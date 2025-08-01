@@ -1,19 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css';
+import { useState } from 'react';
+import SplashScreen from "./components/SplashScreen";
+import Home from './pages/Home';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showSplash, setShowSplash] = useState(true);
+  const [exitSplash, setExitSplash] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center">
-      <h1 className="text-4xl font-bold text-blue-600 mb-4">
-        Welcome to Zhang Properties!
-      </h1>
-     
-    </div>
+    <AnimatePresence>
+      {showSplash ? (
+        <SplashScreen
+          key="splash"
+          onComplete={() => {
+            setExitSplash(true);
+            setTimeout(() => setShowSplash(false), 800); 
+          }}
+          isExiting={exitSplash}
+        />
+      ) : (
+        <Home key="home" />
+      )}
+    </AnimatePresence>
   );
 }
 
-export default App
+export default App;

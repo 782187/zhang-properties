@@ -1,0 +1,145 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #1c1c1c;
+    font-family: sans-serif;
+    justify-content: space-between;
+}
+
+.header-logo {
+    background-color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-inline: 16px;
+}
+
+.header-logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.Zhang {
+    color: #1e293b
+}
+
+.Properties {
+    color: #f59e0b;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    height: 100%;
+    background-color: #0f172a;
+}
+
+.header-button {
+    width: 180px;
+    height: 100%;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #2a2a2a;
+
+}
+
+.header-button:hover .header-button-label,
+.header-button:hover .dropdown-icon {
+    color: #f59e0b;
+}
+
+
+.header-button-label {
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.dropdown-icon {
+    margin-left: 4px;
+    color: white;
+}
+
+.header-contact {
+    width: 160px;
+    height: 100%;
+    background-color: #f59e0b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-contact:hover {
+    background-color: #c6343b;
+}
+
+.arrow {
+    margin-left: 8px;
+    font-size: 1.1rem;
+}
+
+.dropdown-icon {
+    margin-left: 4px;
+    color: white;
+}
+
+
+.header-wrapper {
+    position: relative;
+}
+
+.header-dropdown {
+    position: absolute;
+    top: 80px;
+    /* Same as header height */
+    left: 0;
+    width: 100%;
+    background-color: #0f172a;
+    color: white;
+    z-index: 999;
+    padding: 24px 48px;
+    border-top: 1px solid #334155;
+}
+
+/* Optional: transition effects */
+.header-dropdown {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    color: #f59e0b;
+}
