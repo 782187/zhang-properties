@@ -98,7 +98,7 @@ export default function SplashScreen({ onComplete }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
-                className="position-absolute bottom-0 mb-4 mb-sm-5 start-50 translate-middle-x"
+                className="position-absolute bottom-0 mb-1 mb-sm-1 start-50 translate-middle-x"
             >
                 <div className="d-flex align-items-center justify-content-center">
                     {[...Array(3)].map((_, i) => (
@@ -125,10 +125,10 @@ export default function SplashScreen({ onComplete }) {
                     ))}
                 </div>
                 <div
-                    className="text-secondary text-uppercase small mt-2"
+                    className="text-secondary text-uppercase mt-1 fw-bold"
                     style={{
                         letterSpacing: "0.3em",
-                        fontSize: "0.65rem"
+                        fontSize: "1rem"
                     }}
                 >
                     LOADING

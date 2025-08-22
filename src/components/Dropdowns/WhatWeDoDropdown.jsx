@@ -36,7 +36,7 @@ const WhatWeDoDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
 
   return (
     <div
-      className="bg-white shadow p-5 mt-3" 
+      className="bg-white shadow py-3 px-2 mt-3" 
       style={{ zIndex: 999, position: 'relative', width: '100%' }}
     >
       <div className="d-flex justify-content-between align-items-center mb-3">
