@@ -1,25 +1,28 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
-  /* Modern palette for real estate branding */
-  --primary-color: #1d4ed8; /* Indigo-700 */
-  --secondary-color: #0f172a; /* Slate-900 */
-  --accent-color: #f59e0b; /* Amber-500 */
-  --text-color: #1e293b; /* Slate-800 */
-  --bg-color: #f8fafc; /* Slate-50 */
+  --primary-color: #1d4ed8;
+  --secondary-color: #0f172a;
+  --accent-color: #f59e0b;
+  --text-color: #1e293b;
+  --bg-color: #f8fafc;
   --link-color: #1d4ed8;
   --hover-color: #2563eb;
   --header-bg: rgba(255, 255, 255, 0.8);
   --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --accent-color: #ffae00;
+  --background-color: #fff;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -28,10 +31,11 @@ body {
   min-height: 100vh;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 
@@ -56,3 +60,80 @@ body, html {
     background-color: var(--accent-color);
   }
 } */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 3px solid #0d6efd;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(13, 110, 253, 0.15) !important;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
+}
+
+.diagonal-overlay {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  background-color: #ffc107;
+  opacity: 0.8;
+  top: -75%;
+  left: -75%;
+  transform: rotate(45deg) translateY(0%);
+  transition: transform 3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.diagonal-overlay.slide-away {
+  transform: rotate(45deg) translateY(-200%);
+}
+
+.thumbnail-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 193, 7, 0.9); 
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-button:hover {
+  background-color: rgba(255, 193, 7, 1);
+}
+.common-hover:hover{
+  background-color: rgba(0, 0, 0, 0.867);
+  color: white;
+}

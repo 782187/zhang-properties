@@ -15,60 +15,125 @@ export default function SplashScreen({ onComplete }) {
             animate={{ opacity: 1 }}
             exit={{
                 opacity: 0,
-                y: -100,
-                transition: { duration: 0.8, ease: "easeInOut" },
+                transition: {
+                    duration: 0.8,
+                    ease: "easeInOut"
+                }
             }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center justify-center h-screen bg-white relative z-50"
+            className="vh-100 w-100 d-flex align-items-center justify-content-center bg-white position-fixed top-0 start-0 z-3"
         >
-            {/* Animated Vertical Line */}
+            {/* Main Content Centered */}
             <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: "70px" }}
-                transition={{ duration: 1 }}
-                className="absolute left-1/2 transform -translate-x-1/2 w-[2px] bg-[var(--accent-color)]"
-            />
-
-            <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-center space-y-4 w-full max-w-4xl px-4"
+                className="text-center px-3 px-sm-4"
+                style={{ width: '100%', maxWidth: '900px' }}
             >
-                <div className="flex items-center justify-between w-full">
-                    {/* Logo */}
-                    <div className="flex-1 flex justify-end pr-6">
+                {/* Mobile-only divider */}
+                <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "50px" }}
+                    transition={{ duration: 0.5 }}
+                    className="d-md-none mx-auto my-4"
+                    style={{ height: "2px", backgroundColor: "var(--accent-color)" }}
+                />
+
+                <div className="row align-items-center justify-content-center g-3">
+                    {/* Logo Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="col-12 col-md-auto"
+                    >
                         <motion.h1
                             whileHover={{ scale: 1.05 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="text-3xl font-bold tracking-tight flex gap-1"
+                            className="fw-bold d-flex flex-column flex-md-row gap-1 justify-content-center"
+                            style={{
+                                fontSize: "clamp(1.5rem, 6vw, 2rem)",
+                                lineHeight: 1.2
+                            }}
                         >
-                            <span className="text-[var(--text-color)]">Zhang</span>
-                            <span className="text-[var(--accent-color)]">Properties</span>
+                            <span style={{ color: "var(--text-color)" }}>Zhang</span>
+                            <span style={{ color: "var(--accent-color)" }}>Properties</span>
                         </motion.h1>
-                    </div>
+                    </motion.div>
 
-                    <div className="w-[50px]" />
+                    {/* Divider for Desktop */}
+                    <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: "60px" }}
+                        transition={{ duration: 1 }}
+                        className="d-none d-md-flex mx-4"
+                        style={{
+                            width: "2px",
+                            backgroundColor: "var(--accent-color)"
+                        }}
+                    />
 
-                    {/* Slogan */}
-                    <div className="flex-1 flex justify-start pl-6 text-left text-gray-600 text-xxl font-light leading-snug">
-                        Building trust,<br />
-                        one property at a time.<br />
-                        Turning spaces into homes.
-                    </div>
+                    {/* Tagline */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="col-12 col-md-auto text-center"
+                    >
+                        <div
+                            className="text-muted fw-light mx-auto"
+                            style={{
+                                maxWidth: "280px",
+                                fontSize: '1.3rem',
+                                lineHeight: 1.5
+                            }}
+                        >
+                            Building trust,<br />
+                            one property at a time.<br />
+                            Turning spaces into homes.
+                        </div>
+                    </motion.div>
                 </div>
             </motion.div>
 
-            {/* Loading Text */}
-            <motion.p
+            {/* Loading Dots */}
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
-                className="absolute bottom-[100px] left-1/2 transform -translate-x-1/2 text-sm text-gray-400 tracking-[0.5em]" // <--- more spacing
+                className="position-absolute bottom-0 mb-4 mb-sm-5 start-50 translate-middle-x"
             >
-                LOADING . . .
-            </motion.p>
-
+                <div className="d-flex align-items-center justify-content-center">
+                    {[...Array(3)].map((_, i) => (
+                        <motion.span
+                            key={i}
+                            animate={{
+                                y: [0, -10, 0],
+                                opacity: [0.4, 1, 0.4]
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 1.5,
+                                delay: i * 0.2
+                            }}
+                            className="mx-1"
+                            style={{
+                                display: 'inline-block',
+                                width: 8,
+                                height: 8,
+                                backgroundColor: 'var(--accent-color)',
+                                borderRadius: '50%'
+                            }}
+                        />
+                    ))}
+                </div>
+                <div
+                    className="text-secondary text-uppercase small mt-2"
+                    style={{
+                        letterSpacing: "0.3em",
+                        fontSize: "0.65rem"
+                    }}
+                >
+                    LOADING
+                </div>
+            </motion.div>
         </motion.div>
     );
 }

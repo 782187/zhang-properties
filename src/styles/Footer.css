@@ -1,0 +1,101 @@
+.footer {
+    background-color: #0f172a;
+    color: white;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.Zhang {
+    color: #1e293b;
+    background-color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.Properties {
+    color: #f59e0b;
+    margin-left: 6px;
+}
+
+.footer-link {
+    color: #ffffffcc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-link:hover {
+    color: #f59e0b;
+    transform: translateX(5px);
+}
+
+.footer-top h6 {
+    font-size: 1.1rem;
+}
+
+.animate-fade {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-top {
+        text-align: center;
+    }
+
+    .footer-link {
+        display: inline-block;
+        margin-right: 16px;
+    }
+}
