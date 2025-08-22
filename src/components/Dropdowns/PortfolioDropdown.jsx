@@ -21,7 +21,19 @@ const projects = [
   },
 ];
 
-const PortfolioDropdown = ({ closeDropdown }) => {
+const PortfolioDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
+  const handleLinkClick = () => {
+    // Close desktop dropdown if it exists
+    if (closeDropdown) {
+      closeDropdown();
+    }
+    
+    // Close mobile navbar if it exists and we're on mobile
+    if (mobile && closeMobileNavbar) {
+      closeMobileNavbar();
+    }
+  };
+
   return (
     <div
       className="bg-white shadow p-4 p-md-5 mt-3"
@@ -35,7 +47,10 @@ const PortfolioDropdown = ({ closeDropdown }) => {
             Empowering precision in processes and people for the perfect product,
             resulting in an impeccable portfolio.
           </p>
-          <button className="btn btn-danger d-inline-flex align-items-center mt-3">
+          <button 
+            className="btn btn-danger d-inline-flex align-items-center mt-3"
+            onClick={handleLinkClick}
+          >
             EXPLORE OUR PROJECTS <FaArrowRight className="ms-2" />
           </button>
         </div>
@@ -44,7 +59,12 @@ const PortfolioDropdown = ({ closeDropdown }) => {
         <div className="col-12 col-md-8">
           <div className="row">
             {projects.map((project, index) => (
-              <Link onClick={closeDropdown} to={project.link} className="col-12 col-sm-6 col-md-4 mb-3" key={index}>
+              <Link 
+                onClick={handleLinkClick} 
+                to={project.link} 
+                className="col-12 col-sm-6 col-md-4 mb-3" 
+                key={index}
+              >
                 <div className="card border-0 position-relative h-100">
                   <img
                     src={project.image}

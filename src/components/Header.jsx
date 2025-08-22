@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Header.css';
 import PortfolioDropdown from './Dropdowns/PortfolioDropdown';
 import WhatWeDoDropdown from './Dropdowns/WhatWeDoDropdown';
@@ -8,6 +8,7 @@ import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const navbarRef = useRef();
 
   const handleDropdownClose = () => setActiveDropdown(null);
 
@@ -23,6 +24,16 @@ const Header = () => {
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+  };
+
+  // Function to close the mobile navbar
+  const closeMobileNavbar = () => {
+    if (navbarRef.current && window.innerWidth < 992) {
+      const navbarToggler = navbarRef.current.querySelector('.navbar-toggler');
+      if (navbarToggler && getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click(); // This will collapse the navbar
+      }
+    }
   };
 
   return (
@@ -71,7 +82,11 @@ const Header = () => {
       </div>
 
       {/* Mobile Header */}
-      <Navbar expand="lg" className="mobile-header d-lg-none">
+      <Navbar 
+        expand="lg" 
+        className="mobile-header d-lg-none"
+        ref={navbarRef}
+      >
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className="header-logo-mobile">
             <span className="Zhang">Zhang</span>
@@ -82,38 +97,54 @@ const Header = () => {
 
           <Navbar.Collapse id="mobile-navbar">
             <Nav className="w-100 mobile-nav">
-              <Nav.Link as={Link} to="/" className="mobile-nav-link">Home</Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                className="mobile-nav-link"
+                onClick={closeMobileNavbar}
+              >
+                Home
+              </Nav.Link>
 
               <NavDropdown
                 title="Portfolio"
                 id="portfolio-dropdown"
                 className="mobile-dropdown"
-                renderMenuOnMount={true}
               >
-                <PortfolioDropdown mobile={true} />
+                <PortfolioDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
               </NavDropdown>
 
               <NavDropdown
                 title="What We Do"
                 id="what-we-do-dropdown"
                 className="mobile-dropdown"
-                renderMenuOnMount={true}
               >
-                <WhatWeDoDropdown mobile={true} />
+                <WhatWeDoDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
               </NavDropdown>
 
               <NavDropdown
                 title="We Work With"
                 id="work-with-dropdown"
                 className="mobile-dropdown"
-                renderMenuOnMount={true}
               >
-                <WeWorkWithDropdown mobile={true} />
+                <WeWorkWithDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
               </NavDropdown>
 
-              <Nav.Link as={Link} to="/organisation" className="mobile-nav-link">Organisation</Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/organisation" 
+                className="mobile-nav-link"
+                onClick={closeMobileNavbar}
+              >
+                Organisation
+              </Nav.Link>
 
-              <Nav.Link as={Link} to="/contact_us" className="header-contact-mobile">
+              <Nav.Link 
+                as={Link} 
+                to="/contact_us" 
+                className="header-contact-mobile"
+                onClick={closeMobileNavbar}
+              >
                 Contact <span className="arrow">→</span>
               </Nav.Link>
             </Nav>

@@ -23,7 +23,7 @@ const Contact = () => {
           </div>
 
           <div className="col-md-6 mb-4 mb-md-0 position-relative" data-aos="fade-right">
-            <div className="p-4 p-lg-5" style={{ backdropFilter: 'blur(1px)' }}>
+            <div className="p-1 p-lg-5" style={{ backdropFilter: 'blur(1px)' }}>
               <h2 className="mb-4 text-warning">Get in Touch</h2>
               <EnquiryForm />
             </div>

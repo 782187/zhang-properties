@@ -2,6 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+
 const solutions = [
   {
     title: 'WE BUILD',
@@ -20,21 +21,43 @@ const solutions = [
   },
 ];
 
-const WhatWeDoDropdown = ({ closeDropdown }) => {
+const WhatWeDoDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
+  const handleLinkClick = () => {
+    // Close desktop dropdown if it exists
+    if (closeDropdown) {
+      closeDropdown();
+    }
+    
+    // Close mobile navbar if it exists and we're on mobile
+    if (mobile && closeMobileNavbar) {
+      closeMobileNavbar();
+    }
+  };
+
   return (
     <div
-     className="bg-white shadow p-5 mt-3" style={{ zIndex: 999, position: 'relative', width: '100%' }}
+      className="bg-white shadow p-5 mt-3" 
+      style={{ zIndex: 999, position: 'relative', width: '100%' }}
     >
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3 className="mb-0">Solutions</h3>
-        <a href="#" className="text-danger fw-semibold d-flex align-items-center text-decoration-none">
+        <Link 
+          to="#" 
+          className="text-danger fw-semibold d-flex align-items-center text-decoration-none"
+          onClick={handleLinkClick}
+        >
           More about solutions <FaArrowRight className="ms-2" />
-        </a>
+        </Link>
       </div>
       <hr />
       <div className="row g-3">
         {solutions.map((item, index) => (
-          <Link to={item.link} onClick={closeDropdown} className="col-md-4 text-decoration-none" key={index}>
+          <Link 
+            to={item.link} 
+            onClick={handleLinkClick} 
+            className="col-md-4 text-decoration-none" 
+            key={index}
+          >
             <div className="position-relative d-flex">
               {/* Red Left Section */}
               <div
