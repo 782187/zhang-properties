@@ -66,7 +66,7 @@ const Projects = () => {
     <section className="bg-light py-5 px-3 border border-3">
       <div className="container">
         <motion.h2
-          className="text-center text-warning mb-5 fw-bold"
+          className="text-center text-warning mb-5 fw-bold display-5"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -114,10 +114,10 @@ const Projects = () => {
               </div>
 
               <div className={`col-md-6 ${isEven ? "" : "order-md-1"}`}>
-                <h3 className="text-warning fw-semibold">{proj.name}</h3>
-                <p className="mb-1 text-dark">{proj.location}</p>
-                <p className="text-muted">{proj.size}</p>
-                <p className="text-muted">{proj.description}</p>
+                <h3 className="text-warning fw-semibold fs-3">{proj.name}</h3>
+                <p className="mb-1 text-dark fs-5">{proj.location}</p>
+                <p className="text-muted fs-5">{proj.size}</p>
+                <p className="text-muted fs-5">{proj.description}</p>
               </div>
             </motion.div>
           );

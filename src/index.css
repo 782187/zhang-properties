@@ -3,17 +3,17 @@
 @tailwind utilities; */
 
 :root {
-  --primary-color: #1d4ed8;
-  --secondary-color: #0f172a;
-  --accent-color: #f59e0b;
-  --text-color: #1e293b;
-  --bg-color: #f8fafc;
-  --link-color: #1d4ed8;
-  --hover-color: #2563eb;
-  --header-bg: rgba(255, 255, 255, 0.8);
-  --header-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --accent-color: #ffae00;
-  --background-color: #fff;
+  --primary-color: #0b0b0c;
+  --secondary-color: #111214;
+  --accent-color: #d61f26; /* Red */
+  --text-color: #ffffff;
+  --muted-text: #d1d5db;
+  --bg-color: #0e0f11;
+  --link-color: #ff4d52;
+  --hover-color: #e31b23;
+  --header-bg: rgba(0, 0, 0, 0.65);
+  --header-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --background-color: var(--bg-color);
 }
 
 html {
@@ -27,8 +27,12 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Barlow', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 body,
@@ -38,7 +42,24 @@ html {
   overflow-x: hidden;
 }
 
+/* Headings use Droid Serif */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Barlow', sans-serif;
+}
 
+/* Utility font classes */
+.font-montserrat {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.font-barlow {
+  font-family: 'Barlow', sans-serif;
+}
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -63,16 +84,16 @@ html {
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top: 3px solid #0d6efd;
+  border-top: 3px solid var(--accent-color);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(13, 110, 253, 0.15) !important;
+  box-shadow: 0 12px 20px rgba(214, 31, 38, 0.25) !important;
 }
 
 .bg-gradient {
-  background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+  background: linear-gradient(90deg, rgba(214, 31, 38, 0.9), rgba(214, 31, 38, 0.45));
 }
 
 ::-webkit-scrollbar {
@@ -85,7 +106,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: orange;
+  background: var(--accent-color);
   border-radius: 10px;
 }
 
@@ -123,7 +144,7 @@ html {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 193, 7, 0.9); 
+  background-color: rgba(214, 31, 38, 0.9); 
   color: white;
   cursor: pointer;
   z-index: 2;
@@ -131,7 +152,7 @@ html {
 }
 
 .play-button:hover {
-  background-color: rgba(255, 193, 7, 1);
+  background-color: rgba(214, 31, 38, 1);
 }
 .common-hover:hover{
   background-color: rgba(0, 0, 0, 0.867);

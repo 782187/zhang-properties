@@ -5,6 +5,8 @@ import Projects from './Projects';
 import FastDelivery from './FastDelivery';
 import Clients from './Clients';
 import Contact from './Contact';
+import { siteContent } from '../data/siteContent';
+import Capabilities from './Capabilities';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -21,32 +23,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="position-relative vh-100 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
-        <motion.div
-          className="position-absolute"
-          style={{
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 3,
-            overflow: 'hidden'
-          }}
-          initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
-          animate={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-        >
-          <div style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '200%',
-            height: '200%',
-            background: 'white',
-            transform: 'rotate(45deg) translateX(-100%)',
-            transformOrigin: '0% 0%'
-          }} />
-        </motion.div>
+      <div className="position-relative vh-100 overflow-hidden" style={{ backgroundColor: siteContent.theme?.surface || '#1a1a1a' }}>
 
         <video
           ref={videoRef}
@@ -57,14 +34,14 @@ const Hero = () => {
           className="position-absolute w-100 h-100"
           style={{ objectFit: "cover", zIndex: 0 }}
         >
-          <source src="./hero.mp4" type="video/mp4" />
+          <source src="https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb/67434bc3f8cab15f2f07eb5b_Home_About%20(1)-transcode.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
         <div
           className="position-absolute w-100 h-100"
           style={{
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6))",
+            background: siteContent.hero?.overlayGradient || "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6))",
             zIndex: 1
           }}
         />
@@ -74,16 +51,17 @@ const Hero = () => {
           style={{ zIndex: 2 }}
         >
           <motion.h1
-            className="fw-bold mb-3 text-warning"
+            className="fw-bold mb-3"
             style={{
               fontSize: "clamp(1.8rem, 5vw, 3.5rem)",
-              textShadow: "0 2px 8px rgba(0,0,0,0.5)"
+              textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+              color: '#ffffff'
             }}
             initial={{ opacity: 0, y: -60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            Zhang Industrial Property Consultants
+            {siteContent.hero?.headline}
           </motion.h1>
 
           <motion.p
@@ -97,21 +75,27 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.6, duration: 0.8 }}
           >
-            28+ years of Industrial Real Estate Expertise: Warehousing, Logistics, Industrial Parks, and Land - PAN India & Dubai.
+            {siteContent.hero?.subheadline}
           </motion.p>
 
           <motion.button
-            className="btn btn-warning btn-lg mt-2 mt-md-3 px-4 py-3 text-white"
+            className="btn btn-lg mt-2 mt-md-3 px-4 py-3 text-white"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2.0, duration: 0.5 }}
-            style={{ fontWeight: 600, letterSpacing: '1px' }}
+            style={{
+              fontWeight: 600,
+              letterSpacing: '1px',
+              backgroundColor: 'var(--accent-color)',
+              borderColor: 'var(--accent-color)'
+            }}
           >
-            Request Consultation
+            {siteContent.hero?.ctaLabel}
           </motion.button>
         </div>
       </div>
       <AboutUs />
+      <Capabilities />
       <Projects />
       <FastDelivery />
       <Clients />

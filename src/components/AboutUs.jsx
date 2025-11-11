@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const AboutUs = () => {
   const videoWrapperRef = useRef(null);

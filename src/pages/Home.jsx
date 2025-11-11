@@ -13,6 +13,7 @@ import Investors from '../components/Dropdowns/WeWorkWithSubPages/Investors';
 import LandOwners from '../components/Dropdowns/WeWorkWithSubPages/LandOwners';
 import VendorPartners from '../components/Dropdowns/WeWorkWithSubPages/VendorPartners';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 const Home = () => {
   return (
     <>
