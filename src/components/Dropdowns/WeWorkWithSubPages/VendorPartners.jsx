@@ -4,6 +4,28 @@ import Contact from '../../Contact';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+const SectionSeparator = () => (
+  <div
+    style={{
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '50px',
+      background: `
+        repeating-linear-gradient(
+          45deg,
+          rgba(0, 0, 0, 0.3) 0px,
+          rgba(0, 0, 0, 0.17) 1.5px,
+          transparent 1.5px,
+          transparent 6px
+        )
+      `,
+      backgroundColor: '#ffffff',
+      zIndex: 2,
+    }}
+  ></div>
+);
+
 function VendorPartners() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
@@ -51,93 +73,176 @@ function VendorPartners() {
         header="Vendor Partners"
         subheader="Explore a world of possibilities with our premium services"
         textColor="#fff"
+        leftStatValue="63 Acres"
+        leftStatLabel="Project Area"
+        rightStatValue="15,44,000 Sq.Ft."
+        rightStatLabel="Built-up Potential"
       />
-      
+      <SectionSeparator />
+
       <div className="container py-5">
         <div className="text-center mb-5">
           <motion.div 
-            className="badge bg-warning text-dark fs-6 px-4 py-2 mb-3"
+            className="badge bg-danger text-white fs-6 px-4 py-2 mb-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            OFFER
+            PARTNER BENEFITS
           </motion.div>
           <motion.h2 
-            className="display-4 fw-bold"
+            className="display-5 fw-bold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
+            style={{ fontFamily: "'Barlow', sans-serif", fontSize: '2.7rem', letterSpacing: '0.06em', color: '#111827' }}
           >
-            Opportunity Awaits: Unlocking Potential with Zhang Properties
+            Building lasting vendor relationships
           </motion.h2>
+          <motion.p
+            className="text-muted mx-auto"
+            style={{ maxWidth: '720px', fontFamily: "'Barlow', sans-serif", fontSize: '1.02rem' }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55 }}
+          >
+            As our parks grow, our vendors grow with us – through predictable engagement, transparent processes
+            and a shared commitment to quality and timeliness.
+          </motion.p>
         </div>
 
         <motion.div 
-          className="row g-5 mb-5"
+          className="row g-4 align-items-stretch"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div className="col-lg-6" variants={itemVariants}>
-            <div className="bg-white rounded-4 shadow-lg p-4 p-md-5 h-100">
-              <div className="d-flex align-items-center mb-4">
-                <div className="bg-warning rounded-circle p-2 me-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H7zm2 0a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H9z"/>
-                  </svg>
+          <motion.div className="col-lg-8" variants={itemVariants}>
+            <div
+              className="h-100 rounded-4 shadow-lg p-4 p-md-5 border border-2 border-danger"
+              style={{ backgroundColor: '#fdf9f7' }}
+            >
+              <div className="row g-4">
+                <div className="col-md-6">
+                  <div className="h-100 d-flex flex-column">
+                    <div className="d-flex align-items-center mb-3">
+                      <div className="bg-danger rounded-circle p-2 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H7zm2 0a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H9z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div
+                          className="text-uppercase text-muted"
+                          style={{ fontSize: '0.75rem', letterSpacing: '0.16em' }}
+                        >
+                          01 · Context
+                        </div>
+                        <h3
+                          className="mb-0"
+                          style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.25rem', letterSpacing: '0.01em' }}
+                        >
+                          Challenges in asset utilisation
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-muted mb-0" style={{ fontSize: '0.95rem', lineHeight: 1.7 }}>
+                      Investors often face the challenge of finding a stable asset class with promising growth
+                      prospects, offering returns that outpace the market. While some may have invested in real
+                      estate, their exposure typically lies in commercial or residential spaces, overlooking the
+                      potential of industrial real estate.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="mb-0">Challenges in asset Utilization</h3>
+
+                <div className="col-md-6">
+                  <div className="h-100 d-flex flex-column">
+                    <div className="d-flex align-items-center mb-3">
+                      <div className="bg-dark rounded-circle p-2 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 16 16">
+                          <path d="M8.5 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5h-1z"/>
+                          <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div
+                          className="text-uppercase text-muted"
+                          style={{ fontSize: '0.75rem', letterSpacing: '0.16em' }}
+                        >
+                          02 · Partnership
+                        </div>
+                        <h3
+                          className="mb-0"
+                          style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.25rem', letterSpacing: '0.01em' }}
+                        >
+                          How we maximise your potential
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="mb-0" style={{ fontSize: '0.95rem', lineHeight: 1.7 }}>
+                      At Zhang Properties, we offer a compelling solution by providing investment opportunities
+                      in industrial real estate projects, both at the project level and at a fund level. With our
+                      proven track record and expertise, vendors align with long-term, sustainable projects rather
+                      than transactional engagements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-12 mt-2">
+                  <div className="pt-4 mt-2 border-top border-danger-subtle">
+                    <div className="d-flex align-items-center mb-3">
+                      <div className="bg-danger rounded-circle p-2 me-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                          <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div
+                          className="text-uppercase text-muted"
+                          style={{ fontSize: '0.75rem', letterSpacing: '0.16em' }}
+                        >
+                          03 · Outcome
+                        </div>
+                        <h3
+                          className="mb-0"
+                          style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.25rem', letterSpacing: '0.01em' }}
+                        >
+                          The benefits of partnering with Zhang Properties
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-muted mb-0" style={{ fontSize: '0.95rem', lineHeight: 1.7 }}>
+                      Investors benefit from hassle-free ownership as we handle property maintenance through
+                      dedicated on-site teams. Our stable tenant base, long-term leases and strategic locations
+                      enhance the intrinsic value of the project and create reliable workstreams for our
+                      vendor partners as well.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-muted fs-5">Investors often face the challenge of finding a stable asset class with promising growth prospects, offering returns that outpace the market. While some may have invested in real estate, their exposure typically lies in commercial or residential spaces, overlooking the potential of industrial real estate.</p>
             </div>
           </motion.div>
-          
-          <motion.div className="col-lg-6" variants={itemVariants}>
-            <AnimatedImage src="/build.jpeg" alt="Industrial Facility" />
-          </motion.div>
-          
-          <motion.div className="col-lg-6 order-lg-2" variants={itemVariants}>
-            <div className="bg-warning rounded-4 shadow-lg p-4 p-md-5 h-100">
-              <div className="d-flex align-items-center mb-4">
-                <div className="bg-dark rounded-circle p-2 me-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#fff" viewBox="0 0 16 16">
-                    <path d="M8.5 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5h-1z"/>
-                    <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                  </svg>
-                </div>
-                <h3 className="mb-0">How We Maximize your asset's Potential</h3>
+
+          <motion.div className="col-lg-4" variants={itemVariants}>
+            <div className="h-100 d-flex flex-column">
+              <div className="rounded-4 overflow-hidden shadow-lg mb-3">
+                <AnimatedImage src="/build.jpeg" alt="Industrial Facility" />
               </div>
-              <p className="fs-5">At Zhang Properties, we offer a compelling solution by providing investment opportunities in industrial real estate projects, both at the project level and at a fund level. With our proven track record and expertise, investors can tap into this asset class poised for sustainable growth.</p>
-            </div>
-          </motion.div>
-          
-          <motion.div className="col-lg-6 order-lg-1" variants={itemVariants}>
-            <AnimatedImage src="/build.jpeg" alt="Industrial Facility" />
-          </motion.div>
-          
-          <motion.div className="col-lg-6" variants={itemVariants}>
-            <div className="bg-white rounded-4 shadow-lg p-4 p-md-5 h-100">
-              <div className="d-flex align-items-center mb-4">
-                <div className="bg-warning rounded-circle p-2 me-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
-                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                  </svg>
-                </div>
-                <h3 className="mb-0">The Benefits of Partnering with Zhang Properties</h3>
+              <div
+                className="small text-muted mt-auto pt-2 border-top"
+                style={{ fontFamily: "'Barlow', sans-serif", fontSize: '0.8rem', letterSpacing: '0.08em' }}
+              >
+                VENDOR PARTNER DOSSIER · ZHANG PROPERTIES INDUSTRIAL PARKS
               </div>
-              <p className="text-muted fs-5">Investors benefit from hassle-free ownership as we handle property maintenance through dedicated on-site teams. Our stable tenant base, majorly comprising of manufacturing companies with long-term lease tenures, ensures consistent cash flow and asset stability. Our strategic locations in the heart of industrial hubs provide unique advantages enhancing the intrinsic value of the investment. Furthermore, our projects' high-quality infrastructure attract reputable tenants, as a result attracting interest from major private equity buyers - this opens up avenues for easy and structured exit strategies for you.</p>
             </div>
-          </motion.div>
-          
-          <motion.div className="col-lg-6" variants={itemVariants}>
-            <AnimatedImage src="/build.jpeg" alt="Industrial Facility" />
           </motion.div>
         </motion.div>
       </div>
 
-      <div className="bg-warning bg-opacity-10 py-6">
+      <SectionSeparator />
+
+      <div className="bg-danger bg-opacity-10 py-6">
         <div className="container">
           <motion.div 
             className="text-center mb-5"
@@ -145,8 +250,18 @@ function VendorPartners() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="display-5 fw-bold mb-3">Development Modalities</h2>
-            <p className="lead text-muted">Tailored solutions for every industrial need</p>
+            <h2
+              className="display-5 fw-bold mb-3"
+              style={{ fontFamily: "'Barlow', sans-serif", fontSize: '2.6rem', letterSpacing: '0.01em', color: '#111827' }}
+            >
+              Development Modalities
+            </h2>
+            <p
+              className="lead text-muted"
+              style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.2rem' }}
+            >
+              Tailored solutions for every industrial need
+            </p>
           </motion.div>
           
           <div className="row g-4">
@@ -157,22 +272,32 @@ function VendorPartners() {
               transition={{ delay: 0.3 }}
             >
               <div 
-                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 1 ? 'bg-warning bg-opacity-25' : 'bg-white'}`}
+                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 1 ? 'bg-danger bg-opacity-25' : 'bg-white'}`}
                 onMouseEnter={() => setHoveredCard(1)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className="card-body p-4">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded-circle p-2 me-3">
+                    <div className="bg-danger rounded-circle p-2 me-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H7zm2 0a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5H9z"/>
                       </svg>
                     </div>
-                    <h5 className="card-title mb-0">Speculative developments</h5>
+                    <h5
+                      className="card-title mb-0"
+                      style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.2rem' }}
+                    >
+                      Speculative developments
+                    </h5>
                   </div>
-                  <p className="card-text text-muted">Ready to move in industrial facilities optimised towards efficiency, and as a result decreasing your go-to-market timeline. Experience our standard specifications building developed for your swift expansion.</p>
+                  <p
+                    className="card-text text-muted"
+                    style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1rem', lineHeight: 1.7 }}
+                  >
+                    Ready to move in industrial facilities optimised towards efficiency, and as a result decreasing your go-to-market timeline. Experience our standard specifications building developed for your swift expansion.
+                  </p>
                   <div className="mt-auto pt-3">
-                    <span className="badge bg-warning text-dark">Plug N' Play facilities</span>
+                    <span className="badge bg-danger text-white">Plug N' Play facilities</span>
                   </div>
                 </div>
               </div>
@@ -185,23 +310,28 @@ function VendorPartners() {
               transition={{ delay: 0.4 }}
             >
               <div 
-                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 2 ? 'bg-warning bg-opacity-25' : 'bg-white'}`}
+                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 2 ? 'bg-danger bg-opacity-25' : 'bg-white'}`}
                 onMouseEnter={() => setHoveredCard(2)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className="card-body p-4">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded-circle p-2 me-3">
+                    <div className="bg-danger rounded-circle p-2 me-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M8.5 11.5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4.5a.5.5 0 0 1-.5.5h-1z"/>
                         <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
                       </svg>
                     </div>
-                    <h5 className="card-title mb-0">Custom Developments</h5>
+                    <h5
+                      className="card-title mb-0"
+                      style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.2rem' }}
+                    >
+                      Custom Developments
+                    </h5>
                   </div>
                   <p className="card-text text-muted">Ready to move in industrial facilities optimised towards efficiency, and as a result decreasing your go-to-market timeline. Experience our standard specifications building developed for your swift expansion.</p>
                   <div className="mt-auto pt-3">
-                    <span className="badge bg-warning text-dark">Built to suit</span>
+                    <span className="badge bg-danger text-white">Built to suit</span>
                   </div>
                 </div>
               </div>
@@ -214,23 +344,33 @@ function VendorPartners() {
               transition={{ delay: 0.5 }}
             >
               <div 
-                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 3 ? 'bg-warning bg-opacity-25' : 'bg-white'}`}
+                className={`card h-100 border-0 rounded-4 shadow-sm transition-all ${hoveredCard === 3 ? 'bg-danger bg-opacity-25' : 'bg-white'}`}
                 onMouseEnter={() => setHoveredCard(3)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 <div className="card-body p-4">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded-circle p-2 me-3">
+                    <div className="bg-danger rounded-circle p-2 me-3">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
                         <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                       </svg>
                     </div>
-                    <h5 className="card-title mb-0">Turnkey Developments</h5>
+                    <h5
+                      className="card-title mb-0"
+                      style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1.2rem' }}
+                    >
+                      Turnkey Developments
+                    </h5>
                   </div>
-                  <p className="card-text text-muted">We deliver full stack industrial development from engineering to procurement, construction, and commissioning - a single point solution for your industrial infrastructure needs.</p>
+                  <p
+                    className="card-text text-muted"
+                    style={{ fontFamily: "'Barlow', sans-serif", fontSize: '1rem', lineHeight: 1.7 }}
+                  >
+                    We deliver full stack industrial development from engineering to procurement, construction, and commissioning - a single point solution for your industrial infrastructure needs.
+                  </p>
                   <div className="mt-auto pt-3">
-                    <span className="badge bg-warning text-dark">EPC contracts</span>
+                    <span className="badge bg-danger text-white">EPC contracts</span>
                   </div>
                 </div>
               </div>
@@ -238,6 +378,8 @@ function VendorPartners() {
           </div>
         </div>
       </div>
+
+      <SectionSeparator />
 
       <div className="container py-6">
         <div className="row align-items-center">
@@ -271,14 +413,16 @@ function VendorPartners() {
                 This leads to the integration of indigenous trees in our parks that encourage the native population of flora and fauna to organically create spaces that make our parks more than just industrial spaces.
               </p>
               <div className="d-flex flex-wrap gap-2 mt-5">
-                <span className="badge bg-success bg-opacity-10 text-success fs-6 py-2 px-3">Sustainable Development</span>
-                <span className="badge bg-success bg-opacity-10 text-success fs-6 py-2 px-3">Miyawaki Forests</span>
-                <span className="badge bg-success bg-opacity-10 text-success fs-6 py-2 px-3">Eco-friendly Infrastructure</span>
+                <span className="badge bg-danger bg-opacity-10 text-danger fs-6 py-2 px-3">Sustainable Development</span>
+                <span className="badge bg-danger bg-opacity-10 text-danger fs-6 py-2 px-3">Miyawaki Forests</span>
+                <span className="badge bg-danger bg-opacity-10 text-danger fs-6 py-2 px-3">Eco-friendly Infrastructure</span>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
+
+      <SectionSeparator />
 
       <div className="bg-light py-6">
         <div className="container">
@@ -311,7 +455,7 @@ function VendorPartners() {
                       <h3 className="fw-bold mb-3">We Lease</h3>
                       <p className="text-muted mb-4">Empowering your operations with flexible and strategic industrial leasing solutions tailored to your business needs.</p>
                       <div className="mt-auto">
-                        <Link to="/dropdown/welease" className="btn btn-warning px-4 py-3 fw-bold">Explore Solutions</Link>
+                        <Link to="/dropdown/welease" className="btn btn-danger px-4 py-3 fw-bold">Explore Solutions</Link>
                       </div>
                     </div>
                   </div>
@@ -337,7 +481,7 @@ function VendorPartners() {
                       <h3 className="fw-bold mb-3">We Maintain</h3>
                       <p className="text-muted mb-4">Dedicated park level maintenance and management ensuring your operations never miss a beat and you harness uninterrupted growth.</p>
                       <div className="mt-auto">
-                        <Link to="/dropdown/wemaintain" className="btn btn-warning px-4 py-3 fw-bold">Explore Solutions</Link>
+                        <Link to="/dropdown/wemaintain" className="btn btn-danger px-4 py-3 fw-bold">Explore Solutions</Link>
                       </div>
                     </div>
                   </div>

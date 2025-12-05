@@ -1,55 +1,74 @@
-import React from 'react'
+import React from "react";
 
 function EnquiryForm() {
     return (
-        <div>
-            <form className="rounded px-5"
+        <div
+            style={{
+                padding: "20px",
+                width: "100%",
+                background: `
+                      repeating-linear-gradient(
+                        45deg,
+                        rgba(64, 64, 64, 0.5),
+                        rgba(0, 0, 0, 0.3) 14%,
+                        transparent 14%,
+                        transparent 50%
+                      )
+                    `,
+                backgroundSize: "6px 6px",
+                display: "inline-block",
+            }}
+        >
+            <form
+                className="rounded p-4 p-md-5 shadow-sm"
                 style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                    border: '1px solid rgba(0,0,0,0.1)',
-                    boxShadow: '0 8px 20px rgba(0,0,0,0.05)',
-                    padding: '100px'
-                }}>
+                    backgroundColor: "rgba(255, 255, 255, 0.97)",
+                    borderRadius: "10px",
+                    border: "1px solid rgba(0,0,0,0.1)",
+                    backdropFilter: "blur(3px)",
+                }}
+            >
                 <div className="mb-3">
                     <input
                         type="text"
-                        className="form-control py-3 px-0 rounded-0 bg-transparent"
+                        className="form-control bg-transparent border-0 border-bottom rounded-0 py-3"
                         placeholder="Your Name"
-                        style={{ boxShadow: 'none', border: 'none', borderBottom: '1px solid black' }}
+                        style={{ borderBottom: "1px solid #d61f26", color: "#000" }}
                     />
                 </div>
                 <div className="mb-3">
                     <input
                         type="email"
-                        className="form-control py-3 px-0 rounded-0 bg-transparent"
+                        className="form-control bg-transparent border-0 border-bottom rounded-0 py-3"
                         placeholder="Your Email"
-                        style={{ boxShadow: 'none', border: 'none', borderBottom: '1px solid black' }}
+                        style={{ borderBottom: "1px solid #d61f26", color: "#000" }}
                     />
                 </div>
                 <div className="mb-4">
                     <textarea
-                        className="form-control py-3 px-0 rounded-0 bg-transparent"
                         rows="4"
+                        className="form-control bg-transparent border-0 border-bottom rounded-0 py-3"
                         placeholder="Your Message"
-                        style={{ boxShadow: 'none', border: 'none', borderBottom: '1px solid black' }}
+                        style={{ borderBottom: "1px solid #d61f26", color: "#000" }}
                     ></textarea>
                 </div>
                 <button
                     type="submit"
-                    className="btn btn-warning w-100 fw-bold py-3 text-white"
+                    className="btn w-100 fw-bold py-3 text-white"
                     style={{
-                        boxShadow: '0 4px 15px rgba(253, 153, 13, 0.3)',
-                        transition: 'transform 0.3s',
-                        letterSpacing: '1px'
+                        backgroundColor: "#d61f26",
+                        boxShadow: "0 4px 15px rgba(214,31,38,0.3)",
+                        letterSpacing: "1px",
+                        transition: "transform 0.3s",
                     }}
-                    onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-                    onMouseOut={(e) => e.target.style.transform = 'none'}
+                    onMouseOver={(e) => (e.target.style.transform = "translateY(-2px)")}
+                    onMouseOut={(e) => (e.target.style.transform = "none")}
                 >
                     📩 Send Message
                 </button>
             </form>
         </div>
-    )
+    );
 }
 
-export default EnquiryForm
+export default EnquiryForm;

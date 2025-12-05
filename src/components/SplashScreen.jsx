@@ -53,7 +53,7 @@ export default function SplashScreen({ onComplete }) {
                     prev.map((v, idx) => (idx === li ? current.slice(0, ci) : v))
                 );
                 setCi(ci + 1);
-            }, 55);
+            }, 30);
             return () => clearTimeout(t);
         } else if (li < lines.length - 1) {
             const n = setTimeout(() => {
@@ -82,7 +82,7 @@ export default function SplashScreen({ onComplete }) {
                     .splash-box { width: min(94vw, 900px) !important; }
                     .splash-head { font-size: clamp(1.3rem, 7vw, 1.9rem) !important; }
                     .splash-tag { letter-spacing: 0.18em !important; font-size: 0.62rem !important; }
-                    .splash-typed { max-width: 82vw !important; font-size: clamp(0.9rem, 4.2vw, 1.05rem) !important; line-height: 1.5 !important; }
+                    .splash-typed { max-width: 82vw !important; font-size: clamp(1rem, 4.2vw, 1.05rem) !important; line-height: 1.5 !important; }
                 }
             `}</style>
             <div
@@ -176,7 +176,7 @@ export default function SplashScreen({ onComplete }) {
                         className="text-muted splash-typed mt-3 mt-md-0"
                         style={{
                             maxWidth: 260,
-                            fontSize: "clamp(1rem, 2.4vw, 1.2rem)",
+                            fontSize: "clamp(2rem, 2.4vw, 1.2rem)",
                             lineHeight: 1.6,
                         }}
                     >

@@ -6,29 +6,27 @@ import { Link } from 'react-router-dom';
 const projects = [
   {
     title: 'Tata-Gotion - Chakan',
-    image: '/contact.jpg',
+    image: '/tata_gotion.jpeg',
     link: '/dropdown/tata-gotion',
   },
   {
     title: 'Sany - Chakan',
-    image: '/contact.jpg',
+    image: '/sany_chakan.jpeg',
     link: '/dropdown/sany-chakan',
   },
   {
     title: 'Tata Asal - Sanand',
-    image: '/contact.jpg',
+    image: '/tata_asal.jpg',
     link: '/dropdown/tata-asal',
   },
 ];
 
 const PortfolioDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
   const handleLinkClick = () => {
-    // Close desktop dropdown if it exists
     if (closeDropdown) {
       closeDropdown();
     }
-    
-    // Close mobile navbar if it exists and we're on mobile
+
     if (mobile && closeMobileNavbar) {
       closeMobileNavbar();
     }
@@ -36,62 +34,91 @@ const PortfolioDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
 
   return (
     <div
-      className="bg-white shadow p-4 p-md-5 mt-3"
+      className="bg-white shadow p-3 p-md-4 mt-3"
       style={{ zIndex: 999, position: 'relative', width: '100%' }}
     >
-      <div className="row">
-        {/* Left content section */}
-        <div className="col-12 col-md-4 mb-4 mb-md-0">
-          <h4 className="mb-3">Our industrial parks</h4>
-          <p className="text-muted">
-            Empowering precision in processes and people for the perfect product,
-            resulting in an impeccable portfolio.
-          </p>
-          <button 
-            className="btn btn-danger d-inline-flex align-items-center mt-3"
-            onClick={handleLinkClick}
-          >
-            EXPLORE OUR PROJECTS <FaArrowRight className="ms-2" />
-          </button>
+      <div className="container-fluid">
+        <div className="row align-items-start g-3 mb-3">
+          <div className="col-12 col-lg-3">
+            <h4 className="mb-2 mb-lg-0" style={{ fontWeight: 600 }}>Our industrial parks</h4>
+          </div>
+          <div className="col-12 col-lg-6">
+            <p className="text-muted mb-0" style={{ lineHeight: 1.6 }}>
+              Empowering precision in processes and people for the perfect product,
+              resulting in an impeccable portfolio.
+            </p>
+          </div>
+          <div className="col-12 col-lg-3 d-flex justify-content-lg-end">
+            <div
+              style={{
+                position: "relative",
+                display: "inline-block",
+                background: "repeating-linear-gradient(45deg, #fff, #fff 5px, #d1d1d1 5px, #d1d1d1 6px)",
+                padding: "12px",
+                border: "1px solid #d1d1d1",
+                boxSizing: "content-box",
+              }}
+            >
+              <button
+                className="btn btn-danger d-inline-flex align-items-center"
+                onClick={handleLinkClick}
+              >
+                EXPLORE OUR PROJECTS <FaArrowRight className="ms-2" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Right card grid */}
-        <div className="col-12 col-md-8">
-          <div className="row">
-            {projects.map((project, index) => (
-              <Link 
-                onClick={handleLinkClick} 
-                to={project.link} 
-                className="col-12 col-sm-6 col-md-4 mb-3" 
-                key={index}
+        <div className="row g-3">
+          {projects.map((project, index) => (
+            <div className="col-12 col-sm-6 col-lg-4" key={index}>
+              <Link
+                onClick={handleLinkClick}
+                to={project.link}
+                className="text-decoration-none"
               >
-                <div className="card border-0 position-relative h-100">
-                  <img
-                    src={project.image}
-                    className="card-img-top"
-                    alt={project.title}
+                <div
+                  className="position-relative w-100"
+                  style={{
+                    overflow: 'hidden',
+                    aspectRatio: '1 / 1',
+                    maxHeight: '250px'
+                  }}
+                >
+                  <div
+                    className="w-100 h-100"
                     style={{
-                      height: '180px',
-                      objectFit: 'cover',
-                      width: '100%',
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
                     }}
                   />
                   <div
-                    className="card-body bg-white position-absolute bottom-0 start-0 w-100 d-flex justify-content-between align-items-center"
-                    style={{
-                      padding: '0.75rem',
-                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    }}
+                    className="position-absolute top-0 start-0 w-100 h-100"
+                    style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%)' }}
+                  />
+                  <div
+                    className="position-absolute bottom-0 start-0 end-0 d-flex justify-content-start p-2"
                   >
-                    <span className="fw-medium text-truncate" style={{ maxWidth: '80%' }}>
-                      {project.title}
-                    </span>
-                    <FaArrowRight />
+                    <div
+                      className="d-flex align-items-center shadow-sm"
+                      style={{
+                        backgroundColor: 'rgba(255,255,255,0.98)',
+                        borderRadius: '6px',
+                        padding: '8px 12px',
+                        maxWidth: '88%',
+                      }}
+                    >
+                      <span className="fw-medium text-truncate" style={{ color: '#111', maxWidth: 'calc(100% - 22px)' }}>
+                        {project.title}
+                      </span>
+                      <FaArrowRight className="ms-2" style={{ flex: '0 0 auto' }} />
+                    </div>
                   </div>
                 </div>
               </Link>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

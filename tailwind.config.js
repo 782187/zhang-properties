@@ -1,4 +1,3 @@
-
 export default {
   content: [
     "./index.html",
@@ -8,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        barlow: ['Barlow', 'sans-serif'], 
       },
     },
   },

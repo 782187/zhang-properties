@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom';
 
 const solutions = [
   {
-    title: 'WE BUILD',
-    image: '/build.jpeg',
+    title: 'BUILD TO SUIT',
+    image: '/tata_gotion.jpeg',
     link: '/dropdown/webuild',
   },
   {
     title: 'WE LEASE',
-    image: '/lease.jpeg',
+    image: '/tata_asal.jpg',
     link: '/dropdown/welease',
   },
   {
-    title: 'WE MAINTAIN',
-    image: '/maintain.jpeg',
+    title: 'BUILD OPERATE & TRANSFORM',
+    image: '/sany_chakan2.jpg',
     link: '/dropdown/wemaintain',
   },
 ];
@@ -36,42 +36,62 @@ const WhatWeDoDropdown = ({ closeDropdown, mobile, closeMobileNavbar }) => {
 
   return (
     <div
-      className="bg-white shadow py-3 px-2 mt-3" 
+      className="bg-white shadow py-3 px-3 mt-3"
       style={{ zIndex: 999, position: 'relative', width: '100%' }}
     >
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h3 className="mb-0">Solutions</h3>
-        <Link 
-          to="#" 
+      {/* Top bar */}
+      <div className="d-flex justify-content-between align-items-center mb-2">
+        <h5 className="mb-0" style={{ fontWeight: 600 }}>Solutions</h5>
+        <Link
+          to="#"
           className="text-danger fw-semibold d-flex align-items-center text-decoration-none"
           onClick={handleLinkClick}
+          style={{ whiteSpace: 'nowrap' }}
         >
           More about solutions <FaArrowRight className="ms-2" />
         </Link>
       </div>
-      <hr />
-      <div className="row g-3">
+      <hr className="mt-2 mb-3" />
+
+      {/* Tiles */}
+      <div className="row g-3 align-items-stretch">
         {solutions.map((item, index) => (
-          <Link 
-            to={item.link} 
-            onClick={handleLinkClick} 
-            className="col-md-4 text-decoration-none" 
+          <Link
+            to={item.link}
+            onClick={handleLinkClick}
+            className="col-12 col-md-4 text-decoration-none"
             key={index}
           >
-            <div className="position-relative d-flex">
-              {/* Red Left Section */}
+            <div
+              className="d-flex w-100"
+              style={{
+                border: '1px solid #e5e7eb',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                height: 'clamp(130px, 18vw, 170px)'
+              }}
+            >
+              {/* Left red panel */}
               <div
-                className="bg-danger d-flex align-items-center justify-content-center text-white fw-bold text-center"
-                style={{ width: '50%', minHeight: '150px' }}
+                className="bg-danger d-flex align-items-center justify-content-center text-white text-center"
+                style={{
+                  width: '40%',
+                  padding: '0 8px',
+                  letterSpacing: '1.2px',
+                  fontWeight: 700,
+                  fontSize: 'clamp(0.85rem, 1.6vw, 1rem)'
+                }}
               >
                 {item.title}
               </div>
-              <div style={{ width: '50%' }}>
+
+              {/* Right image panel */}
+              <div style={{ width: '60%', position: 'relative' }}>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="img-fluid"
-                  style={{ height: '100%', objectFit: 'cover' }}
+                  className="w-100 h-100"
+                  style={{ objectFit: 'cover', display: 'block' }}
                 />
               </div>
             </div>

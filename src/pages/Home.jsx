@@ -2,6 +2,7 @@ import Hero from '../components/Hero'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactUs from '../components/Dropdowns/ContactUs';
+import Organisation from '../pages/Organisation';
 import TataGotion from '../components/Dropdowns/PortfolioDropdownSubPages/TataGotion';
 import SanyChakan from '../components/Dropdowns/PortfolioDropdownSubPages/SanyChakan';
 import TataAsal from '../components/Dropdowns/PortfolioDropdownSubPages/TataAsal';
@@ -22,6 +23,7 @@ const Home = () => {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/contact_us" element={<ContactUs />} />
+          <Route path="/organisation" element={<Organisation />} />
 
           <Route path="/dropdown/tata-gotion" element={<TataGotion/>}/>
           <Route path="/dropdown/sany-chakan" element={<SanyChakan/>}/>

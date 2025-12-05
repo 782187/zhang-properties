@@ -37,8 +37,27 @@
   overflow-x: hidden;
 }
 
+/* Sticky right-side form on larger screens */
+@media (min-width: 992px) {
+  .contact-cards-container {
+    padding-right: 0.75rem;
+  }
+
+  .contact-form-container {
+    position: relative;
+  }
+
+  .sticky-form {
+    position: sticky;
+    top: 5rem; /* keeps it below navbar/hero */
+  }
+}
+
 .hero-section {
-  background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+  background-image: url('/contact.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -46,6 +65,7 @@
   padding-bottom: 4rem;
   position: relative;
   overflow: hidden;
+  font-size: 1.1rem; /* slightly increase default typography scale */
 }
 
 .min-vh-80 {
