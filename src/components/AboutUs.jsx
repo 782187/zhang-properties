@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { images } from "@assets/media";
 
 const AboutUs = () => {
   const [playVideo, setPlayVideo] = useState(false);
@@ -127,7 +129,7 @@ const AboutUs = () => {
             onClick={() => setPlayVideo(true)}
           >
             <img
-              src="./about_us_thumbnail.jpg"
+              src={images.aboutUsThumbnail}
               alt="About Us Thumbnail"
               style={{
                 position: "absolute",
@@ -195,7 +197,8 @@ const AboutUs = () => {
             boxSizing: "content-box",
           }}
         >
-          <button
+          <Link
+            to="/organisation"
             style={{
               display: "flex",
               alignItems: "center",
@@ -212,16 +215,16 @@ const AboutUs = () => {
               transition: "background-color 0.3s ease",
               whiteSpace: "nowrap",
               boxSizing: "border-box",
+              textDecoration: "none"
             }}
             onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#d61f26")}
             onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#b42023")}
-            onClick={() => console.log("Dive Into Our Culture clicked!")}
           >
             DIVE INTO OUR CULTURE
             <span style={{ marginLeft: "10px", fontSize: "1.2rem" }}>
               →
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

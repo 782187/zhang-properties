@@ -92,7 +92,7 @@ const Footer = () => {
                                 {[
                                     { to: "/dropdown/tata-gotion", label: "Portfolio" },
                                     { to: "/dropdown/webuild", label: "What We Do" },
-                                    { to: "/dropdown/ouroccupiers", label: "We Work With" },
+                                    { to: "/we_can_deliver_in", label: "We Can Deliver In" },
                                     { to: "/organisation", label: "Organisation" },
                                 ].map((link, i) => (
                                     <Link
@@ -173,7 +173,7 @@ const Footer = () => {
                             }}>
                                 Contact
                             </h6>
-                            <p style={{ color: '#ccc', marginBottom: '0.5rem' }}>Email: ***@gmail.com</p>
+                            <p style={{ color: '#ccc', marginBottom: '0.5rem' }}>Email: hangproperties@gmail.com</p>
                             <p style={{ color: '#ccc', marginBottom: '0.5rem' }}>Phone: +91 9225520888 / 020-61095378</p>
                             <p style={{ color: '#ccc', marginBottom: '1.5rem' }}>Address: Pune, Maharashtra, India</p>
                             <Link

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { videos } from '@assets/media';
 
 const PRIMARY_RED = '#d61f26';
 const PRIMARY_ACCENT = '#d61f26';
@@ -123,7 +124,7 @@ const FastDelivery = () => {
                     }}
                 >
                     <video
-                        src="./fasterdelivery.mp4"
+                        src={videos.fasterDelivery}
                         autoPlay
                         muted
                         loop

@@ -1,18 +1,75 @@
-import React from "react";
+import React, { Suspense, lazy, useEffect, useRef, useState } from "react";
 import OrganisationHero from "../components/OrganisationHero";
 import OrganisationInfoSection from "../components/OrganisationInfoSection";
 import AboutUsSection from "../components/AboutUsSection";
-import ImageGallery from "../components/ImageGallery";
-import TeamHero from "../components/TeamHero";
-import Contact from "../components/Contact";
+
+const ImageGallery = lazy(() => import("../components/ImageGallery"));
+const TeamHero = lazy(() => import("../components/TeamHero"));
+const Contact = lazy(() => import("../components/Contact"));
+
+// Shared hook to mount heavy sections only when scrolled into view
+const useVisible = (rootMargin = "200px") => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isVisible) return;
+    const node = ref.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [isVisible, rootMargin]);
+
+  return [ref, isVisible];
+};
+
+const SectionSkeleton = ({ height = 400 }) => (
+  <div
+    style={{
+      height,
+      background:
+        "linear-gradient(90deg, #f4f4f4 25%, #e9e9e9 37%, #f4f4f4 63%)",
+      backgroundSize: "400% 100%",
+      animation: "org-pulse 1.2s ease-in-out infinite",
+      borderRadius: "8px",
+      margin: "32px auto",
+      maxWidth: "1200px",
+    }}
+  />
+);
 
 const Organisation = () => {
+  const [galleryRef, galleryVisible] = useVisible();
+  const [teamRef, teamVisible] = useVisible();
+  const [contactRef, contactVisible] = useVisible("300px");
+
   return (
     <>
       <OrganisationHero />
       <OrganisationInfoSection />
       <AboutUsSection />
-      <ImageGallery />
+      <div ref={galleryRef}>
+        {galleryVisible ? (
+          <Suspense fallback={<SectionSkeleton height={500} />}>
+            <ImageGallery />
+          </Suspense>
+        ) : (
+          <SectionSkeleton height={500} />
+        )}
+      </div>
       <div
         style={{
           marginTop: "50px",
@@ -33,8 +90,24 @@ const Organisation = () => {
           zIndex: 2,
         }}
       ></div>
-      <TeamHero />
-      <Contact />
+      <div ref={teamRef}>
+        {teamVisible ? (
+          <Suspense fallback={<SectionSkeleton height={360} />}>
+            <TeamHero />
+          </Suspense>
+        ) : (
+          <SectionSkeleton height={360} />
+        )}
+      </div>
+      <div ref={contactRef}>
+        {contactVisible ? (
+          <Suspense fallback={<SectionSkeleton height={520} />}>
+            <Contact />
+          </Suspense>
+        ) : (
+          <SectionSkeleton height={520} />
+        )}
+      </div>
     </>
   );
 };

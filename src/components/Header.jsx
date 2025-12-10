@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import '../styles/Header.css';
 import PortfolioDropdown from './Dropdowns/PortfolioDropdown';
 import WhatWeDoDropdown from './Dropdowns/WhatWeDoDropdown';
-import WeWorkWithDropdown from './Dropdowns/WeWorkWithDropdown';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
@@ -15,7 +14,6 @@ const Header = () => {
   const DROPDOWN_COMPONENTS = {
     'Portfolio': <PortfolioDropdown closeDropdown={handleDropdownClose} />,
     'What We Do': <WhatWeDoDropdown closeDropdown={handleDropdownClose} />,
-    'We Work With': <WeWorkWithDropdown closeDropdown={handleDropdownClose} />,
   };
 
   const handleMouseEnter = (label) => {
@@ -60,12 +58,7 @@ const Header = () => {
             >
               What We Do <span className="dropdown-icon">▼</span>
             </div>
-            <div
-              className="header-button"
-              onMouseEnter={() => handleMouseEnter('We Work With')}
-            >
-              We Work With <span className="dropdown-icon">▼</span>
-            </div>
+            <Link to="/we_can_deliver_in" className="header-button">We Can Deliver In</Link>
             <Link to="/organisation" className="header-button">Organisation</Link>
           </div>
 
@@ -122,13 +115,14 @@ const Header = () => {
                 <WhatWeDoDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
               </NavDropdown>
 
-              <NavDropdown
-                title="We Work With"
-                id="work-with-dropdown"
-                className="mobile-dropdown"
+              <Nav.Link 
+                as={Link} 
+                to="/we_can_deliver_in" 
+                className="mobile-nav-link"
+                onClick={closeMobileNavbar}
               >
-                <WeWorkWithDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
-              </NavDropdown>
+                We Can Deliver In
+              </Nav.Link>
 
               <Nav.Link 
                 as={Link} 

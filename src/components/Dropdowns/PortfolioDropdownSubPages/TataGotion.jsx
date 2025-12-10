@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import HeroSection from './HeroSection';
 import ProjectAccordion from './ProjectAccordion';
 import Contact from '../../Contact';
+import { images, videos } from '@assets/media';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const containerVariants = {
@@ -48,7 +49,7 @@ const staggerContainer = {
 function TataGotion() {
     return (
         <motion.div
-            className="tata-gotion-page"
+            className="esr-talegaon-page"
             style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}
             initial="hidden"
             animate="show"
@@ -56,14 +57,14 @@ function TataGotion() {
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
             <HeroSection
-                videoSrc="/tata-gotion.mp4"
-                header="Tata Gotion"
-                subheader="Explore a world of possibilities with our premium services"
+        videoSrc={videos.tataGotion}
+                header="ESR Talegaon B05"
+                subheader="Premium industrial facility for Putzmeister"
                 textColor="#fff"
-                leftStatValue="63 Acres"
-                leftStatLabel="Project Area"
-                rightStatValue="15,44,000 Sq.Ft."
-                rightStatLabel="Built-up Potential"
+                leftStatValue="271,205 Sq.Ft."
+                leftStatLabel="Chargeable Area"
+                rightStatValue="15m"
+                rightStatLabel="Building Height"
             />
 
             <ProjectAccordion
@@ -71,23 +72,19 @@ function TataGotion() {
                     {
                         title: 'Project Overview',
                         content: (
-                            <p className="project-accordion-body">
-                                Tata Gotion is curated as a flagship destination for next-generation manufacturing and clean-energy
-                                industries. Expansive clear spans, engineered floor loading, and generous vertical volumes work together to
-                                create a highly capable and visually refined industrial environment. Signature façades, articulated corner
-                                elements, and an elevated material palette communicate a strong visual identity from the very first glance.
-                                The result is a campus that feels global in stature yet locally attuned.
-                            </p>
+                            <>
+                                <p className="project-accordion-body">
+                                    ESR Talegaon B05 is a state-of-the-art industrial facility designed specifically for Putzmeister. The building features a PEB structure with 10m clear height at eaves, 271,205 Sq.Ft. chargeable area including ground floor, mezzanine, and open areas. Engineered with 5-7 ton/sq.m floor loading for heavy manufacturing operations and advanced fire safety systems.
+                                </p>
+                            <img src={images.projectStructure2} width="100%" height="auto" alt="Not Supported"/>
+                            </>
                         ),
                     },
                     {
-                        title: 'Development Status',
+                        title: 'Building Specifications',
                         content: (
                             <p className="project-accordion-body">
-                                The project is being executed with a strong emphasis on precision and predictability. Structural works,
-                                façade systems, and essential building services are aligned to global benchmarks so that occupiers benefit
-                                from a stable, future-ready platform for growth. Timelines are guided by detailed micro-scheduling,
-                                enabling transparent progress tracking and minimal disruption to surrounding business ecosystems.
+                                Grade-A construction with standing seam roofing, 3-4% skylights for natural daylight, and rooftop solar provisions. Includes 16.5m wide docking aprons, 2.4m x 3m dock doors, and 400 lux LED lighting throughout operational areas. Energy-efficient design with IGBC Gold rated sustainable features including rainwater harvesting and STP treated water recycling.
                             </p>
                         ),
                     },
@@ -96,13 +93,11 @@ function TataGotion() {
                         content: (
                             <div className="project-accordion-map">
                                 <p className="project-accordion-body">
-                                    Tata Gotion is positioned to leverage excellent regional connectivity, with smooth access to major
-                                    highways, ports, and urban centres. This connectivity backbone helps businesses simplify logistics,
-                                    enhance workforce accessibility, and strengthen supply-chain resilience.
+                                    Strategically located in Talegaon industrial hub with excellent connectivity to major highways, Mumbai-Pune Expressway, and logistics corridors. Part of ESR's premier industrial park ecosystem with shovel-ready infrastructure, 24/7 security, and smart building management systems.
                                 </p>
                                 <div className="project-accordion-map-frame">
                                     <iframe
-                                        title="Tata Gotion Location Map"
+                                        title="ESR Talegaon Location Map"
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5882348736006!2d73.79243207518711!3d18.50254018258066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfbfd1b8af2d%3A0x5b1ce9f44c3a1f5a!2sIndustrial%20Park!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin"
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
@@ -123,16 +118,13 @@ function TataGotion() {
             >
                 <div className="container">
                     <motion.h2 className="text-center mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333393' }}>
-                        A Vision Beyond Steel and Concrete
+                        Precision Engineering for Manufacturing Excellence
                     </motion.h2>
                     <motion.p className="fs-5" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        More than just a structure, Tata Gotion is an ecosystem built to nurture businesses. It combines space, technology, and sustainability into a seamless experience for industries ranging from electric vehicles to high-tech logistics.
+                        Built to Putzmeister's exacting standards with 7 ton/sq.m floor loading across 52,000+ Sq.Ft. manufacturing zones and 20MT EOT crane provisions. Includes 1,500 KVA power capacity, dedicated 2,000 Sq.Ft. toilet blocks, and comprehensive fire suppression systems meeting NBC 2016 norms.
                     </motion.p>
                     <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Every inch of the facility is crafted with intent — wide internal roads for truck movement, multi-tier safety protocols, 24/7 operations control room, energy-efficient lighting, and rooftop solar panels. The project has received accolades for its green building certification, helping industries reduce their operational carbon footprint.
-                    </motion.p>
-                    <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Whether you're looking to establish a manufacturing base or a strategic distribution hub, Tata Gotion offers scalability, security, and a support ecosystem that stands class apart.
+                        Smart infrastructure features IoT-enabled energy monitoring, centralized STP water recycling, and park-wide security platform. Ready for immediate operations with all statutory approvals, boundary wall, and internal road infrastructure completed.
                     </motion.p>
                 </div>
             </motion.section>
@@ -157,12 +149,12 @@ function TataGotion() {
                         <div className="portfolio-gallery-grid">
                             {[
                                 {
-                                    src: "/tata_gotion2.png",
-                                    alt: "Logistics hub aerial view",
+                                    src: images.esrTalegaon1,
+                                    alt: "ESR Talegaon B05 manufacturing facility",
                                 },
                                 {
-                                    src: "/tata_gotion3.jpg",
-                                    alt: "Factory roof and landscape",
+                                    src: images.esrTalegaon2,
+                                    alt: "Industrial park master plan overview",
                                 },
                             ].map((item, index) => (
                                 <motion.div
@@ -202,19 +194,16 @@ function TataGotion() {
                             variants={itemVariants}
                         >
                             <h2 className="mb-3 text-center text-md-start" style={{ fontFamily: "'Barlow', sans-serif", color: '#3333338b' }}>
-                                Resources
+                                Project Resources
                             </h2>
                             <p className="mb-3 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Discover how Zhang Properties is partnering with global brands to create scalable,
-                                future-forward industrial ecosystems. Dive into case studies, thought leadership, and
-                                project highlights from across our portfolio.
+                                ESR Talegaon represents Asia Pacific's leading real asset manager's commitment to India's industrial infrastructure. With 20MN+ Sq.Ft. developed across 10 cities, ESR delivers Grade-A warehousing powered by sustainable technology.
                             </p>
                             <p className="mb-4 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Each development is designed with a clear focus on performance, sustainability, and
-                                long-term value creation for our partners and stakeholders.
+                                Strategic partnership with Putzmeister for long-term manufacturing excellence with 108-month lease commitment and comprehensive facility management.
                             </p>
                             <a href="#contact" className="text-decoration-none">
-                                <span className="me-2" style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>Our Resources</span>
+                                <span className="me-2" style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>View Proposal Details</span>
                                 <span style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>→</span>
                             </a>
                         </motion.div>
@@ -225,8 +214,8 @@ function TataGotion() {
                         >
                             <div className="overflow-hidden shadow-sm">
                                 <img
-                                    src="/tata_gotion1.png"
-                                    alt="Modern industrial warehouse by Zhang Properties"
+                                    src={images.esrTalegaonRender}
+                                    alt="ESR Talegaon B05 facility rendering"
                                     className="img-fluid w-100"
                                     style={{ height: "60vh" }}
                                 />
@@ -250,7 +239,6 @@ function TataGotion() {
                 <div className="container-xl">
                     <div className="row align-items-center g-5">
 
-                        {/* LEFT CONTENT */}
                         <motion.div
                             className="col-md-6 text-md-start text-center"
                             variants={itemVariants}
@@ -302,7 +290,6 @@ function TataGotion() {
                             </p>
                         </motion.div>
 
-                        {/* RIGHT IMAGE */}
                         <motion.div
                             className="col-md-6 d-flex justify-content-md-end justify-content-center"
                             variants={itemVariants}
@@ -316,7 +303,7 @@ function TataGotion() {
                                 }}
                             >
                                 <img
-                                    src="/hemant_khatri.png"
+                                    src={images.hemantKhatri}
                                     alt="Hemant Khatri - Zhang Properties"
                                     className="img-fluid w-100"
                                     style={{ objectFit: "cover" }}
@@ -335,21 +322,21 @@ function TataGotion() {
             >
                 <div className="container text-center">
                     <motion.h2 className="mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333398' }}>
-                        What Makes This Building Class Apart
+                        Facility Highlights
                     </motion.h2>
                     <div className="row g-4">
                         {[
                             {
-                                title: "Green Certified Infrastructure",
-                                desc: "Solar energy, rainwater harvesting, and environmentally conscious design for future-proof operations."
+                                title: "Heavy Duty Flooring",
+                                desc: "7 tons/sq.m across 52,000+ Sq.Ft. with 9MT total floor load capacity for manufacturing."
                             },
                             {
-                                title: "Smart Automation",
-                                desc: "IoT-enabled control systems ensure peak efficiency and remote management across the facility."
+                                title: "Power Infrastructure",
+                                desc: "1,500 KVA sanctioned capacity with dedicated transformer yard and smart metering."
                             },
                             {
-                                title: "Strategic Location",
-                                desc: "Located close to major highways and logistics hubs, ensuring fast and affordable connectivity."
+                                title: "Sustainable Design",
+                                desc: "IGBC Gold rated with rooftop solar, rainwater harvesting, and 35% water reduction."
                             }
                         ].map((feature, index) => (
                             <motion.div
@@ -382,13 +369,13 @@ function TataGotion() {
             >
                 <div className="container text-center">
                     <motion.h2 className="mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#3333338e' }}>
-                        Key Milestones
+                        Key Specifications
                     </motion.h2>
                     <div className="row g-4 justify-content-center">
                         {[
-                            { value: "1.3M+", label: "Sq.ft Area" },
-                            { value: "2", label: "Industrial Parks" },
-                            { value: "24/7", label: "On-site Maintenance" }
+                            { value: "271,205", label: "Chargeable Sq.Ft." },
+                            { value: "15m", label: "Clear Height" },
+                            { value: "1,500", label: "KVA Power" }
                         ].map((milestone, index) => (
                             <motion.div
                                 className="col-6 col-md-3"

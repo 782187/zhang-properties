@@ -2,21 +2,22 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import { images } from '@assets/media';
 
 const solutions = [
   {
     title: 'BUILD TO SUIT',
-    image: '/tata_gotion.jpeg',
+    image: images.tataGotion,
     link: '/dropdown/webuild',
   },
   {
     title: 'WE LEASE',
-    image: '/tata_asal.jpg',
+    image: images.tataAsal,
     link: '/dropdown/welease',
   },
   {
     title: 'BUILD OPERATE & TRANSFORM',
-    image: '/sany_chakan2.jpg',
+    image: images.sanyChakan2,
     link: '/dropdown/wemaintain',
   },
 ];

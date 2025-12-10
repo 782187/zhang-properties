@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HeroSection from './HeroSection';
-import ProjectAccordion from './ProjectAccordion';
+import HeroSection from '../PortfolioDropdownSubPages/HeroSection';
+import ProjectAccordion from '../PortfolioDropdownSubPages/ProjectAccordion';
 import Contact from '../../Contact';
 import { images, videos } from '@assets/media';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,10 +46,10 @@ const staggerContainer = {
     }
 };
 
-function TataAsal() {
+function TataGotionCompleted() {
     return (
         <motion.div
-            className="tata-asal-page"
+            className="tata-gotion-completed-page"
             style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}
             initial="hidden"
             animate="show"
@@ -57,14 +57,14 @@ function TataAsal() {
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
             <HeroSection
-        videoSrc={videos.tataGotion}
-                header="Jadhavwadi Facility"
-                subheader="Pre-Engineered Manufacturing for TATA Autocomps"
+                videoSrc={videos.tataGotion}
+                header="Tata Gotion"
+                subheader="Completed EV gigafactory campuses across two growth corridors"
                 textColor="#fff"
-                leftStatValue="23,400 Sqm"
-                leftStatLabel="Plot Area"
-                rightStatValue="12,494 Sqm"
-                rightStatLabel="Shed Area"
+                leftStatValue="1.2M Sq.Ft."
+                leftStatLabel="Industrial Footprint"
+                rightStatValue="Chakan + Sanand"
+                rightStatLabel="Locations"
             />
 
             <ProjectAccordion
@@ -74,9 +74,9 @@ function TataAsal() {
                         content: (
                             <>
                                 <p className="project-accordion-body">
-                                    Sovereign Infra Steels presents state-of-the-art pre-engineered manufacturing facility at Gat No. 55-60, Jadhavwadi, Talegaon MIDC for TATA Autocomps Systems Limited. Features 213.34m x 49.04m industrial shed with 11m clear height, 4 x 10MT EOT cranes, 24m wide access road, and comprehensive infrastructure including fire safety, water systems, and STP. Located 0.8km from Chakan-Talegaon highway with excellent regional connectivity.[file:1]
+                                    Tata Gotion delivers 1.2 million sq.ft of fully commissioned battery manufacturing and assembly infrastructure across twin campuses in Chakan (Pune) and Sanand (Gujarat). Both parks combine high-bay production halls, battery module lines, warehousing blocks, and collaborative offices with robust utilities sized for 24x7 manufacturing.
                                 </p>
-                            <img src={images.projectStructure} width="100%" height="auto" alt="Image Not Supported" />
+                                <img src={images.tataGotion} width="100%" height="auto" alt="Tata Gotion campus" />
                             </>
                         ),
                     },
@@ -84,7 +84,7 @@ function TataAsal() {
                         title: 'Development Status',
                         content: (
                             <p className="project-accordion-body">
-                                Project includes 12,494 sqm shed, 2,023 sqm mezzanine, 777 sqm canopy, 4,500 sqm open area. Equipped with 0.5mm standing seam roofing, K-115 sprinkler system, 220,000L fire tank, 58,000L domestic tank, 10KLD STP. Handover 6 months from LOI with lease commencement April 1, 2026.[file:1]
+                                Both campuses are delivered and production-ready with integrated fire & life safety (sprinklers, hydrants, addressable detection), dual-feeder power distribution, high-capacity HVAC, treated water networks, and STP. Compliance and statutory approvals are closed, and line handover is complete for customer commissioning.
                             </p>
                         ),
                     },
@@ -93,12 +93,12 @@ function TataAsal() {
                         content: (
                             <div className="project-accordion-map">
                                 <p className="project-accordion-body">
-                                    Prime Talegaon MIDC location with 24m wide approach road, fully developed infrastructure. 41km from Pune Airport, surrounded by Magna Automotive, Marquardt India, Dextra India. Centrally located in established industrial belt.[file:1]
+                                    Chakan campus sits inside the auto & EV ecosystem with proximity to the Mumbai–Pune Expressway, rail sidings, and Pune airport. The Sanand campus plugs into Ahmedabad ring road, the DFC/ports corridor, and an established supplier base—giving the program bi-regional resilience and rapid distribution reach.
                                 </p>
                                 <div className="project-accordion-map-frame">
                                     <iframe
-                                        title="Jadhavwadi Location Map"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7679288923534!2d73.85625527518693!3d18.493913882585592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c10b9c4d4a2d%3A0x6e5a2a0de93e5c5f!2sPune%20Industrial%20Estate!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
+                                        title="Tata Gotion Chakan Map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.904104583058!2d73.76845481511583!3d18.7000488692883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2cfe45be93f1b%3A0x50b08ac13e8a5f17!2sChakan%20MIDC!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         allowFullScreen
@@ -118,16 +118,13 @@ function TataAsal() {
             >
                 <div className="container">
                     <motion.h2 className="text-center mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333393' }}>
-                        Precision Engineering
+                        Completed Excellence
                     </motion.h2>
                     <motion.p className="fs-5" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        14.5m ridge height, 1:15 pitch, ridge ventilation, 5% skylights, 8 rolling shutters, 12 docks, 2.8m brick walls, 5m canopy. Office with ACP fascia, ceramic flooring, separate entry, dedicated toilets.[file:1]
+                        Two synchronized parks deliver flexible assembly lines, automated storage, and heavy-duty utilities for energy storage manufacturing. High-bay spans, multiple crane bays, and dock planning enable parallel production and outbound logistics without cross-overs.
                     </motion.p>
                     <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Complete fire safety, 2000KW power supply, 200 lux lighting, compound wall, 10m gate, security cabin. 7.5MT/sqm flooring capacity with heavy crane provisions.[file:1]
-                    </motion.p>
-                    <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Designed for operational excellence with strategic infrastructure positioning businesses for long-term success in Talegaon MIDC.[file:1]
+                        The campuses pair solar-ready roofing, skylight-driven daylighting, and water-positive infrastructure with smart security and BMS. Designed for low energy intensity and long-term operational resilience.
                     </motion.p>
                 </div>
             </motion.section>
@@ -152,12 +149,16 @@ function TataAsal() {
                         <div className="portfolio-gallery-grid">
                             {[
                                 {
-                                    src: images.jadhavwadi1,
-                                    alt: "Jadhavwadi industrial shed layout",
+                                    src: images.tataGotion1,
+                                    alt: "Assembly hall – Chakan campus",
                                 },
                                 {
-                                    src: images.jadhavwadi2,
-                                    alt: "Pre-engineered manufacturing facility",
+                                    src: images.tataGotion2,
+                                    alt: "Production bay and utilities",
+                                },
+                                {
+                                    src: images.tataGotion3,
+                                    alt: "Sanand campus exterior",
                                 },
                             ].map((item, index) => (
                                 <motion.div
@@ -185,6 +186,49 @@ function TataAsal() {
             </motion.section>
 
             <motion.section
+                className="py-5 bg-light"
+                variants={staggerContainer}
+                viewport={{ once: true, amount: 0.2 }}
+                whileInView="show"
+            >
+                <div className="container">
+                    <motion.h2 className="text-center mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333393' }}>
+                        Location Maps
+                    </motion.h2>
+                    <div className="row g-4">
+                        <motion.div className="col-md-6" variants={itemVariants}>
+                            <div className="ratio ratio-16x9 shadow-sm">
+                                <iframe
+                                    title="Chakan Campus Map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.904104583058!2d73.76845481511583!3d18.7000488692883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2cfe45be93f1b%3A0x50b08ac13e8a5f17!2sChakan%20MIDC!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    allowFullScreen
+                                />
+                            </div>
+                            <p className="mt-3 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#555' }}>
+                                Chakan campus fronts the auto belt with four-lane access to the expressway, 40 km to Pune Airport, and established EV supply partners nearby.
+                            </p>
+                        </motion.div>
+                        <motion.div className="col-md-6" variants={itemVariants}>
+                            <div className="ratio ratio-16x9 shadow-sm">
+                                <iframe
+                                    title="Sanand Campus Map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.1234567890123!2d72.45678901234567!3d22.98765432109876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b8a1234567%3A0x9876543210abcdef!2sSanand%20Industrial%20Area!5e0!3m2!1sen!2sin!4v1700000000003!5m2!1sen!2sin"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    allowFullScreen
+                                />
+                            </div>
+                            <p className="mt-3 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#555' }}>
+                                Sanand campus connects to Ahmedabad ring road, ports/DFC corridor, and a large skilled workforce, giving dual-region resilience for production.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
                 className="py-5"
                 style={{ backgroundColor: 'aliceblue', minHeight: '60vh' }}
                 variants={staggerContainer}
@@ -198,18 +242,14 @@ function TataAsal() {
                             variants={itemVariants}
                         >
                             <h2 className="mb-3 text-center text-md-start" style={{ fontFamily: "'Barlow', sans-serif", color: '#3333338b' }}>
-                                Commercial Structure
+                                Project Completion
                             </h2>
                             <p className="mb-3 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Monthly rent ₹64.76 lakhs with 7% annual escalation, 12 months security deposit. 9 years 11 months agreement, 7 years 6 months lock-in period.[file:1]
+                                Commissioned facilities with crane-ready bays, EHS clearances, and validated utilities allow immediate line installation for EV battery systems. Robust yard planning supports simultaneous truck turns and container handling.
                             </p>
                             <p className="mb-4 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Handover 6 months from LOI, rent commencement April 2026. 2000KW power included with express feeder, CAM in client scope.[file:1]
+                                Dedicated office blocks, QC labs, and worker amenities are integrated within the campuses, enabling smooth scale-up while maintaining product traceability and safety compliance.
                             </p>
-                            <a href="#contact" className="text-decoration-none">
-                                <span className="me-2" style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>View Full Terms</span>
-                                <span style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>→</span>
-                            </a>
                         </motion.div>
 
                         <motion.div
@@ -218,8 +258,8 @@ function TataAsal() {
                         >
                             <div className="overflow-hidden shadow-sm">
                                 <img
-                                    src={images.jadhavwadiOverview}
-                                    alt="Jadhavwadi facility masterplan"
+                                    src={images.tataGotion2}
+                                    alt="Tata Gotion facility overview"
                                     className="img-fluid w-100"
                                     style={{ height: "60vh" }}
                                 />
@@ -242,7 +282,6 @@ function TataAsal() {
             >
                 <div className="container-xl">
                     <div className="row align-items-center g-5">
-
                         <motion.div
                             className="col-md-6 text-md-start text-center"
                             variants={itemVariants}
@@ -326,21 +365,21 @@ function TataAsal() {
             >
                 <div className="container text-center">
                     <motion.h2 className="mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333398' }}>
-                        Technical Superiority
+                        Key Features
                     </motion.h2>
                     <div className="row g-4">
                         {[
                             {
-                                title: "Heavy Duty Infrastructure",
-                                desc: "11m clear height, 4x10MT cranes, 7.5MT/sqm flooring, 14.5m ridge height."
+                                title: "Dual-location resilience",
+                                desc: "Redundant production across Chakan and Sanand to de-risk supply and logistics."
                             },
                             {
-                                title: "Advanced Fire Safety",
-                                desc: "K-115 sprinklers, hydrants, 220KL fire tank, PMRDA/NBC compliant systems."
+                                title: "Production-ready utilities",
+                                desc: "High-capacity power, HVAC, fire safety, water & waste systems aligned to EV manufacturing loads."
                             },
                             {
-                                title: "Strategic Connectivity",
-                                desc: "24m access road, 0.8km from highway, 41km from Pune Airport."
+                                title: "Heavy-duty movement",
+                                desc: "Multiple dock positions, wide yards, and crane-enabled bays for fast material flow."
                             }
                         ].map((feature, index) => (
                             <motion.div
@@ -377,9 +416,9 @@ function TataAsal() {
                     </motion.h2>
                     <div className="row g-4 justify-content-center">
                         {[
-                            { value: "23,400", label: "Sqm Plot Area" },
-                            { value: "12,494", label: "Sqm Shed Area" },
-                            { value: "11m", label: "Clear Height" }
+                            { value: "1.2M", label: "Sq.Ft. across two campuses" },
+                            { value: "24/7", label: "Utility-ready operations" },
+                            { value: "100%", label: "Commissioned & handed over" }
                         ].map((milestone, index) => (
                             <motion.div
                                 className="col-6 col-md-3"
@@ -424,4 +463,5 @@ function TataAsal() {
     );
 }
 
-export default TataAsal;
+export default TataGotionCompleted;
+

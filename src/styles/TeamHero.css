@@ -1,7 +1,7 @@
 .team-hero {
   position: relative;
   min-height: 600px;
-  background-image: url('/team-hero-bg.jpg');
+  background-image: url('../assets/images/team-hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

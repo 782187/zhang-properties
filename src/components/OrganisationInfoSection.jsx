@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/OrganisationInfoSection.css';
 import AboutUsSection from './AboutUsSection';
+import { images } from '@assets/media';
 
 const OrganisationInfoSection = () => {
   return (
@@ -54,7 +55,7 @@ const OrganisationInfoSection = () => {
 
         <div className="large-image">
           <img 
-            src="/org_info.jpg" 
+            src={images.orgInfo} 
             alt="Industrial park with modern architecture" 
             loading="lazy"
           />

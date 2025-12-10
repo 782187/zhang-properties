@@ -1,3 +1,5 @@
+import { videos } from '@assets/media';
+
 export const siteContent = {
   brand: {
     name: 'Zhang',
@@ -13,7 +15,7 @@ export const siteContent = {
     tagline: 'FOR THOSE WHO BUILD',
     headline: 'We Are Realising The Promise Of Industrial Real Estate In The Country',
     ctaLabel: 'Contact →',
-    videoSrc: '/hero.mp4',
+    videoSrc: videos.hero,
     overlayGradient: 'linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75))',
   },
   capabilities: [

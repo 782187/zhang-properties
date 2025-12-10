@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/AboutUsSection.css';
+import { images } from '@assets/media';
 
 const AboutUsSection = () => {
   return (
@@ -7,7 +8,7 @@ const AboutUsSection = () => {
       <div className="background-overlay"></div>
       <div className="content-container">
         <div className="text-content">
-          <h2 className="section-title">DREAM IT. DESIGN IT. DEVELOP IT.</h2>
+          <h2 className="section-title" style={{color: "white"}}>DREAM IT. DESIGN IT. DEVELOP IT.</h2>
           <div className="description-text">
             <p>
               At Zhang Properties, we transform visions into reality. Our comprehensive approach to industrial real estate development ensures that every project meets the highest standards of quality, functionality, and sustainability.
@@ -25,7 +26,7 @@ const AboutUsSection = () => {
           <div className="video-wrapper">
             <video 
               controls
-              poster="/about_us_thumbnail.jpg"
+              poster={images.aboutUsThumbnail}
               className="about-video"
             >
               <source src="https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb/67434bc3f8cab15f2f07ebba_Company-transcode.mp4" type="video/mp4" />

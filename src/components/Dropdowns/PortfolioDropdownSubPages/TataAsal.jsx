@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import HeroSection from './HeroSection';
 import ProjectAccordion from './ProjectAccordion';
 import Contact from '../../Contact';
+import { images, videos } from '@assets/media';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const containerVariants = {
@@ -56,7 +57,7 @@ function TataAsal() {
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
             <HeroSection
-                videoSrc="/tata-gotion.mp4"
+        videoSrc={videos.tataGotion}
                 header="Tata Asal"
                 subheader="Explore a world of possibilities with our premium services"
                 textColor="#fff"
@@ -160,11 +161,11 @@ function TataAsal() {
                         <div className="portfolio-gallery-grid">
                             {[
                                 {
-                                    src: "/tata_asal1.jpg",
+                                    src: images.tataAsal1,
                                     alt: "Technology and control room",
                                 },
                                 {
-                                    src: "/tata_asal2.jpg",
+                                    src: images.tataAsal2,
                                     alt: "Industrial tech workspace",
                                 },
                             ].map((item, index) => (
@@ -228,7 +229,7 @@ function TataAsal() {
                         >
                             <div className="overflow-hidden shadow-sm">
                                 <img
-                                    src="/tata_asal.jpg"
+                                    src={images.tataAsal}
                                     alt="Zhang Properties campus overview"
                                     className="img-fluid w-100"
                                     style={{ height: "60vh" }}
@@ -319,7 +320,7 @@ function TataAsal() {
                                 }}
                             >
                                 <img
-                                    src="/hemant_khatri.png"
+                                    src={images.hemantKhatri}
                                     alt="Hemant Khatri - Zhang Properties"
                                     className="img-fluid w-100"
                                     style={{ objectFit: "cover" }}

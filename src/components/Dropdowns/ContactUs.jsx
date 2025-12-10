@@ -2,17 +2,16 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import EnquiryForm from '../EnquiryForm';
-import contactImg from '/about_us_thumbnail.jpg';
-import teamImg from '/Zhang_Logo.png';
+import EnquiryForm from '../ProjectDetailsForm';
 import '../../styles/ContactUs.css';
+import { images } from '@assets/media';
+
+const contactImg = images.aboutUsThumbnail;
+const teamImg = images.zhangLogo;
 
 const ContactUs = () => {
     const formRef = useRef(null);
     const heroCanvasRef = useRef(null);
-    const leftScrollRef = useRef(null);
-    const contactSectionRef = useRef(null);
-    const stickyFormRef = useRef(null);
     const controls = useAnimation();
 
     useEffect(() => {
@@ -47,11 +46,10 @@ const ContactUs = () => {
 
             ctx.clearRect(0, 0, width, height);
 
-            // Light background like the reference strip
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(0, 0, width, height);
 
-            const stripeSpacing = 8 * dpr; // distance between diagonal lines
+            const stripeSpacing = 8 * dpr;
             const speed = 0.35;
             const time = Date.now() * 0.001;
             const offset = (time * speed * stripeSpacing) % stripeSpacing;
@@ -60,7 +58,6 @@ const ContactUs = () => {
             ctx.strokeStyle = '#c7c7c7';
             ctx.lineWidth = 1 * dpr;
 
-            // Draw diagonal lines directly across the full rectangle
             for (let x = -height * 2; x < width + height * 2; x += stripeSpacing) {
                 ctx.beginPath();
                 ctx.moveTo(x - offset, height * 1.5);
@@ -70,7 +67,6 @@ const ContactUs = () => {
 
             ctx.restore();
 
-            // Solid top border like second image
             ctx.save();
             ctx.strokeStyle = '#9b9b9b';
             ctx.lineWidth = 2 * dpr;
@@ -102,190 +98,517 @@ const ContactUs = () => {
         };
     }, [controls]);
 
-    useEffect(() => {
-        const leftEl = leftScrollRef.current;
-        const sectionEl = contactSectionRef.current;
-        const formEl = stickyFormRef.current;
-
-        if (!leftEl || !sectionEl || !formEl) return;
-
-        const isFormFullyVisible = () => {
-            const rect = formEl.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        };
-
-        const isLeftAtTop = () => leftEl.scrollTop <= 0;
-        const isLeftAtBottom = () => leftEl.scrollTop + leftEl.clientHeight >= leftEl.scrollHeight;
-
-        const handleWheel = (event) => {
-            const sectionRect = sectionEl.getBoundingClientRect();
-
-            const isSectionInView = sectionRect.bottom > 0 && sectionRect.top < window.innerHeight;
-            if (!isSectionInView) return;
-
-            if (!isFormFullyVisible()) return;
-
-            const deltaY = event.deltaY;
-
-            if (deltaY < 0 && isLeftAtTop()) return;
-            if (deltaY > 0 && isLeftAtBottom()) return;
-
-            event.preventDefault();
-            leftEl.scrollTop += deltaY;
-        };
-
-        window.addEventListener('wheel', handleWheel, { passive: false });
-
-        return () => {
-            window.removeEventListener('wheel', handleWheel);
-        };
-    }, []);
-
     const scrollToForm = () => {
         formRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
-        <div className="contact-page">
-            <section className="hero-section position-relative overflow-hidden">
-                <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark" style={{ opacity: 0.45, zIndex: 0 }}></div>
+        <div className="contact-page" style={{ fontFamily: "'Barlow', sans-serif" }}>
+            <section
+                className="hero-section position-relative overflow-hidden"
+                style={{
+                    backgroundColor: '#1a1a1a',
+                    minHeight: '85vh',
+                    display: 'flex',
+                    alignItems: 'center'
+                }}
+            >
+                <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0,0,0,0.45)', zIndex: 0 }}></div>
 
-                <div className="container position-relative z-2 d-flex align-items-center min-vh-80">
-                    <div className="w-100 text-center text-lg-start">
-                        <motion.h1
-                            className="fw-bold mb-4 text-white"
-                            style={{
-                                fontFamily: "'Barlow', sans-serif",
-                                fontSize: 'clamp(2.4rem, 4vw, 3.5rem)',
-                                letterSpacing: '0.04em'
-                            }}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.9 }}
-                        >
-                            We Are Ready To Help You
-                        </motion.h1>
+                <div className="container position-relative z-2 py-5">
+                    <div className="row align-items-center">
+                        <div className="col-lg-7 text-center text-lg-start">
+                            <motion.span
+                                style={{
+                                    color: '#ffffffb3',
+                                    fontSize: 'clamp(0.9rem, 2.2vw, 1.1rem)',
+                                    letterSpacing: '4px',
+                                    textTransform: 'uppercase',
+                                    borderTop: '2px solid #d61f26',
+                                    borderBottom: '2px solid #d61f26',
+                                    padding: '8px 16px',
+                                    marginBottom: '1.5rem',
+                                    display: 'inline-block'
+                                }}
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3, duration: 0.8 }}
+                            >
+                                Get in Touch
+                            </motion.span>
 
-                        <motion.p
-                            className="text-light mb-4 mx-auto"
-                            style={{
-                                maxWidth: '640px',
-                                fontFamily: "'Barlow', sans-serif",
-                                fontSize: 'clamp(1.05rem, 1.6vw, 1.25rem)'
-                            }}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.9, delay: 0.15 }}
-                        >
-                            Tell us about your requirements and our team will get back to you with tailored solutions for your industrial, commercial or residential needs.
-                        </motion.p>
+                            <motion.h1
+                                className="mb-4 text-white"
+                                style={{
+                                    fontSize: 'clamp(2.5rem, 6vw, 4.2rem)',
+                                    lineHeight: '1.2',
+                                    marginBottom: '1.5rem',
+                                    fontWeight: '500'
+                                }}
+                                initial={{ opacity: 0, y: -60 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.6, duration: 0.8 }}
+                            >
+                                Your Vision, <span style={{ color: '#d61f26', fontWeight: '500' }}>Our Expertise</span>
+                            </motion.h1>
 
-                        <motion.button
-                            className="btn btn-lg px-5 py-3 fw-bold"
-                            style={{
-                                fontFamily: "'Barlow', sans-serif",
-                                fontSize: '1.05rem',
-                                backgroundColor: '#d61f26',
-                                borderColor: '#d61f26',
-                                color: '#1a1a1a'
-                            }}
-                            whileHover={{
-                                scale: 1.06,
-                                boxShadow: "0px 8px 24px rgba(0,0,0,0.45)"
-                            }}
-                            whileTap={{ scale: 0.96 }}
-                            onClick={scrollToForm}
-                        >
-                            Get in Touch
-                        </motion.button>
+                            <motion.p
+                                className="text-light mb-4"
+                                style={{
+                                    fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)',
+                                    color: '#ffffffb3',
+                                    lineHeight: '1.7',
+                                    maxWidth: '600px'
+                                }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.9, delay: 0.9 }}
+                            >
+                                Partner with us for premium industrial, commercial, and residential solutions tailored to your unique requirements.
+                            </motion.p>
+
+                            <motion.div
+                                className="d-flex flex-wrap gap-3 mt-5"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 1.2 }}
+                            >
+                                <motion.button
+                                    className="btn btn-lg px-5 py-3 fw-bold"
+                                    style={{
+                                        fontSize: '1.1rem',
+                                        backgroundColor: '#d61f26',
+                                        borderColor: '#d61f26',
+                                        color: '#ffffff',
+                                        letterSpacing: '1px'
+                                    }}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        boxShadow: "0px 8px 24px rgba(214,31,38,0.45)"
+                                    }}
+                                    whileTap={{ scale: 0.96 }}
+                                    onClick={scrollToForm}
+                                >
+                                    Start Your Project
+                                </motion.button>
+
+                                <motion.button
+                                    className="btn btn-lg px-5 py-3 fw-bold"
+                                    style={{
+                                        fontSize: '1.1rem',
+                                        backgroundColor: 'transparent',
+                                        border: '2px solid #ffffff',
+                                        color: '#ffffff',
+                                        letterSpacing: '1px'
+                                    }}
+                                    whileHover={{
+                                        scale: 1.05,
+                                        backgroundColor: 'rgba(255,255,255,0.1)'
+                                    }}
+                                    whileTap={{ scale: 0.96 }}
+                                >
+                                    View Our Portfolio
+                                </motion.button>
+                            </motion.div>
+                        </div>
+
+                        <div className="col-lg-5 mt-5 mt-lg-0">
+                            <motion.div
+                                className="position-relative"
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 1 }}
+                            >
+                                <div className="position-absolute top-0 start-0 w-100 h-100"
+                                    style={{
+                                        backgroundColor: '#d61f26',
+                                        borderRadius: '20px',
+                                        transform: 'rotate(3deg)',
+                                        opacity: 0.1
+                                    }}></div>
+                                <div className="position-relative p-4 p-lg-5 bg-white rounded-4 shadow-lg">
+                                    <h4 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
+                                        Quick Contact
+                                    </h4>
+                                    <div className="mb-4">
+                                        <p className="mb-3">
+                                            <i className="fas fa-phone-alt me-3" style={{ color: '#d61f26' }}></i>
+                                            <a href="tel:+919225520888" className="text-decoration-none" style={{ color: '#333' }}>
+                                                +91 9225520888
+                                            </a>
+                                        </p>
+                                        <p className="mb-3">
+                                            <i className="fas fa-envelope me-3" style={{ color: '#d61f26' }}></i>
+                                            <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
+                                                zhangproperties@gmail.com
+                                            </a>
+                                        </p>
+                                        <p className="mb-0">
+                                            <i className="fas fa-map-marker-alt me-3" style={{ color: '#d61f26' }}></i>
+                                            <span style={{ color: '#666' }}>Pune, India</span>
+                                        </p>
+                                    </div>
+                                    <button
+                                        className="btn w-100 py-3 fw-bold"
+                                        style={{
+                                            backgroundColor: '#1a1a1a',
+                                            color: '#ffffff'
+                                        }}
+                                        onClick={scrollToForm}
+                                    >
+                                        Send Detailed Inquiry
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
-
-                <canvas
-                    ref={heroCanvasRef}
-                    className="position-absolute bottom-0 start-0 w-100"
-                    style={{ height: '110px', zIndex: 1, pointerEvents: 'none' }}
-                ></canvas>
             </section>
 
-            <section className="contact-architecture-bg py-5" id="contact-form" ref={(el) => { formRef.current = el; contactSectionRef.current = el; }}>
-                <div className="w-100">
-                    <div className="row justify-content-center g-4 align-items-stretch">
-                        <div className="col-12 rounded-4 shadow-lg overflow-hidden">
 
-                            <div className="row flex-lg-nowrap" style={{ backgroundColor: 'transparent' }}>
-                                <div ref={leftScrollRef} className="col-lg-6 glass-box p-4 d-flex flex-column gap-4 contact-cards-container">
-                                    <h1
-                                        className='text-center display-3'
-                                        style={{ color: '#d61f26' }}
-                                    >
-                                        Contact Us
-                                    </h1>
+            <section
+                className="py-5"
+                id="contact-form"
+                ref={formRef}
+                style={{ backgroundColor: '#f8f9fa' }}
+            >
+                <div className="container-fluid px-0">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="text-center mb-5 px-3 px-md-4 px-lg-5">
+                            <span style={{
+                                color: '#d61f26',
+                                fontSize: '1rem',
+                                letterSpacing: '3px',
+                                textTransform: 'uppercase',
+                                fontWeight: '500'
+                            }}>
+                                PROJECT INQUIRY
+                            </span>
+                            <h2 className="mt-3 mb-4" style={{ color: '#1a1a1a', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+                                Tell Us About Your Requirements
+                            </h2>
+                            <p className="mb-0" style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1rem, 1.5vw, 1.1rem)' }}>
+                                Fill out the form below and our team will contact you within 24 hours with personalized solutions.
+                            </p>
+                        </div>
 
-                                    <motion.div
-                                        className="card contact-card w-100 shadow"
-                                        whileHover={{ y: -5 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
+                        {/* Full Width Form Container with Pattern Border */}
+                        <div className="form-container-wrapper" style={{
+                            position: 'relative',
+                            padding: '3px', // This creates space for the pattern border
+                            width: '100%',
+                            margin: 0,
+                            background: `
+                    repeating-linear-gradient(
+                        45deg,
+                        rgba(214, 31, 38, 0.15) 0px,
+                        rgba(214, 31, 38, 0.1) 1.5px,
+                        transparent 1.5px,
+                        transparent 6px
+                    )
+                `,
+                        }}>
+                            {/* Top Pattern */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    width: "100%",
+                                    height: "3px",
+                                    background: `
+                            repeating-linear-gradient(
+                                45deg,
+                                rgba(214, 31, 38, 0.15) 0px,
+                                rgba(214, 31, 38, 0.1) 1.5px,
+                                transparent 1.5px,
+                                transparent 6px
+                            )
+                        `,
+                                    zIndex: 2,
+                                }}
+                            ></div>
+
+                            {/* Bottom Pattern */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    width: "100%",
+                                    height: "3px",
+                                    background: `
+                            repeating-linear-gradient(
+                                -45deg,
+                                rgba(214, 31, 38, 0.15) 0px,
+                                rgba(214, 31, 38, 0.1) 1.5px,
+                                transparent 1.5px,
+                                transparent 6px
+                            )
+                        `,
+                                    zIndex: 2,
+                                }}
+                            ></div>
+
+                            {/* Left Pattern */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    width: "3px",
+                                    height: "100%",
+                                    background: `
+                            repeating-linear-gradient(
+                                135deg,
+                                rgba(214, 31, 38, 0.15) 0px,
+                                rgba(214, 31, 38, 0.1) 1.5px,
+                                transparent 1.5px,
+                                transparent 6px
+                            )
+                        `,
+                                    zIndex: 2,
+                                }}
+                            ></div>
+
+                            {/* Right Pattern */}
+                            <div
+                                style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    right: 0,
+                                    width: "3px",
+                                    height: "100%",
+                                    background: `
+                            repeating-linear-gradient(
+                                -135deg,
+                                rgba(214, 31, 38, 0.15) 0px,
+                                rgba(214, 31, 38, 0.1) 1.5px,
+                                transparent 1.5px,
+                                transparent 6px
+                            )
+                        `,
+                                    zIndex: 2,
+                                }}
+                            ></div>
+
+                            {/* Form Content */}
+                            <div style={{
+                                backgroundColor: '#ffffff',
+                                padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 3rem)',
+                                width: '100%',
+                                minHeight: '600px'
+                            }}>
+                                <EnquiryForm />
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            <section className="py-2" style={{ backgroundColor: '#ffffff' }}>
+                <div className="container py-5">
+                    <div className="text-center mb-5">
+                        <span style={{
+                            color: '#d61f26',
+                            fontSize: '1rem',
+                            letterSpacing: '3px',
+                            textTransform: 'uppercase',
+                            fontWeight: '500'
+                        }}>
+                            OUR PRESENCE
+                        </span>
+                        <h2 className="mt-3 mb-4" style={{ color: '#1a1a1a', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+                            Connect With Us
+                        </h2>
+                    </div>
+
+                    <div className="row g-4">
+                        <div className="col-md-6 col-lg-4">
+                            <motion.div
+                                className="h-100"
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                                    <div style={{ height: '200px', overflow: 'hidden' }}>
                                         <img
                                             src={contactImg}
-                                            alt="Office"
-                                            className="img-fluid rounded-top"
-                                            style={{ height: '250px', objectFit: 'cover' }}
+                                            alt="Our Office"
+                                            className="img-fluid w-100 h-100"
+                                            style={{ objectFit: 'cover', transition: 'transform 0.5s ease' }}
                                         />
-                                        <div className="card-body">
-                                            <h5 className="fw-bold" style={{ color: '#d61f26' }}>Our Office</h5>
-
-                                            <p className="mb-0">Modern workspace in Pune, designed for collaboration and innovation.</p>
+                                    </div>
+                                    <div className="card-body p-4">
+                                        <h5 className="fw-bold mb-3" style={{ color: '#1a1a1a' }}>
+                                            <i className="fas fa-building me-2" style={{ color: '#d61f26' }}></i>
+                                            Our Headquarters
+                                        </h5>
+                                        <p style={{ color: '#666', lineHeight: '1.7' }}>
+                                            11 Raja Ram Apts., 103, South Main Road, Koregaon Park, Pune-411001
+                                        </p>
+                                        <div className="mt-4">
+                                            <a
+                                                href="https://maps.google.com"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn btn-outline-danger px-4"
+                                            >
+                                                <i className="fas fa-map-marked-alt me-2"></i>
+                                                View on Map
+                                            </a>
                                         </div>
-                                    </motion.div>
-
-                                    <motion.div
-                                        className="card contact-card w-100 shadow"
-                                        whileHover={{ y: -5 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <img
-                                            src={teamImg}
-                                            alt="Team"
-                                            className="img-fluid rounded-top"
-                                            style={{ height: '250px', objectFit: 'cover' }}
-                                        />
-                                        <div className="card-body">
-                                            <h5 className="fw-bold" style={{ color: '#d61f26' }}>Contact Info</h5>
-
-                                            <p>
-                                                <strong>Address:</strong><br />
-                                                11 Raja Ram Apts.,<br />
-                                                103, South Main Road,<br />
-                                                Koregaon Park, Pune-411001
-                                            </p>
-                                            <p><strong>Phone:</strong> +91 9225520888 / 020-61095378</p>
-                                            <p><strong>Email:</strong> ...@gmail.com</p>
-                                            <p><strong>Hours:</strong> Mon - Fri, 9 AM - 6 PM</p>
-                                        </div>
-                                    </motion.div>
-
-                                    <motion.div
-                                        className="card contact-card w-100 shadow"
-                                        whileHover={{ y: -5 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <div className="card-body">
-                                            <h5 className="fw-bold" style={{ color: '#d61f26' }}>Visit Us</h5>
-
-                                            <p>Schedule a visit to our office to discuss your project in person.</p>
-                                            <p><strong>Appointments:</strong> Available Mon-Fri, 10 AM - 4 PM</p>
-                                        </div>
-                                    </motion.div>
-                                </div>
-
-                                <div className="col-lg-6 p-3 d-flex flex-column justify-content-center contact-form-container">
-                                    <div ref={stickyFormRef} className="sticky-form">
-                                        <EnquiryForm />
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
+                        </div>
+
+                        <div className="col-md-6 col-lg-4">
+                            <motion.div
+                                className="h-100"
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="card h-100 border-0 shadow-sm rounded-4">
+                                    <div className="card-body p-4 d-flex flex-column">
+                                        <div className="mb-4">
+                                            <img
+                                                src={teamImg}
+                                                alt="Zhang Properties"
+                                                className="img-fluid mb-4"
+                                                style={{ maxHeight: '60px' }}
+                                            />
+                                            <h5 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
+                                                <i className="fas fa-address-card me-2" style={{ color: '#d61f26' }}></i>
+                                                Contact Information
+                                            </h5>
+                                        </div>
+
+                                        <div className="mb-4">
+                                            <p className="mb-3">
+                                                <i className="fas fa-phone-alt me-3" style={{ color: '#d61f26' }}></i>
+                                                <span style={{ color: '#333' }}>+91 9225520888</span>
+                                                <br />
+                                                <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Mobile</span>
+                                            </p>
+                                            <p className="mb-3">
+                                                <i className="fas fa-phone me-3" style={{ color: '#d61f26' }}></i>
+                                                <span style={{ color: '#333' }}>020-61095378</span>
+                                                <br />
+                                                <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Office</span>
+                                            </p>
+                                            <p className="mb-3">
+                                                <i className="fas fa-envelope me-3" style={{ color: '#d61f26' }}></i>
+                                                <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
+                                                    zhangproperties@gmail.com
+                                                </a>
+                                            </p>
+                                        </div>
+
+                                        <div className="mt-auto">
+                                            <div className="d-flex gap-2">
+                                                <a href="#" className="btn btn-outline-secondary px-3">
+                                                    <i className="fab fa-whatsapp"></i>
+                                                </a>
+                                                <a href="#" className="btn btn-outline-secondary px-3">
+                                                    <i className="fab fa-linkedin-in"></i>
+                                                </a>
+                                                <a href="#" className="btn btn-outline-secondary px-3">
+                                                    <i className="fab fa-facebook-f"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <div className="col-md-6 col-lg-4">
+                            <motion.div
+                                className="h-100"
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div className="card h-100 border-0 shadow-sm rounded-4">
+                                    <div className="card-body p-4">
+                                        <h5 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
+                                            <i className="fas fa-clock me-2" style={{ color: '#d61f26' }}></i>
+                                            Business Hours
+                                        </h5>
+
+                                        <div className="mb-4">
+                                            <div className="d-flex justify-content-between py-3 border-bottom">
+                                                <span style={{ color: '#333' }}>Monday - Friday</span>
+                                                <span style={{ color: '#d61f26', fontWeight: '500' }}>9:00 AM - 6:00 PM</span>
+                                            </div>
+                                            <div className="d-flex justify-content-between py-3 border-bottom">
+                                                <span style={{ color: '#333' }}>Saturday</span>
+                                                <span style={{ color: '#d61f26', fontWeight: '500' }}>10:00 AM - 2:00 PM</span>
+                                            </div>
+                                            <div className="d-flex justify-content-between py-3">
+                                                <span style={{ color: '#333' }}>Sunday</span>
+                                                <span style={{ color: '#666' }}>Closed</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-4">
+                                            <h6 className="fw-bold mb-3" style={{ color: '#1a1a1a' }}>
+                                                <i className="fas fa-calendar-check me-2" style={{ color: '#d61f26' }}></i>
+                                                Appointments
+                                            </h6>
+                                            <p style={{ color: '#666', fontSize: '0.9rem' }}>
+                                                Schedule appointments Monday through Friday, between 10:00 AM and 4:00 PM.
+                                            </p>
+                                            <button
+                                                className="btn btn-danger w-100 py-3 fw-bold mt-3"
+                                                onClick={scrollToForm}
+                                            >
+                                                <i className="fas fa-calendar-alt me-2"></i>
+                                                Book Appointment
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-5" style={{ backgroundColor: '#1a1a1a', color: '#ffffff' }}>
+                <div className="container py-4">
+                    <div className="row align-items-center">
+                        <div className="col-lg-8">
+                            <h3 className="mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
+                                Ready to Transform Your Vision into Reality?
+                            </h3>
+                            <p className="mb-0" style={{ color: '#ffffffb3', fontSize: '1.1rem' }}>
+                                Contact us today for a free consultation and discover how we can help you achieve your goals.
+                            </p>
+                        </div>
+                        <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                            <motion.button
+                                className="btn btn-lg px-5 py-3 fw-bold"
+                                style={{
+                                    backgroundColor: '#d61f26',
+                                    borderColor: '#d61f26',
+                                    color: '#ffffff',
+                                    fontSize: '1.1rem'
+                                }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    boxShadow: "0px 8px 24px rgba(214,31,38,0.45)"
+                                }}
+                                whileTap={{ scale: 0.96 }}
+                                onClick={scrollToForm}
+                            >
+                                Get Started Now
+                                <i className="fas fa-arrow-right ms-2"></i>
+                            </motion.button>
                         </div>
                     </div>
                 </div>

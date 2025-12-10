@@ -7,17 +7,17 @@ const GREY_TEXT = "#6c757d";
 
 const projects = [
   {
-    name: "Tata Gotion",
-    location: "Chakan & Sanand",
-    size: "1.3 Million Sq.ft.",
-    description: "Ensuring smooth operations in industrial parks is vital. With us, you gain peace of mind as we handle all common area maintenance operations, creating a conducive environment for your business to thrive. We partner from planning to delivery, maintaining strict timelines and safety standards. Our proactive monitoring keeps operations efficient and risk-free.",
+    name: "ESR Talegaon B05",
+    location: "Talegaon Industrial Park",
+    size: "271,205 Sq.Ft.",
+    description: "State-of-the-art industrial facility designed for Putzmeister with 15m clear height, 7 ton/sq.m floor loading, and 1,500 KVA power capacity. Features IGBC Gold rated sustainable design, rooftop solar provisions, and comprehensive fire safety systems meeting NBC 2016 norms. Includes smart infrastructure with IoT energy monitoring and park-wide security platform.",
     video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb%2F68cd098d925ff15bf5d0fe70_we%20build-transcode.mp4",
   },
   {
-    name: "Sany",
-    location: "Chakan",
-    size: "3.25 Lac Sq.ft.",
-    description: "Ensuring smooth operations in industrial parks is vital. With us, you gain peace of mind as we handle all common area maintenance operations, creating a conducive environment for your business to thrive. Our expert teams stay aligned with your business goals throughout execution. Transparent reporting ensures clarity at every milestone.",
+    name: "Tata Autocomp Systems",
+    location: "Jadhavwadi, Talegaon MIDC",
+    size: "134,487 Sq.Ft.",
+    description: "Pre-engineered manufacturing facility by Sovereign Infra Steels with 11m clear height, 4 x 10MT EOT cranes, and 7.5 MT/sq.m floor loading. Features 12 docks, 8 rolling shutters, K-115 sprinkler system, and 2000KW power with express feeder. Complete with 5m canopy, office block, STP-10KLD, and 24m wide access road just 0.8km from Chakan-Talegaon highway.",
     video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb%2F68cd184533fe6f7277984bf7_we%20lease-transcode.mp4",
   },
   {

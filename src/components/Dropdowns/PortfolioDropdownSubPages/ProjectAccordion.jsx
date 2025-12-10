@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 
 const ProjectAccordion = ({ items = [] }) => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
+  const [previewSrc, setPreviewSrc] = useState(null);
 
   const handleToggle = (index) => {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
+
+  const handleImageClick = (event) => {
+    const target = event.target;
+    if (target && target.tagName === 'IMG' && target.src) {
+      setPreviewSrc(target.src);
+    }
+  };
+
+  const closePreview = () => setPreviewSrc(null);
 
   return (
     <div className="project-accordion">
@@ -21,13 +31,11 @@ const ProjectAccordion = ({ items = [] }) => {
               className="project-accordion-header"
               onClick={() => handleToggle(index)}
             >
-              <span className={`project-accordion-icon${isOpen ? ' rotated' : ''}`}>
-                
-              </span>
+              <span className={`project-accordion-icon${isOpen ? ' rotated' : ''}`} />
               <span className="project-accordion-title">{item.title}</span>
             </button>
             {item.content && isOpen && (
-              <div className="project-accordion-content">
+              <div className="project-accordion-content" onClick={handleImageClick}>
                 {item.content}
                 <div
                   className={`project-accordion-decor ${
@@ -56,6 +64,13 @@ const ProjectAccordion = ({ items = [] }) => {
           </div>
         );
       })}
+      {previewSrc && (
+        <div className="project-image-preview-backdrop" onClick={closePreview} role="button" tabIndex={0} onKeyDown={closePreview}>
+          <div className="project-image-preview-dialog">
+            <img src={previewSrc} alt="Project preview" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

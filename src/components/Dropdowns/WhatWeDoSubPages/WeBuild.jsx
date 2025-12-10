@@ -3,6 +3,7 @@ import HeroSection from '../PortfolioDropdownSubPages/HeroSection';
 import Contact from '../../Contact';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { images, videos } from '@assets/media';
 
 function WeBuild() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -47,7 +48,7 @@ function WeBuild() {
   return (
     <div className="bg-light" style={{ fontFamily: "'Barlow', sans-serif" }}>
       <HeroSection
-        videoSrc="/tata-gotion.mp4"
+        videoSrc={videos.tataGotion}
         header="We Build"
         subheader="Explore a world of possibilities with our premium services"
         textColor="#fff"
@@ -110,7 +111,7 @@ function WeBuild() {
                   variants={itemVariants}
                 >
                   <div className="whatwedo-feature-image-wrapper">
-                    <img src="/tata_gotion1.png" alt="Zhang industrial development meeting" />
+                    <img src={images.tataGotion1} alt="Zhang industrial development meeting" />
                   </div>
                 </motion.div>
               </div>
@@ -168,7 +169,7 @@ function WeBuild() {
               >
                 <div className="whatwedo-feature-image-wrapper">
                   <img
-                    src="/tata_gotion1.png"
+                    src={images.tataGotion1}
                     alt="Zhang build-to-suit facility"
                     className="whatwedo-light-image"
                   />
@@ -211,7 +212,7 @@ function WeBuild() {
             <div className="position-relative">
               <div className="position-relative z-1">
                 <div className="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg">
-                  <img src="/greenpark.jpg" alt="Green Park" className="img-fluid object-cover" />
+                  <img src={images.greenpark} alt="Green Park" className="img-fluid object-cover" />
                 </div>
               </div>
             </div>
@@ -286,7 +287,7 @@ function WeBuild() {
                 <div className="row g-0">
                   <div className="col-md-5">
                     <div className="ratio ratio-1x1 h-100">
-                      <img src="/tata_gotion1.png" alt="Lease Solution" className="img-fluid object-cover" />
+                      <img src={images.tataGotion1} alt="Lease Solution" className="img-fluid object-cover" />
                     </div>
                   </div>
                   <div className="col-md-7">
@@ -313,7 +314,7 @@ function WeBuild() {
                 <div className="row g-0">
                   <div className="col-md-5">
                     <div className="ratio ratio-1x1 h-100">
-                      <img src="/tata_gotion2.png" alt="Maintain Solution" className="img-fluid object-cover" />
+                      <img src={images.tataGotion2} alt="Maintain Solution" className="img-fluid object-cover" />
                     </div>
                   </div>
                   <div className="col-md-7">

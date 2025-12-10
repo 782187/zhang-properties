@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ImageGallery.css';
+import { gallery } from '@assets/media';
 
 const ImageGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -7,19 +8,19 @@ const ImageGallery = () => {
   const commonAlt = 'Life at Zhang Properties';
 
   const galleryImages = [
-    { id: 1, src: '/gallery/life-1.jpg', size: 'large' },
-    { id: 2, src: '/gallery/tata-asal.jpg', size: 'small' },
-    { id: 3, src: '/gallery/office-meeting.jpg', size: 'small' },
-    { id: 4, src: '/gallery/tata-building.jpg', size: 'medium' },
-    { id: 5, src: '/gallery/soko-building.jpg', size: 'large' },
-    { id: 6, src: '/gallery/women-team.jpg', size: 'small' },
-    { id: 7, src: '/gallery/factory-floor.jpg', size: 'wide' },
-    { id: 8, src: '/gallery/board-meeting.jpg', size: 'medium' },
-    { id: 9, src: '/gallery/tech-team.jpg', size: 'small' },
-    { id: 10, src: '/gallery/warehouse.jpg', size: 'wide' },
-    { id: 11, src: '/gallery/team-lunch.jpg', size: 'medium' },
-    { id: 12, src: '/gallery/construction.jpg', size: 'large' },
-    { id: 13, src: '/gallery/celebration.jpg', size: 'small' }
+    { id: 1, src: gallery.life1, size: 'large' },
+    { id: 2, src: gallery.tataAsal, size: 'small' },
+    { id: 3, src: gallery.officeMeeting, size: 'small' },
+    { id: 4, src: gallery.tataBuilding, size: 'medium' },
+    { id: 5, src: gallery.sokoBuilding, size: 'large' },
+    { id: 6, src: gallery.womenTeam, size: 'small' },
+    { id: 7, src: gallery.factoryFloor, size: 'wide' },
+    { id: 8, src: gallery.boardMeeting, size: 'medium' },
+    { id: 9, src: gallery.techTeam, size: 'small' },
+    { id: 10, src: gallery.warehouse, size: 'wide' },
+    { id: 11, src: gallery.teamLunch, size: 'medium' },
+    { id: 12, src: gallery.construction, size: 'large' },
+    { id: 13, src: gallery.celebration, size: 'small' }
   ];
 
   const openLightbox = (image) => {
@@ -34,7 +35,7 @@ const ImageGallery = () => {
     <section className="image-gallery-section">
       <div className="gallery-container">
         <div className="gallery-header">
-          <h2 className="gallery-title">Life @ Zhang Properties</h2>
+          <h2 className="gallery-title" style={{color: "gray"}}>Life At Zhang Properties</h2>
           <p className="gallery-subtitle">Experience our vibrant work culture and dynamic environment</p>
         </div>
         

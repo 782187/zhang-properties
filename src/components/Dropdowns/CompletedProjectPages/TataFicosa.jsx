@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import HeroSection from './HeroSection';
-import ProjectAccordion from './ProjectAccordion';
+import HeroSection from '../PortfolioDropdownSubPages/HeroSection';
+import ProjectAccordion from '../PortfolioDropdownSubPages/ProjectAccordion';
 import Contact from '../../Contact';
 import { images, videos } from '@assets/media';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,10 +46,10 @@ const staggerContainer = {
     }
 };
 
-function TataAsal() {
+function TataFicosa() {
     return (
         <motion.div
-            className="tata-asal-page"
+            className="tata-ficosa-page"
             style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}
             initial="hidden"
             animate="show"
@@ -57,14 +57,14 @@ function TataAsal() {
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
         >
             <HeroSection
-        videoSrc={videos.tataGotion}
-                header="Jadhavwadi Facility"
-                subheader="Pre-Engineered Manufacturing for TATA Autocomps"
+                videoSrc={videos.tataGotion}
+                header="Tata Ficosa"
+                subheader="1 lakh sq.ft automotive components facility"
                 textColor="#fff"
-                leftStatValue="23,400 Sqm"
-                leftStatLabel="Plot Area"
-                rightStatValue="12,494 Sqm"
-                rightStatLabel="Shed Area"
+                leftStatValue="1L Sq.Ft."
+                leftStatLabel="Built-Up"
+                rightStatValue="Chakan"
+                rightStatLabel="Location"
             />
 
             <ProjectAccordion
@@ -74,9 +74,9 @@ function TataAsal() {
                         content: (
                             <>
                                 <p className="project-accordion-body">
-                                    Sovereign Infra Steels presents state-of-the-art pre-engineered manufacturing facility at Gat No. 55-60, Jadhavwadi, Talegaon MIDC for TATA Autocomps Systems Limited. Features 213.34m x 49.04m industrial shed with 11m clear height, 4 x 10MT EOT cranes, 24m wide access road, and comprehensive infrastructure including fire safety, water systems, and STP. Located 0.8km from Chakan-Talegaon highway with excellent regional connectivity.[file:1]
+                                    100,000 sq.ft of production, storage, and office space delivered for automotive components manufacturing in Chakan. Clear spans, crane-ready bays, and dock canopies enable efficient assembly and shipping.
                                 </p>
-                            <img src={images.projectStructure} width="100%" height="auto" alt="Image Not Supported" />
+                                <img src={images.projectStructure} width="100%" height="auto" alt="Tata Ficosa Facility" />
                             </>
                         ),
                     },
@@ -84,7 +84,7 @@ function TataAsal() {
                         title: 'Development Status',
                         content: (
                             <p className="project-accordion-body">
-                                Project includes 12,494 sqm shed, 2,023 sqm mezzanine, 777 sqm canopy, 4,500 sqm open area. Equipped with 0.5mm standing seam roofing, K-115 sprinkler system, 220,000L fire tank, 58,000L domestic tank, 10KLD STP. Handover 6 months from LOI with lease commencement April 1, 2026.[file:1]
+                                Project successfully completed and operational. The facility includes comprehensive infrastructure with advanced fire safety systems, efficient power distribution, modern water management systems, and complete logistics support. All statutory approvals obtained and facility fully operational.
                             </p>
                         ),
                     },
@@ -93,12 +93,12 @@ function TataAsal() {
                         content: (
                             <div className="project-accordion-map">
                                 <p className="project-accordion-body">
-                                    Prime Talegaon MIDC location with 24m wide approach road, fully developed infrastructure. 41km from Pune Airport, surrounded by Magna Automotive, Marquardt India, Dextra India. Centrally located in established industrial belt.[file:1]
+                                    Strategically located in a prime industrial area with excellent connectivity to major highways, ports, and logistics hubs. Prime location with established infrastructure, proximity to key markets, and access to skilled workforce. Well-connected to major transportation networks.
                                 </p>
                                 <div className="project-accordion-map-frame">
                                     <iframe
-                                        title="Jadhavwadi Location Map"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7679288923534!2d73.85625527518693!3d18.493913882585592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c10b9c4d4a2d%3A0x6e5a2a0de93e5c5f!2sPune%20Industrial%20Estate!5e0!3m2!1sen!2sin!4v1700000000001!5m2!1sen!2sin"
+                                        title="Tata Ficosa Location Map"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5882348736006!2d73.79243207518711!3d18.50254018258066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfbfd1b8af2d%3A0x5b1ce9f44c3a1f5a!2sIndustrial%20Park!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin"
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         allowFullScreen
@@ -118,16 +118,13 @@ function TataAsal() {
             >
                 <div className="container">
                     <motion.h2 className="text-center mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333393' }}>
-                        Precision Engineering
+                        Completed Excellence
                     </motion.h2>
                     <motion.p className="fs-5" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        14.5m ridge height, 1:15 pitch, ridge ventilation, 5% skylights, 8 rolling shutters, 12 docks, 2.8m brick walls, 5m canopy. Office with ACP fascia, ceramic flooring, separate entry, dedicated toilets.[file:1]
+                        Planned for lean flows with multiple shutters/docks, wide circulation, and segregated pedestrian movement to keep production, storage, and offices connected yet safe.
                     </motion.p>
                     <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Complete fire safety, 2000KW power supply, 200 lux lighting, compound wall, 10m gate, security cabin. 7.5MT/sqm flooring capacity with heavy crane provisions.[file:1]
-                    </motion.p>
-                    <motion.p className="fs-5 mt-3" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>
-                        Designed for operational excellence with strategic infrastructure positioning businesses for long-term success in Talegaon MIDC.[file:1]
+                        Efficient envelope with skylights and insulated roofing, rainwater harvesting, and landscaping combine with modern MEP systems to reduce operating costs.
                     </motion.p>
                 </div>
             </motion.section>
@@ -152,12 +149,16 @@ function TataAsal() {
                         <div className="portfolio-gallery-grid">
                             {[
                                 {
-                                    src: images.jadhavwadi1,
-                                    alt: "Jadhavwadi industrial shed layout",
+                                    src: images.esrTalegaon1,
+                                    alt: "Tata Ficosa completed facility",
                                 },
                                 {
-                                    src: images.jadhavwadi2,
-                                    alt: "Pre-engineered manufacturing facility",
+                                    src: images.esrTalegaon2,
+                                    alt: "Industrial facility overview",
+                                },
+                                {
+                                    src: images.projectStructure,
+                                    alt: "Shop-floor planning",
                                 },
                             ].map((item, index) => (
                                 <motion.div
@@ -185,6 +186,35 @@ function TataAsal() {
             </motion.section>
 
             <motion.section
+                className="py-5 bg-light"
+                variants={staggerContainer}
+                viewport={{ once: true, amount: 0.2 }}
+                whileInView="show"
+            >
+                <div className="container">
+                    <motion.h2 className="text-center mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333393' }}>
+                        Location Map
+                    </motion.h2>
+                    <div className="row g-4">
+                        <motion.div className="col-md-8 offset-md-2" variants={itemVariants}>
+                            <div className="ratio ratio-16x9 shadow-sm">
+                                <iframe
+                                    title="Tata Ficosa Chakan Map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.904104583058!2d73.76845481511583!3d18.7000488692883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2cfe45be93f1b%3A0x50b08ac13e8a5f17!2sChakan%20MIDC!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    allowFullScreen
+                                />
+                            </div>
+                            <p className="mt-3 lead text-center" style={{ fontFamily: "'Barlow', sans-serif", color: '#555' }}>
+                                Located inside Chakan MIDC with quick connectivity to the Pune–Mumbai Expressway, nearby rail sidings, and Pune Airport.
+                            </p>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section
                 className="py-5"
                 style={{ backgroundColor: 'aliceblue', minHeight: '60vh' }}
                 variants={staggerContainer}
@@ -198,18 +228,14 @@ function TataAsal() {
                             variants={itemVariants}
                         >
                             <h2 className="mb-3 text-center text-md-start" style={{ fontFamily: "'Barlow', sans-serif", color: '#3333338b' }}>
-                                Commercial Structure
+                                Project Completion
                             </h2>
                             <p className="mb-3 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Monthly rent ₹64.76 lakhs with 7% annual escalation, 12 months security deposit. 9 years 11 months agreement, 7 years 6 months lock-in period.[file:1]
+                                Fully commissioned with tested utilities, EHS compliance, and dock/canopy infrastructure ready for steady production and dispatch.
                             </p>
                             <p className="mb-4 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#666' }}>
-                                Handover 6 months from LOI, rent commencement April 2026. 2000KW power included with express feeder, CAM in client scope.[file:1]
+                                Offices, QC labs, and amenities are integrated into the plan to keep teams close to production while maintaining safe, efficient movement of materials and people.
                             </p>
-                            <a href="#contact" className="text-decoration-none">
-                                <span className="me-2" style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>View Full Terms</span>
-                                <span style={{ fontFamily: "'Barlow', sans-serif", color: '#dc3545' }}>→</span>
-                            </a>
                         </motion.div>
 
                         <motion.div
@@ -218,8 +244,8 @@ function TataAsal() {
                         >
                             <div className="overflow-hidden shadow-sm">
                                 <img
-                                    src={images.jadhavwadiOverview}
-                                    alt="Jadhavwadi facility masterplan"
+                                    src={images.esrTalegaon2}
+                                    alt="Tata Ficosa facility overview"
                                     className="img-fluid w-100"
                                     style={{ height: "60vh" }}
                                 />
@@ -242,7 +268,6 @@ function TataAsal() {
             >
                 <div className="container-xl">
                     <div className="row align-items-center g-5">
-
                         <motion.div
                             className="col-md-6 text-md-start text-center"
                             variants={itemVariants}
@@ -326,21 +351,21 @@ function TataAsal() {
             >
                 <div className="container text-center">
                     <motion.h2 className="mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#33333398' }}>
-                        Technical Superiority
+                        Key Features
                     </motion.h2>
                     <div className="row g-4">
                         {[
                             {
-                                title: "Heavy Duty Infrastructure",
-                                desc: "11m clear height, 4x10MT cranes, 7.5MT/sqm flooring, 14.5m ridge height."
+                                title: "Chakan advantage",
+                                desc: "In the auto belt with rapid connectivity to expressway, port corridors, and suppliers."
                             },
                             {
-                                title: "Advanced Fire Safety",
-                                desc: "K-115 sprinklers, hydrants, 220KL fire tank, PMRDA/NBC compliant systems."
+                                title: "Utilities commissioned",
+                                desc: "Power, air, water, fire, and waste systems fully delivered for immediate use."
                             },
                             {
-                                title: "Strategic Connectivity",
-                                desc: "24m access road, 0.8km from highway, 41km from Pune Airport."
+                                title: "Flow-focused layout",
+                                desc: "Multiple docks, canopies, and wide yards for smooth inbound and outbound movement."
                             }
                         ].map((feature, index) => (
                             <motion.div
@@ -377,9 +402,9 @@ function TataAsal() {
                     </motion.h2>
                     <div className="row g-4 justify-content-center">
                         {[
-                            { value: "23,400", label: "Sqm Plot Area" },
-                            { value: "12,494", label: "Sqm Shed Area" },
-                            { value: "11m", label: "Clear Height" }
+                            { value: "1L", label: "Sq.Ft. delivered" },
+                            { value: "Chakan", label: "Location" },
+                            { value: "100%", label: "Operational" }
                         ].map((milestone, index) => (
                             <motion.div
                                 className="col-6 col-md-3"
@@ -424,4 +449,5 @@ function TataAsal() {
     );
 }
 
-export default TataAsal;
+export default TataFicosa;
+
