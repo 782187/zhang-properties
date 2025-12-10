@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+"dist.zip" 
+"dist/"    # if builds are there too
+"dist.zip" 
+"dist/" 
