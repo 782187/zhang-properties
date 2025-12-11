@@ -17,6 +17,7 @@ import orgInfo from './images/org_info.jpg';
 import organizationHero from './images/organization_hero.jpg';
 import projectStructure from './images/project_tructure.jpg';
 import projectStructure2 from './images/project_tructure2.jpg';
+import sanyChakan0 from './images/sany_chakan.png';
 import sanyChakan from './images/sany_chakan.jpeg';
 import sanyChakan1 from './images/sany_chakan1.jpg';
 import sanyChakan2 from './images/sany_chakan2.jpg';
@@ -69,6 +70,7 @@ export const images = {
   organizationHero,
   projectStructure,
   projectStructure2,
+  sanyChakan0,
   sanyChakan,
   sanyChakan1,
   sanyChakan2,

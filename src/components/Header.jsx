@@ -4,6 +4,7 @@ import PortfolioDropdown from './Dropdowns/PortfolioDropdown';
 import WhatWeDoDropdown from './Dropdowns/WhatWeDoDropdown';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
+import { images } from '@assets/media';
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -39,10 +40,17 @@ const Header = () => {
       {/* Desktop Header */}
       <div className="desktop-header d-none d-lg-block">
         <div className="header-container">
-          <div className="header-logo">
-            <span className="Zhang">Zhang</span>
-            <span className="Properties">Properties</span>
-          </div>
+          <Link to="/" className="header-logo">
+            <img 
+              src={images.zhangLogo} 
+              alt="Zhang Properties Logo" 
+              className="header-logo-img"
+            />
+            <div className="header-logo-text">
+              <span className="Zhang">Zhang</span>
+              <span className="Properties">Properties</span>
+            </div>
+          </Link>
 
           <div className="header-nav">
             <Link to="/" className="header-button">Home</Link>
@@ -82,8 +90,15 @@ const Header = () => {
       >
         <Container fluid>
           <Navbar.Brand as={Link} to="/" className="header-logo-mobile">
-            <span className="Zhang">Zhang</span>
-            <span className="Properties">Properties</span>
+            <img 
+              src={images.zhangLogo} 
+              alt="Zhang Properties Logo" 
+              className="header-logo-img-mobile"
+            />
+            <div className="header-logo-text-mobile">
+              <span className="Zhang">Zhang</span>
+              <span className="Properties">Properties</span>
+            </div>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="mobile-navbar" className="custom-toggler" />

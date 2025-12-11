@@ -349,13 +349,22 @@ h6 {
 .project-accordion-content img {
   width: 100%;
   height: auto;
-  max-height: 320px;
+  max-height: 600px;
+  min-height: 400px;
   display: block;
-  margin: 1.25rem auto;
-  border-radius: 10px;
-  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
-  object-fit: cover;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
   cursor: zoom-in;
+  background: #f8f9fa;
+  padding: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-accordion-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
 }
 
 .project-accordion-body {
@@ -838,6 +847,13 @@ h6 {
     padding: 0 2.2rem 2.3rem 2.2rem;
   }
 
+  .project-accordion-content img {
+    max-height: 300px;
+    min-height: 250px;
+    margin: 1.5rem auto;
+    padding: 4px;
+  }
+
   .project-accordion-decor {
     margin-top: 2.25rem;
     flex-direction: row;
@@ -846,6 +862,14 @@ h6 {
 
   .decor-box {
     flex-basis: 24%;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .project-accordion-content img {
+    max-height: 450px;
+    min-height: 350px;
+    margin: 1.75rem auto;
   }
 }
 

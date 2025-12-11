@@ -5,9 +5,12 @@ import 'aos/dist/aos.css';
 import EnquiryForm from '../ProjectDetailsForm';
 import '../../styles/ContactUs.css';
 import { images } from '@assets/media';
+import { siteContent } from '../../data/siteContent';
 
 const contactImg = images.aboutUsThumbnail;
 const teamImg = images.zhangLogo;
+const palette = siteContent.theme;
+const FONT_FAMILY = "'Barlow', sans-serif";
 
 const ContactUs = () => {
     const formRef = useRef(null);
@@ -103,17 +106,23 @@ const ContactUs = () => {
     };
 
     return (
-        <div className="contact-page" style={{ fontFamily: "'Barlow', sans-serif" }}>
+        <div className="contact-page" style={{ fontFamily: FONT_FAMILY, backgroundColor: palette.surface, color: palette.text }}>
             <section
                 className="hero-section position-relative overflow-hidden"
                 style={{
-                    backgroundColor: '#1a1a1a',
+                    backgroundColor: palette.surface,
                     minHeight: '85vh',
                     display: 'flex',
                     alignItems: 'center'
                 }}
             >
-                <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: 'rgba(0,0,0,0.45)', zIndex: 0 }}></div>
+                <div
+                    className="position-absolute top-0 start-0 w-100 h-100"
+                    style={{
+                        background: "linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.55))",
+                        zIndex: 0
+                    }}
+                ></div>
 
                 <div className="container position-relative z-2 py-5">
                     <div className="row align-items-center">
@@ -124,8 +133,8 @@ const ContactUs = () => {
                                     fontSize: 'clamp(0.9rem, 2.2vw, 1.1rem)',
                                     letterSpacing: '4px',
                                     textTransform: 'uppercase',
-                                    borderTop: '2px solid #d61f26',
-                                    borderBottom: '2px solid #d61f26',
+                                    borderTop: `2px solid ${palette.accent}`,
+                                    borderBottom: `2px solid ${palette.accent}`,
                                     padding: '8px 16px',
                                     marginBottom: '1.5rem',
                                     display: 'inline-block'
@@ -177,9 +186,9 @@ const ContactUs = () => {
                                     className="btn btn-lg px-5 py-3 fw-bold"
                                     style={{
                                         fontSize: '1.1rem',
-                                        backgroundColor: '#d61f26',
-                                        borderColor: '#d61f26',
-                                        color: '#ffffff',
+                                        backgroundColor: palette.accent,
+                                        borderColor: palette.accent,
+                                        color: palette.text,
                                         letterSpacing: '1px'
                                     }}
                                     whileHover={{
@@ -197,8 +206,8 @@ const ContactUs = () => {
                                     style={{
                                         fontSize: '1.1rem',
                                         backgroundColor: 'transparent',
-                                        border: '2px solid #ffffff',
-                                        color: '#ffffff',
+                                        border: `2px solid ${palette.text}`,
+                                        color: palette.text,
                                         letterSpacing: '1px'
                                     }}
                                     whileHover={{
@@ -221,38 +230,38 @@ const ContactUs = () => {
                             >
                                 <div className="position-absolute top-0 start-0 w-100 h-100"
                                     style={{
-                                        backgroundColor: '#d61f26',
+                                        backgroundColor: palette.accent,
                                         borderRadius: '20px',
                                         transform: 'rotate(3deg)',
                                         opacity: 0.1
                                     }}></div>
                                 <div className="position-relative p-4 p-lg-5 bg-white rounded-4 shadow-lg">
-                                    <h4 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
+                                    <h4 className="fw-bold mb-4" style={{ color: palette.surface }}>
                                         Quick Contact
                                     </h4>
                                     <div className="mb-4">
                                         <p className="mb-3">
-                                            <i className="fas fa-phone-alt me-3" style={{ color: '#d61f26' }}></i>
+                                            <i className="fas fa-phone-alt me-3" style={{ color: palette.accent }}></i>
                                             <a href="tel:+919225520888" className="text-decoration-none" style={{ color: '#333' }}>
                                                 +91 9225520888
                                             </a>
                                         </p>
                                         <p className="mb-3">
-                                            <i className="fas fa-envelope me-3" style={{ color: '#d61f26' }}></i>
+                                            <i className="fas fa-envelope me-3" style={{ color: palette.accent }}></i>
                                             <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
                                                 zhangproperties@gmail.com
                                             </a>
                                         </p>
                                         <p className="mb-0">
-                                            <i className="fas fa-map-marker-alt me-3" style={{ color: '#d61f26' }}></i>
+                                            <i className="fas fa-map-marker-alt me-3" style={{ color: palette.accent }}></i>
                                             <span style={{ color: '#666' }}>Pune, India</span>
                                         </p>
                                     </div>
                                     <button
                                         className="btn w-100 py-3 fw-bold"
                                         style={{
-                                            backgroundColor: '#1a1a1a',
-                                            color: '#ffffff'
+                                            backgroundColor: palette.surface,
+                                            color: palette.text
                                         }}
                                         onClick={scrollToForm}
                                     >
@@ -280,7 +289,7 @@ const ContactUs = () => {
                     >
                         <div className="text-center mb-5 px-3 px-md-4 px-lg-5">
                             <span style={{
-                                color: '#d61f26',
+                                color: palette.accent,
                                 fontSize: '1rem',
                                 letterSpacing: '3px',
                                 textTransform: 'uppercase',
@@ -288,7 +297,7 @@ const ContactUs = () => {
                             }}>
                                 PROJECT INQUIRY
                             </span>
-                            <h2 className="mt-3 mb-4" style={{ color: '#1a1a1a', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+                            <h2 className="mt-3 mb-4" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
                                 Tell Us About Your Requirements
                             </h2>
                             <p className="mb-0" style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1rem, 1.5vw, 1.1rem)' }}>
@@ -414,7 +423,7 @@ const ContactUs = () => {
                 <div className="container py-5">
                     <div className="text-center mb-5">
                         <span style={{
-                            color: '#d61f26',
+                            color: palette.accent,
                             fontSize: '1rem',
                             letterSpacing: '3px',
                             textTransform: 'uppercase',
@@ -422,7 +431,7 @@ const ContactUs = () => {
                         }}>
                             OUR PRESENCE
                         </span>
-                        <h2 className="mt-3 mb-4" style={{ color: '#1a1a1a', fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+                        <h2 className="mt-3 mb-4" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
                             Connect With Us
                         </h2>
                     </div>
@@ -444,8 +453,8 @@ const ContactUs = () => {
                                         />
                                     </div>
                                     <div className="card-body p-4">
-                                        <h5 className="fw-bold mb-3" style={{ color: '#1a1a1a' }}>
-                                            <i className="fas fa-building me-2" style={{ color: '#d61f26' }}></i>
+                                        <h5 className="fw-bold mb-3" style={{ color: palette.surface }}>
+                                            <i className="fas fa-building me-2" style={{ color: palette.accent }}></i>
                                             Our Headquarters
                                         </h5>
                                         <p style={{ color: '#666', lineHeight: '1.7' }}>
@@ -482,27 +491,27 @@ const ContactUs = () => {
                                                 className="img-fluid mb-4"
                                                 style={{ maxHeight: '60px' }}
                                             />
-                                            <h5 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
-                                                <i className="fas fa-address-card me-2" style={{ color: '#d61f26' }}></i>
+                                            <h5 className="fw-bold mb-4" style={{ color: palette.surface }}>
+                                                <i className="fas fa-address-card me-2" style={{ color: palette.accent }}></i>
                                                 Contact Information
                                             </h5>
                                         </div>
 
                                         <div className="mb-4">
                                             <p className="mb-3">
-                                                <i className="fas fa-phone-alt me-3" style={{ color: '#d61f26' }}></i>
+                                                <i className="fas fa-phone-alt me-3" style={{ color: palette.accent }}></i>
                                                 <span style={{ color: '#333' }}>+91 9225520888</span>
                                                 <br />
                                                 <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Mobile</span>
                                             </p>
                                             <p className="mb-3">
-                                                <i className="fas fa-phone me-3" style={{ color: '#d61f26' }}></i>
+                                                <i className="fas fa-phone me-3" style={{ color: palette.accent }}></i>
                                                 <span style={{ color: '#333' }}>020-61095378</span>
                                                 <br />
                                                 <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Office</span>
                                             </p>
                                             <p className="mb-3">
-                                                <i className="fas fa-envelope me-3" style={{ color: '#d61f26' }}></i>
+                                                <i className="fas fa-envelope me-3" style={{ color: palette.accent }}></i>
                                                 <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
                                                     zhangproperties@gmail.com
                                                 </a>
@@ -535,19 +544,19 @@ const ContactUs = () => {
                             >
                                 <div className="card h-100 border-0 shadow-sm rounded-4">
                                     <div className="card-body p-4">
-                                        <h5 className="fw-bold mb-4" style={{ color: '#1a1a1a' }}>
-                                            <i className="fas fa-clock me-2" style={{ color: '#d61f26' }}></i>
+                                        <h5 className="fw-bold mb-4" style={{ color: palette.surface }}>
+                                            <i className="fas fa-clock me-2" style={{ color: palette.accent }}></i>
                                             Business Hours
                                         </h5>
 
                                         <div className="mb-4">
                                             <div className="d-flex justify-content-between py-3 border-bottom">
                                                 <span style={{ color: '#333' }}>Monday - Friday</span>
-                                                <span style={{ color: '#d61f26', fontWeight: '500' }}>9:00 AM - 6:00 PM</span>
+                                                <span style={{ color: palette.accent, fontWeight: '500' }}>9:00 AM - 6:00 PM</span>
                                             </div>
                                             <div className="d-flex justify-content-between py-3 border-bottom">
                                                 <span style={{ color: '#333' }}>Saturday</span>
-                                                <span style={{ color: '#d61f26', fontWeight: '500' }}>10:00 AM - 2:00 PM</span>
+                                                <span style={{ color: palette.accent, fontWeight: '500' }}>10:00 AM - 2:00 PM</span>
                                             </div>
                                             <div className="d-flex justify-content-between py-3">
                                                 <span style={{ color: '#333' }}>Sunday</span>
@@ -556,15 +565,16 @@ const ContactUs = () => {
                                         </div>
 
                                         <div className="mt-4">
-                                            <h6 className="fw-bold mb-3" style={{ color: '#1a1a1a' }}>
-                                                <i className="fas fa-calendar-check me-2" style={{ color: '#d61f26' }}></i>
+                                            <h6 className="fw-bold mb-3" style={{ color: palette.surface }}>
+                                                <i className="fas fa-calendar-check me-2" style={{ color: palette.accent }}></i>
                                                 Appointments
                                             </h6>
                                             <p style={{ color: '#666', fontSize: '0.9rem' }}>
                                                 Schedule appointments Monday through Friday, between 10:00 AM and 4:00 PM.
                                             </p>
                                             <button
-                                                className="btn btn-danger w-100 py-3 fw-bold mt-3"
+                                                className="btn w-100 py-3 fw-bold mt-3"
+                                                style={{ backgroundColor: palette.accent, borderColor: palette.accent, color: palette.text }}
                                                 onClick={scrollToForm}
                                             >
                                                 <i className="fas fa-calendar-alt me-2"></i>
@@ -579,7 +589,7 @@ const ContactUs = () => {
                 </div>
             </section>
 
-            <section className="py-5" style={{ backgroundColor: '#1a1a1a', color: '#ffffff' }}>
+            <section className="py-5" style={{ backgroundColor: palette.surface, color: palette.text }}>
                 <div className="container py-4">
                     <div className="row align-items-center">
                         <div className="col-lg-8">
@@ -594,9 +604,9 @@ const ContactUs = () => {
                             <motion.button
                                 className="btn btn-lg px-5 py-3 fw-bold"
                                 style={{
-                                    backgroundColor: '#d61f26',
-                                    borderColor: '#d61f26',
-                                    color: '#ffffff',
+                                    backgroundColor: palette.accent,
+                                    borderColor: palette.accent,
+                                    color: palette.text,
                                     fontSize: '1.1rem'
                                 }}
                                 whileHover={{

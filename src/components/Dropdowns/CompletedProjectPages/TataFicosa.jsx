@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import HeroSection from '../PortfolioDropdownSubPages/HeroSection';
 import ProjectAccordion from '../PortfolioDropdownSubPages/ProjectAccordion';
 import Contact from '../../Contact';
@@ -46,7 +47,156 @@ const staggerContainer = {
     }
 };
 
+const completedProjects = [
+    {
+        title: 'Tata Gotion',
+        image: images.esrTalegaon2,
+        link: '/completed/tata-gotion',
+        area: '1.2M Sq.Ft.',
+        location: 'Chakan + Sanand',
+    },
+    {
+        title: 'Sany',
+        image: images.jadhavwadiOverview,
+        link: '/completed/sany',
+        area: '350K Sq.Ft.',
+        location: 'Chakan',
+    },
+    {
+        title: 'Tata Asal',
+        image: images.tataAsal,
+        link: '/completed/tata-asal',
+        area: '1L Sq.Ft.',
+        location: 'Sanand',
+    },
+    {
+        title: 'Tata Toyo Radiator',
+        image: images.esrTalegaon2,
+        link: '/completed/tata-toyo-radiator',
+        area: '3L Sq.Ft.',
+        location: 'Hinjewadi',
+    },
+    {
+        title: 'Tata Ficosa',
+        image: images.esrTalegaon2,
+        link: '/completed/tata-ficosa',
+        area: '1L Sq.Ft.',
+        location: 'Chakan',
+    },
+];
+
+const ProjectCard = ({ project, index }) => (
+    <motion.div
+        className="col-12 col-sm-6 col-lg-3"
+        key={index}
+        variants={itemVariants}
+        whileHover={{ y: -6, scale: 1.02 }}
+        transition={{ duration: 0.25 }}
+    >
+        <Link to={project.link} className="text-decoration-none">
+            <div
+                className="position-relative w-100 d-flex flex-column"
+                style={{
+                    overflow: 'hidden',
+                    borderRadius: '0',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    cursor: 'pointer'
+                }}
+            >
+                {/* Red Square Section */}
+                <div
+                    className="d-flex flex-column align-items-center justify-content-center"
+                    style={{
+                        backgroundColor: '#d61f26',
+                        color: '#ffffff',
+                        padding: '3rem 2rem',
+                        minHeight: '280px',
+                        aspectRatio: '1 / 1'
+                    }}
+                >
+                    {/* Large Project Name */}
+                    <div
+                        style={{
+                            fontFamily: "'Barlow', sans-serif",
+                            fontWeight: 700,
+                            fontSize: '2.5rem',
+                            letterSpacing: '0.05em',
+                            textTransform: 'uppercase',
+                            textAlign: 'center',
+                            lineHeight: '1.1',
+                            marginBottom: '1rem'
+                        }}
+                    >
+                        {project.title}
+                    </div>
+                    
+                    {/* Thin White Line */}
+                    <div
+                        style={{
+                            width: '60px',
+                            height: '2px',
+                            backgroundColor: '#ffffff',
+                            margin: '0.75rem 0'
+                        }}
+                    />
+                    
+                    {/* BY Zhang Properties */}
+                    <div
+                        style={{
+                            fontFamily: "'Barlow', sans-serif",
+                            fontWeight: 400,
+                            fontSize: '0.85rem',
+                            letterSpacing: '0.15em',
+                            textTransform: 'uppercase',
+                            textAlign: 'center',
+                            marginTop: '0.5rem',
+                            opacity: 0.95
+                        }}
+                    >
+                        BY ZHANG PROPERTIES
+                    </div>
+                </div>
+                
+                {/* Dark Grey Bar */}
+                <div
+                    style={{
+                        backgroundColor: '#2f2f2f',
+                        padding: '1.25rem 1.5rem',
+                        minHeight: '80px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <div
+                        style={{
+                            fontFamily: "'Dancing Script', 'Brush Script MT', 'Lucida Handwriting', cursive",
+                            color: '#ffffff',
+                            fontSize: '1.5rem',
+                            fontWeight: 400,
+                            textAlign: 'center',
+                            letterSpacing: '0.05em',
+                            lineHeight: '1.2'
+                        }}
+                    >
+                        {project.title}
+                    </div>
+                </div>
+            </div>
+        </Link>
+    </motion.div>
+);
+
 function TataFicosa() {
+    const location = useLocation();
+    const currentProjectLink = location.pathname;
+    
+    // Filter out the current project from the list
+    const filteredCompletedProjects = completedProjects.filter(
+        project => project.link !== currentProjectLink
+    );
+    
     return (
         <motion.div
             className="tata-ficosa-page"
@@ -390,49 +540,45 @@ function TataFicosa() {
                 </div>
             </motion.section>
 
+            {/* Completed Projects Section */}
             <motion.section
                 className="py-5 bg-light"
                 variants={staggerContainer}
                 viewport={{ once: true, amount: 0.2 }}
                 whileInView="show"
             >
-                <div className="container text-center">
-                    <motion.h2 className="mb-4" variants={itemVariants} style={{ fontFamily: "'Barlow', sans-serif", color: '#3333338e' }}>
-                        Key Specifications
-                    </motion.h2>
-                    <div className="row g-4 justify-content-center">
-                        {[
-                            { value: "1L", label: "Sq.Ft. delivered" },
-                            { value: "Chakan", label: "Location" },
-                            { value: "100%", label: "Operational" }
-                        ].map((milestone, index) => (
-                            <motion.div
-                                className="col-6 col-md-3"
+                <div className="container">
+                    <motion.div
+                        className="mb-4"
+                        variants={itemVariants}
+                    >
+                        <h2
+                            className="mb-2"
+                            style={{
+                                fontFamily: "'Barlow', sans-serif",
+                                fontWeight: 600,
+                                color: '#333',
+                                fontSize: '2rem'
+                            }}
+                        >
+                            Completed Projects
+                        </h2>
+                        <div
+                            style={{
+                                width: '60px',
+                                height: '4px',
+                                backgroundColor: '#d61f26',
+                                borderRadius: '2px'
+                            }}
+                        />
+                    </motion.div>
+                    <div className="row g-4">
+                        {filteredCompletedProjects.map((project, index) => (
+                            <ProjectCard 
+                                project={project} 
+                                index={index} 
                                 key={index}
-                                variants={itemVariants}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ once: true }}
-                                custom={index}
-                            >
-                                <div className="p-4 bg-white shadow rounded">
-                                    <motion.h3
-                                        style={{ fontFamily: "'Barlow', sans-serif", color: '#007bff' }}
-                                        initial={{ scale: 0.8 }}
-                                        whileInView={{
-                                            scale: 1,
-                                            transition: {
-                                                type: "spring",
-                                                stiffness: 300
-                                            }
-                                        }}
-                                        viewport={{ once: true }}
-                                    >
-                                        {milestone.value}
-                                    </motion.h3>
-                                    <p className="mb-0 lead" style={{ fontFamily: "'Barlow', sans-serif", color: '#333' }}>{milestone.label}</p>
-                                </div>
-                            </motion.div>
+                            />
                         ))}
                     </div>
                 </div>
