@@ -1,5 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { Link } from "react-router-dom";
+import { images } from "@assets/media";
 
 const PRIMARY_RED = "#d61f26";
 const DARK_TEXT = "#515050ff";
@@ -7,37 +9,49 @@ const GREY_TEXT = "#6c757d";
 
 const projects = [
   {
-    name: "ESR Talegaon B05",
-    location: "Talegaon Industrial Park",
-    size: "271,205 Sq.Ft.",
-    description: "State-of-the-art industrial facility designed for Putzmeister with 15m clear height, 7 ton/sq.m floor loading, and 1,500 KVA power capacity. Features IGBC Gold rated sustainable design, rooftop solar provisions, and comprehensive fire safety systems meeting NBC 2016 norms. Includes smart infrastructure with IoT energy monitoring and park-wide security platform.",
-    video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb%2F68cd098d925ff15bf5d0fe70_we%20build-transcode.mp4",
+    name: "Tata Gotion",
+    location: "Chakan + Sanand",
+    size: "1.2M Sq.Ft.",
+    description: "Tata Gotion delivers 1.2 million sq.ft of fully commissioned battery manufacturing and assembly infrastructure across twin campuses in Chakan (Pune) and Sanand (Gujarat). Both parks combine high-bay production halls, battery module lines, warehousing blocks, and collaborative offices with robust utilities sized for 24x7 manufacturing.",
+    image: images.tataGotion,
+    link: "/completed/tata-gotion",
   },
   {
-    name: "Tata Autocomp Systems",
-    location: "Jadhavwadi, Talegaon MIDC",
-    size: "134,487 Sq.Ft.",
-    description: "Pre-engineered manufacturing facility by Sovereign Infra Steels with 11m clear height, 4 x 10MT EOT cranes, and 7.5 MT/sq.m floor loading. Features 12 docks, 8 rolling shutters, K-115 sprinkler system, and 2000KW power with express feeder. Complete with 5m canopy, office block, STP-10KLD, and 24m wide access road just 0.8km from Chakan-Talegaon highway.",
-    video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb%2F68cd184533fe6f7277984bf7_we%20lease-transcode.mp4",
+    name: "Sany",
+    location: "Chakan",
+    size: "350K Sq.Ft.",
+    description: "350,000 sq.ft of pre-engineered sheds and office cores for Sany's heavy-equipment program, delivered in the heart of Chakan MIDC. Wide bays, crane-ready grids, and deep yards support assembly, testing, and outbound logistics.",
+    image: images.sanyChakan,
+    link: "/completed/sany",
   },
   {
     name: "Tata Asal",
     location: "Sanand",
-    size: "1 Lac Sq.ft.",
-    description: "Ensuring smooth operations in industrial parks is vital. With us, you gain peace of mind as we handle all common area maintenance operations, creating a conducive environment for your business to thrive. From site readiness to handover, we keep quality and efficiency at the core. Our team optimizes workflows to minimize downtime and costs.",
-    video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb%2F68cd18960476ea03f59d1007_we%20maintain-transcode.mp4",
+    size: "1L Sq.Ft.",
+    description: "100,000 sq.ft of pre-engineered manufacturing space in Sanand for Tata Asal, blending production bays, warehouse space, and collaborative office/lab cores. Designed for flexible line layouts with ample loading interfaces.",
+    image: images.tataAsal,
+    link: "/completed/tata-asal",
   },
   {
-    name: "Mahindra",
+    name: "Tata Toyo Radiator",
+    location: "Hinjewadi",
+    size: "3L Sq.Ft.",
+    description: "Delivered industrial facility in Hinjewadi industrial/IT corridor. Strategically located with excellent connectivity to major highways and logistics hubs. Features modern infrastructure designed for efficient operations and scalability.",
+    image: images.projectStructure,
+    link: "/completed/tata-toyo-radiator",
+  },
+  {
+    name: "Tata Ficosa",
     location: "Chakan",
-    size: "92,000 Sq.ft.",
-    description: "Ensuring smooth operations in industrial parks is vital. With us, you gain peace of mind as we handle all common area maintenance operations, creating a conducive environment for your business to thrive. We ensure seamless coordination and reliable post-delivery support. A dedicated helpdesk provides rapid resolution for on-ground needs.",
-    video: "https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb/67434bc3f8cab15f2f07eb5c_env%20sus-transcode.mp4",
+    size: "1L Sq.Ft.",
+    description: "Completed manufacturing facility in Chakan industrial belt. Designed for precision manufacturing with modern infrastructure, efficient layouts, and comprehensive utilities. Ready for immediate operations with full statutory compliance.",
+    image: images.esrTalegaon2,
+    link: "/completed/tata-ficosa",
   },
 ];
 
 const Projects = () => {
-  const videoRefs = useRef([]);
+  const imageRefs = useRef([]);
 
   return (
     <section
@@ -78,7 +92,7 @@ const Projects = () => {
               },
               { threshold: 0.3 }
             );
-            const element = videoRefs.current[idx];
+            const element = imageRefs.current[idx];
             if (element) observer.observe(element);
             return () => observer.disconnect();
           }, [controls, idx]);
@@ -95,76 +109,99 @@ const Projects = () => {
               <div
                 className={`col-12 col-md-6 ${isEven ? "" : "order-md-2"} mb-4 mb-md-0`}
               >
-                <div
-                  className="position-relative overflow-hidden shadow-sm"
-                  ref={(el) => (videoRefs.current[idx] = el)}
-                  style={{
-                    overflow: "hidden",
-                    position: "relative",
-                    maxWidth: "520px",
-                    margin: "0 auto",
-                  }}
-                >
-                  <motion.div
-                    variants={{
-                      hidden: {
-                        x: "0%",
-                        y: "0%",
-                        rotate: 45,
-                        scale: 1.5,
-                      },
-                      visible: {
-                        x: "250%",
-                        y: "-250%",
-                        rotate: 45,
-                        scale: 1.5,
-                        transition: {
-                          duration: 3
-                        },
-                      },
-                    }}
-                    initial="hidden"
-                    animate={controls}
+                <Link to={proj.link} className="text-decoration-none">
+                  <div
+                    className="position-relative overflow-hidden shadow-sm"
+                    ref={(el) => (imageRefs.current[idx] = el)}
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "300%",
-                      height: "300%",
-                      backgroundColor: PRIMARY_RED,
-                      zIndex: 3,
-                      transformOrigin: "center center",
-                      pointerEvents: "none",
-                    }}
-                  />
-                  <video
-                    src={proj.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-100 h-auto"
-                    style={{
-                      display: "block",
-                      objectFit: "cover",
-                      aspectRatio: "1 / 1",
-                      zIndex: 2,
+                      overflow: "visible",
                       position: "relative",
+                      maxWidth: "520px",
+                      margin: "0 auto",
+                      cursor: "pointer",
+                      transition: "transform 0.3s ease",
+                      backgroundColor: "#f8f9fa",
+                      borderRadius: "8px",
                     }}
-                  />
-                </div>
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.02)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
+                  >
+                    <motion.div
+                      variants={{
+                        hidden: {
+                          x: "0%",
+                          y: "0%",
+                          rotate: 45,
+                          scale: 1.5,
+                        },
+                        visible: {
+                          x: "250%",
+                          y: "-250%",
+                          rotate: 45,
+                          scale: 1.5,
+                          transition: {
+                            duration: 3
+                          },
+                        },
+                      }}
+                      initial="hidden"
+                      animate={controls}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "300%",
+                        height: "300%",
+                        backgroundColor: PRIMARY_RED,
+                        zIndex: 3,
+                        transformOrigin: "center center",
+                        pointerEvents: "none",
+                      }}
+                    />
+                    <img
+                      src={proj.image}
+                      alt={proj.name}
+                      className="w-100 h-auto"
+                      style={{
+                        display: "block",
+                        objectFit: "contain",
+                        width: "100%",
+                        height: "auto",
+                        minHeight: "400px",
+                        maxHeight: "600px",
+                        zIndex: 2,
+                        position: "relative",
+                        backgroundColor: "#f8f9fa",
+                      }}
+                    />
+                  </div>
+                </Link>
               </div>
 
               <div className={`col-12 col-md-6 ${isEven ? "" : "order-md-1"}`}>
-                <h3
-                  style={{
-                    color: DARK_TEXT,
-                    fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                    fontWeight: 500,
-                  }}
-                >
-                  {proj.name}
-                </h3>
+                <Link to={proj.link} className="text-decoration-none">
+                  <h3
+                    style={{
+                      color: DARK_TEXT,
+                      fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                      fontWeight: 500,
+                      transition: "color 0.3s ease",
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = PRIMARY_RED;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = DARK_TEXT;
+                    }}
+                  >
+                    {proj.name}
+                  </h3>
+                </Link>
                 <p
                   style={{
                     color: DARK_TEXT,
