@@ -248,7 +248,7 @@ function TataFicosa() {
                                 <div className="project-accordion-map-frame">
                                     <iframe
                                         title="Tata Ficosa Location Map"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5882348736006!2d73.79243207518711!3d18.50254018258066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfbfd1b8af2d%3A0x5b1ce9f44c3a1f5a!2sIndustrial%20Park!5e0!3m2!1sen!2sin!4v1700000000002!5m2!1sen!2sin"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6016.828789236615!2d73.7867836!3d18.8001253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b4556af34839%3A0x5001c212668c91d6!2sTATA%20FICOSA%20AUTOMOTIVE%20SYSTEMS%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1700000000002"
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
                                         allowFullScreen
@@ -299,16 +299,12 @@ function TataFicosa() {
                         <div className="portfolio-gallery-grid">
                             {[
                                 {
-                                    src: images.esrTalegaon1,
+                                    src: images.tataFicosa,
                                     alt: "Tata Ficosa completed facility",
                                 },
                                 {
-                                    src: images.esrTalegaon2,
+                                    src: images.tataFicosa1,
                                     alt: "Industrial facility overview",
-                                },
-                                {
-                                    src: images.projectStructure,
-                                    alt: "Shop-floor planning",
                                 },
                             ].map((item, index) => (
                                 <motion.div
@@ -350,7 +346,7 @@ function TataFicosa() {
                             <div className="ratio ratio-16x9 shadow-sm">
                                 <iframe
                                     title="Tata Ficosa Chakan Map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.904104583058!2d73.76845481511583!3d18.7000488692883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2cfe45be93f1b%3A0x50b08ac13e8a5f17!2sChakan%20MIDC!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6016.828789236615!2d73.7867836!3d18.8001253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b4556af34839%3A0x5001c212668c91d6!2sTATA%20FICOSA%20AUTOMOTIVE%20SYSTEMS%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1700000000002"
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                     allowFullScreen
@@ -394,7 +390,7 @@ function TataFicosa() {
                         >
                             <div className="overflow-hidden shadow-sm">
                                 <img
-                                    src={images.esrTalegaon2}
+                                    src={images.tataFicosa}
                                     alt="Tata Ficosa facility overview"
                                     className="img-fluid w-100"
                                     style={{ height: "60vh" }}
@@ -413,10 +409,51 @@ function TataFicosa() {
                 style={{
                     borderTop: "1px solid #e5e5e5",
                     borderBottom: "1px solid #e5e5e5",
-                    background: "#fff"
+                    background: "#fff",
+                    position: "relative",
+                    overflow: "hidden"
                 }}
             >
-                <div className="container-xl">
+                <svg
+                    style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: 0,
+                        pointerEvents: "none",
+                        opacity: 0.15
+                    }}
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1200 400"
+                >
+                    <path
+                        d="M 0 400 Q 200 300 400 200 T 600 100 T 800 150 T 1000 200 T 1200 250 L 1200 400 L 0 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M 1200 400 Q 1000 300 800 200 T 600 100 T 400 150 T 200 200 T 0 250 L 0 400 L 1200 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M 0 400 Q 150 320 300 240 T 600 120 T 900 180 T 1200 220 L 1200 400 L 0 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="1.5"
+                    />
+                    <path
+                        d="M 1200 400 Q 1050 320 900 240 T 600 120 T 300 180 T 0 220 L 0 400 L 1200 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="1.5"
+                    />
+                </svg>
+                <div className="container-xl" style={{ position: "relative", zIndex: 1 }}>
                     <div className="row align-items-center g-5">
                         <motion.div
                             className="col-md-6 text-md-start text-center"
@@ -465,7 +502,7 @@ function TataFicosa() {
                                     color: "#555"
                                 }}
                             >
-                                hemant@example.com
+                                zhangproperties@gmail.com
                             </p>
                         </motion.div>
 

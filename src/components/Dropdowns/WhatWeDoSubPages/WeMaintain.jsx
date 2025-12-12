@@ -120,62 +120,95 @@ function WeMaintain() {
         </div>
       </motion.section>
 
-      <div className="container-xl mb-4 mt-4 mt-md-5">
+      <div className="container-xl mb-3">
         <motion.h2
           className="fw-bold text-md-start text-center"
           initial={{ opacity: 0, y: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', letterSpacing: '0.02em' }}
+          style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', letterSpacing: '0.02em', color: '#333' }}
         >
           Park-Level Facility Management
         </motion.h2>
       </div>
 
       <motion.section
-        className="whatwedo-light-section py-4 py-md-5"
+        className="py-3 py-md-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
+        style={{ 
+          backgroundColor: '#fdfdff',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
       >
-        <div className="whatwedo-light-grid">
-          <div className="whatwedo-light-card">
-            <div className="row g-4 align-items-center">
-              <motion.div
-                className="col-lg-6 d-flex align-items-center order-2 order-lg-1"
-                variants={itemVariants}
-              >
-                <div className="whatwedo-feature-text-block w-100 p-3 p-md-4 p-lg-5">
-                  <div className="whatwedo-light-card-title mb-3" style={{ fontSize: 'clamp(1.2rem, 3vw, 1.8rem)' }}>
-                    Comprehensive operations &amp; maintenance for occupiers
-                  </div>
-                  <p style={{ fontSize: 'clamp(0.9rem, 2vw, 1.3rem)', lineHeight: 1.7 }}>
-                    At Zhang Properties, we treat the ongoing performance of the park
-                    as seriously as day-one delivery. Our teams manage common utilities,
-                    fire and life safety systems, landscape, lighting, roadways and waste
-                    so that every occupier experiences a safe, clean and predictable
-                    environment. Structured SOPs, periodic audits and responsive support
-                    ensure that small issues are addressed before they become operational
-                    risks for your business.
-                  </p>
-                </div>
-              </motion.div>
+        <div
+          style={{
+            position: 'absolute',
+            inset: '-18% -12%',
+            backgroundImage: `
+              linear-gradient(#8eacf8a1 1px, transparent 1px),
+              linear-gradient(90deg, #7b89ad99 1px, transparent 1px)
+            `,
+            backgroundSize: '180px 120px',
+            opacity: 0.3,
+            zIndex: 0,
+            pointerEvents: 'none'
+          }}
+        />
+        <div className="container-xl" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="row g-0 align-items-center">
+            <motion.div
+              className="col-lg-6 d-flex align-items-center order-2 order-lg-1"
+              variants={itemVariants}
+            >
+              <div className="w-100 px-3 px-md-4 px-lg-5 py-4">
+                <h3
+                  className="fw-bold mb-2"
+                  style={{ 
+                    fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', 
+                    color: '#333',
+                    fontFamily: "'Barlow', sans-serif"
+                  }}
+                >
+                  Comprehensive operations &amp; maintenance for occupiers
+                </h3>
+                <p 
+                  style={{ 
+                    fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', 
+                    lineHeight: 1.7,
+                    color: '#666',
+                    marginBottom: 0,
+                    fontFamily: "'Barlow', sans-serif"
+                  }}
+                >
+                  At Zhang Properties, we treat the ongoing performance of the park
+                  as seriously as day-one delivery. Our teams manage common utilities,
+                  fire and life safety systems, landscape, lighting, roadways and waste
+                  so that every occupier experiences a safe, clean and predictable
+                  environment. Structured SOPs, periodic audits and responsive support
+                  ensure that small issues are addressed before they become operational
+                  risks for your business.
+                </p>
+              </div>
+            </motion.div>
 
-              <motion.div
-                className="col-lg-6 order-1 order-lg-2"
-                variants={itemVariants}
-              >
-                <div className="whatwedo-feature-image-wrapper">
-                  <img
-                    src={images.sanyChakan2}
-                    alt="Zhang facility management"
-                    className="whatwedo-light-image water-float w-100 h-auto"
-                  />
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              className="col-lg-6 order-1 order-lg-2"
+              variants={itemVariants}
+            >
+              <div style={{ width: '100%', height: '100%', minHeight: '400px' }}>
+                <img
+                  src={images.sanyChakan2}
+                  alt="Zhang facility management"
+                  className="w-100 h-100"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>

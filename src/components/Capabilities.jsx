@@ -26,7 +26,7 @@ const Capabilities = () => {
   const cards = siteContent.capabilities || [
     { title: "Design & Build", description: "From concept to completion, we manage the entire lifecycle of industrial property development.", icon: "build" },
     { title: "Leasing & Sales", description: "Expert consultation for acquiring, selling, or leasing industrial and commercial spaces.", icon: "lease" },
-    { title: "Facilities Maintenance", description: "Comprehensive maintenance services to ensure your properties operate efficiently 24/7.", icon: "maintain" },
+    { title: "Build Operate and Transform", description: "Comprehensive maintenance services to ensure your properties operate efficiently 24/7.", icon: "maintain" },
   ]
 
   return (

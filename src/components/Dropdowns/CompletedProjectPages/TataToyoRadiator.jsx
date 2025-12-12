@@ -413,10 +413,51 @@ function TataToyoRadiator() {
                 style={{
                     borderTop: "1px solid #e5e5e5",
                     borderBottom: "1px solid #e5e5e5",
-                    background: "#fff"
+                    background: "#fff",
+                    position: "relative",
+                    overflow: "hidden"
                 }}
             >
-                <div className="container-xl">
+                <svg
+                    style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: 0,
+                        pointerEvents: "none",
+                        opacity: 0.15
+                    }}
+                    preserveAspectRatio="none"
+                    viewBox="0 0 1200 400"
+                >
+                    <path
+                        d="M 0 400 Q 200 300 400 200 T 600 100 T 800 150 T 1000 200 T 1200 250 L 1200 400 L 0 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M 1200 400 Q 1000 300 800 200 T 600 100 T 400 150 T 200 200 T 0 250 L 0 400 L 1200 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="2"
+                    />
+                    <path
+                        d="M 0 400 Q 150 320 300 240 T 600 120 T 900 180 T 1200 220 L 1200 400 L 0 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="1.5"
+                    />
+                    <path
+                        d="M 1200 400 Q 1050 320 900 240 T 600 120 T 300 180 T 0 220 L 0 400 L 1200 400 Z"
+                        fill="none"
+                        stroke="#d61f26"
+                        strokeWidth="1.5"
+                    />
+                </svg>
+                <div className="container-xl" style={{ position: "relative", zIndex: 1 }}>
                     <div className="row align-items-center g-5">
                         <motion.div
                             className="col-md-6 text-md-start text-center"
@@ -465,7 +506,7 @@ function TataToyoRadiator() {
                                     color: "#555"
                                 }}
                             >
-                                hemant@example.com
+                                zhangproperties@gmail.com
                             </p>
                         </motion.div>
 

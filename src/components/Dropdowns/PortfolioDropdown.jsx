@@ -7,12 +7,12 @@ import { images } from '@assets/media';
 const completedProjects = [
   {
     title: 'Tata Gotion',
-    image: images.esrTalegaon2,
+    image: images.tataGotion,
     link: '/completed/tata-gotion',
   },
   {
     title: 'Sany',
-    image: images.jadhavwadiOverview,
+    image: images.sanyChakan,
     link: '/completed/sany',
   },
   {
@@ -27,7 +27,7 @@ const completedProjects = [
   },
   {
     title: 'Tata Ficosa',
-    image: images.esrTalegaon1,
+    image: images.tataFicosa,
     link: '/completed/tata-ficosa',
   },
 ];

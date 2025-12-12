@@ -32,7 +32,7 @@ export const siteContent = {
       icon: 'lease'
     },
     {
-      title: 'We Maintain',
+      title: 'Build Operate and Transform',
       description:
         'End‑to‑end facility management to keep your operations running 24/7.',
       icon: 'maintain'

@@ -120,62 +120,95 @@ function WeBuild() {
         </div>
       </motion.section>
 
-      <div className="container-xl mb-4 mt-5">
+      <div className="container-xl mb-3">
         <motion.h2
           className="fw-bold text-md-start text-center"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          style={{ fontSize: '3rem', color: '#444444d9', letterSpacing: '0.02em' }}
+          style={{ fontSize: '3rem', color: '#333', letterSpacing: '0.02em' }}
         >
           Integrated Build-to-Suit Delivery
         </motion.h2>
       </div>
 
       <motion.section
-        className="whatwedo-light-section"
+        className="py-3 py-md-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
+        style={{ 
+          backgroundColor: '#fdfdff',
+          position: 'relative',
+          overflow: 'hidden'
+        }}
       >
-        <div className="whatwedo-light-grid">
-          <div className="whatwedo-light-card">
-            <div className="row g-4 align-items-center">
-              <motion.div
-                className="col-lg-6 d-flex align-items-center"
-                variants={itemVariants}
-              >
-                <div className="whatwedo-feature-text-block w-100">
-                  <div className="whatwedo-light-card-title" style={{ fontSize: '1.8rem' }}>
-                    Comprehensive development for future-ready facilities
-                  </div>
-                  <p style={{ fontSize: '1.3rem', lineHeight: 1.7 }}>
-                    Zhang Properties acts as your development arm from concept to handover.
-                    We identify the right land parcels, master-plan the park, coordinate with
-                    consultants and authorities, and drive EPC partners to deliver on time.
-                    Every build-to-suit facility is designed around your process flows,
-                    loading patterns, sustainability objectives, and compliance norms so
-                    that the finished asset feels bespoke to your operation, not just a
-                    generic industrial box.
-                  </p>
-                </div>
-              </motion.div>
+        <div
+          style={{
+            position: 'absolute',
+            inset: '-18% -12%',
+            backgroundImage: `
+              linear-gradient(#8eacf8a1 1px, transparent 1px),
+              linear-gradient(90deg, #7b89ad99 1px, transparent 1px)
+            `,
+            backgroundSize: '180px 120px',
+            opacity: 0.3,
+            zIndex: 0,
+            pointerEvents: 'none'
+          }}
+        />
+        <div className="container-xl" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="row g-0 align-items-center">
+            <motion.div
+              className="col-lg-6 d-flex align-items-center order-2 order-lg-1"
+              variants={itemVariants}
+            >
+              <div className="w-100 px-3 px-md-4 px-lg-5 py-4">
+                <h3
+                  className="fw-bold mb-2"
+                  style={{ 
+                    fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', 
+                    color: '#333',
+                    fontFamily: "'Barlow', sans-serif"
+                  }}
+                >
+                  Comprehensive development for future-ready facilities
+                </h3>
+                <p 
+                  style={{ 
+                    fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', 
+                    lineHeight: 1.7,
+                    color: '#666',
+                    marginBottom: 0,
+                    fontFamily: "'Barlow', sans-serif"
+                  }}
+                >
+                  Zhang Properties acts as your development arm from concept to handover.
+                  We identify the right land parcels, master-plan the park, coordinate with
+                  consultants and authorities, and drive EPC partners to deliver on time.
+                  Every build-to-suit facility is designed around your process flows,
+                  loading patterns, sustainability objectives, and compliance norms so
+                  that the finished asset feels bespoke to your operation, not just a
+                  generic industrial box.
+                </p>
+              </div>
+            </motion.div>
 
-              <motion.div
-                className="col-lg-6"
-                variants={itemVariants}
-              >
-                <div className="whatwedo-feature-image-wrapper">
-                  <img
-                    src={images.tataGotion1}
-                    alt="Zhang build-to-suit facility"
-                    className="whatwedo-light-image"
-                  />
-                </div>
-              </motion.div>
-            </div>
+            <motion.div
+              className="col-lg-6 order-1 order-lg-2"
+              variants={itemVariants}
+            >
+              <div style={{ width: '100%', height: '100%', minHeight: '400px' }}>
+                <img
+                  src={images.tataGotion1}
+                  alt="Zhang build-to-suit facility"
+                  className="w-100 h-100"
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -241,6 +274,344 @@ function WeBuild() {
           </motion.div>
         </div>
       </div>
+
+      <div
+        style={{
+          marginTop: "50px",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "50px",
+          background: `
+            repeating-linear-gradient(
+              45deg,
+              rgba(0, 0, 0, 0.3) 0px,
+              rgba(0, 0, 0, 0.17) 1.5px,
+              transparent 1.5px,
+              transparent 6px
+            )
+          `,
+          backgroundColor: "#ffffff",
+          zIndex: 2,
+        }}
+      ></div>
+
+      {/* Currently we are Developing Section */}
+      <motion.section
+        className="py-5"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="container-xl">
+          <motion.div
+            className="mb-5"
+            variants={itemVariants}
+          >
+            <h2
+              className="fw-bold text-center mb-2"
+              style={{ fontSize: '3rem', color: '#444444d9', letterSpacing: '0.02em' }}
+            >
+              Currently we are Developing
+            </h2>
+            <div
+              style={{
+                width: '80px',
+                height: '4px',
+                backgroundColor: '#d61f26',
+                margin: '0 auto',
+                borderRadius: '2px'
+              }}
+            />
+          </motion.div>
+
+          <div className="row g-4">
+            {[
+              {
+                title: 'ESR Talegaon B05',
+                location: 'Talegaon',
+                area: '271,205 Sq.Ft.',
+                description: 'Premium industrial facility for Putzmeister with 15m building height, Grade-A construction, and IGBC Gold rated sustainable features.',
+                image: images.esrTalegaon2,
+                link: '/dropdown/tata-gotion'
+              },
+              {
+                title: 'SOVEREIGN INFRA STEELS PVT. LTD.',
+                location: 'Talegaon MIDC',
+                area: '12,494 Sqm Shed Area',
+                description: 'Pre-engineered manufacturing facility for TATA Autocomps with 11m clear height, 4x10MT EOT cranes, and comprehensive infrastructure.',
+                image: images.jadhavwadiOverview,
+                link: '/dropdown/sany-chakan'
+              },
+              {
+                title: 'Tata Asal - Sanand',
+                location: 'Sanand',
+                area: '15,44,000 Sq.Ft. Built-up Potential',
+                description: 'Contemporary industrial campus with 63 acres project area, prioritizing efficient circulation and premium arrival experience.',
+                image: images.tataAsal,
+                link: '/dropdown/tata-asal'
+              }
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                className="col-md-6 col-lg-4"
+                variants={itemVariants}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link to={project.link} className="text-decoration-none">
+                  <div
+                    className="h-100 shadow-lg"
+                    style={{
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      backgroundColor: '#fff',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={() => setHoveredCard(index)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                  >
+                    <div className="position-relative" style={{ height: '250px', overflow: 'hidden' }}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="img-fluid w-100 h-100"
+                        style={{
+                          objectFit: 'cover',
+                          transform: hoveredCard === index ? 'scale(1.1)' : 'scale(1)',
+                          transition: 'transform 0.3s ease'
+                        }}
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3
+                        className="fw-bold mb-2"
+                        style={{
+                          fontSize: '1.5rem',
+                          color: '#333',
+                          fontFamily: "'Barlow', sans-serif"
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+                      <div className="mb-2">
+                        <span
+                          className="badge bg-danger bg-opacity-10 text-danger me-2"
+                          style={{ fontSize: '0.9rem', padding: '0.4rem 0.8rem' }}
+                        >
+                          {project.location}
+                        </span>
+                        <span
+                          className="badge bg-primary bg-opacity-10 text-primary"
+                          style={{ fontSize: '0.9rem', padding: '0.4rem 0.8rem' }}
+                        >
+                          {project.area}
+                        </span>
+                      </div>
+                      <p
+                        className="text-muted mb-0"
+                        style={{
+                          fontSize: '1rem',
+                          lineHeight: 1.6,
+                          fontFamily: "'Barlow', sans-serif"
+                        }}
+                      >
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
+      <div
+        style={{
+          marginTop: "50px",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "50px",
+          background: `
+            repeating-linear-gradient(
+              45deg,
+              rgba(0, 0, 0, 0.3) 0px,
+              rgba(0, 0, 0, 0.17) 1.5px,
+              transparent 1.5px,
+              transparent 6px
+            )
+          `,
+          backgroundColor: "#ffffff",
+          zIndex: 2,
+        }}
+      ></div>
+
+      {/* Developed Projects Section */}
+      <motion.section
+        className="py-5 bg-light"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <div className="container-xl">
+          <motion.div
+            className="mb-5"
+            variants={itemVariants}
+          >
+            <h2
+              className="fw-bold text-center mb-2"
+              style={{ fontSize: '3rem', color: '#444444d9', letterSpacing: '0.02em' }}
+            >
+              Developed Projects
+            </h2>
+            <div
+              style={{
+                width: '80px',
+                height: '4px',
+                backgroundColor: '#d61f26',
+                margin: '0 auto',
+                borderRadius: '2px'
+              }}
+            />
+          </motion.div>
+
+          <div className="row g-4">
+            {[
+              {
+                title: 'Tata Gotion',
+                location: 'Chakan + Sanand',
+                area: '1.2M Sq.Ft.',
+                description: 'Fully commissioned battery manufacturing and assembly infrastructure across twin campuses with high-bay production halls, battery module lines, and robust utilities.',
+                image: images.tataGotion,
+                link: '/completed/tata-gotion'
+              },
+              {
+                title: 'Sany',
+                location: 'Chakan',
+                area: '350K Sq.Ft.',
+                description: 'Pre-engineered sheds and office cores for heavy-equipment program with wide bays, crane-ready grids, and deep yards supporting assembly and testing.',
+                image: images.sanyChakan,
+                link: '/completed/sany'
+              },
+              {
+                title: 'Tata Asal',
+                location: 'Sanand',
+                area: '1L Sq.Ft.',
+                description: 'Pre-engineered manufacturing space blending production bays, warehouse space, and collaborative office/lab cores designed for flexible line layouts.',
+                image: images.tataAsal,
+                link: '/completed/tata-asal'
+              },
+              {
+                title: 'Tata Toyo Radiator',
+                location: 'Hinjewadi',
+                area: '3L Sq.Ft.',
+                description: 'Delivered industrial facility in Hinjewadi industrial/IT corridor with excellent connectivity to major highways and logistics hubs.',
+                image: images.projectStructure,
+                link: '/completed/tata-toyo-radiator'
+              },
+              {
+                title: 'Tata Ficosa',
+                location: 'Chakan',
+                area: '1L Sq.Ft.',
+                description: 'Completed manufacturing facility designed for precision manufacturing with modern infrastructure, efficient layouts, and comprehensive utilities.',
+                image: images.esrTalegaon2,
+                link: '/completed/tata-ficosa'
+              }
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                className="col-md-6 col-lg-4"
+                variants={itemVariants}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Link to={project.link} className="text-decoration-none">
+                  <div
+                    className="h-100 shadow-lg"
+                    style={{
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      backgroundColor: '#fff',
+                      transition: 'all 0.3s ease',
+                      cursor: 'pointer'
+                    }}
+                    onMouseEnter={() => setHoveredCard(`completed-${index}`)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                  >
+                    <div className="position-relative" style={{ height: '250px', overflow: 'hidden' }}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="img-fluid w-100 h-100"
+                        style={{
+                          objectFit: 'cover',
+                          transform: hoveredCard === `completed-${index}` ? 'scale(1.1)' : 'scale(1)',
+                          transition: 'transform 0.3s ease'
+                        }}
+                      />
+                      <div
+                        className="position-absolute top-0 end-0 m-2"
+                        style={{
+                          backgroundColor: '#d61f26',
+                          color: '#fff',
+                          padding: '0.3rem 0.8rem',
+                          borderRadius: '4px',
+                          fontSize: '0.85rem',
+                          fontWeight: 'bold',
+                          fontFamily: "'Barlow', sans-serif"
+                        }}
+                      >
+                        COMPLETED
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3
+                        className="fw-bold mb-2"
+                        style={{
+                          fontSize: '1.5rem',
+                          color: '#333',
+                          fontFamily: "'Barlow', sans-serif"
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+                      <div className="mb-2">
+                        <span
+                          className="badge bg-danger bg-opacity-10 text-danger me-2"
+                          style={{ fontSize: '0.9rem', padding: '0.4rem 0.8rem' }}
+                        >
+                          {project.location}
+                        </span>
+                        <span
+                          className="badge bg-primary bg-opacity-10 text-primary"
+                          style={{ fontSize: '0.9rem', padding: '0.4rem 0.8rem' }}
+                        >
+                          {project.area}
+                        </span>
+                      </div>
+                      <p
+                        className="text-muted mb-0"
+                        style={{
+                          fontSize: '1rem',
+                          lineHeight: 1.6,
+                          fontFamily: "'Barlow', sans-serif"
+                        }}
+                      >
+                        {project.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
 
       <div
         style={{

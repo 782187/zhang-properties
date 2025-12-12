@@ -173,7 +173,7 @@ const ContactUs = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.9, delay: 0.9 }}
                             >
-                                Partner with us for premium industrial, commercial, and residential solutions tailored to your unique requirements.
+                                Transform your industrial real estate vision into reality. From build-to-suit facilities to strategic leasing solutions, we deliver excellence that drives your business forward. Let's build something extraordinary together.
                             </motion.p>
 
                             <motion.div
@@ -236,36 +236,47 @@ const ContactUs = () => {
                                         opacity: 0.1
                                     }}></div>
                                 <div className="position-relative p-4 p-lg-5 bg-white rounded-4 shadow-lg">
-                                    <h4 className="fw-bold mb-4" style={{ color: palette.surface }}>
-                                        Quick Contact
+                                    <h4 className="fw-bold mb-3" style={{ color: palette.surface, fontSize: '1.5rem' }}>
+                                        Let's Start a Conversation
                                     </h4>
+                                    <p className="mb-4" style={{ color: '#666', fontSize: '0.95rem' }}>
+                                        Reach out to us directly. Our team is ready to discuss your project needs and answer any questions you may have.
+                                    </p>
                                     <div className="mb-4">
                                         <p className="mb-3">
-                                            <i className="fas fa-phone-alt me-3" style={{ color: palette.accent }}></i>
-                                            <a href="tel:+919225520888" className="text-decoration-none" style={{ color: '#333' }}>
+                                            <i className="fas fa-phone-alt me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                            <a href="tel:+919225520888" className="text-decoration-none fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>
                                                 +91 9225520888
                                             </a>
+                                            <br />
+                                            <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>Call us anytime</span>
                                         </p>
                                         <p className="mb-3">
-                                            <i className="fas fa-envelope me-3" style={{ color: palette.accent }}></i>
-                                            <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
+                                            <i className="fas fa-envelope me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                            <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>
                                                 zhangproperties@gmail.com
                                             </a>
+                                            <br />
+                                            <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>We respond within 24 hours</span>
                                         </p>
                                         <p className="mb-0">
-                                            <i className="fas fa-map-marker-alt me-3" style={{ color: palette.accent }}></i>
-                                            <span style={{ color: '#666' }}>Pune, India</span>
+                                            <i className="fas fa-map-marker-alt me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                            <span className="fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>Pune, India</span>
+                                            <br />
+                                            <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>Serving nationwide</span>
                                         </p>
                                     </div>
                                     <button
                                         className="btn w-100 py-3 fw-bold"
                                         style={{
                                             backgroundColor: palette.surface,
-                                            color: palette.text
+                                            color: palette.text,
+                                            fontSize: '1rem',
+                                            letterSpacing: '0.5px'
                                         }}
                                         onClick={scrollToForm}
                                     >
-                                        Send Detailed Inquiry
+                                        Get Detailed Quote
                                     </button>
                                 </div>
                             </motion.div>
@@ -293,15 +304,19 @@ const ContactUs = () => {
                                 fontSize: '1rem',
                                 letterSpacing: '3px',
                                 textTransform: 'uppercase',
-                                fontWeight: '500'
+                                fontWeight: '600'
                             }}>
-                                PROJECT INQUIRY
+                                START YOUR PROJECT
                             </span>
-                            <h2 className="mt-3 mb-4" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
-                                Tell Us About Your Requirements
+                            <h2 className="mt-3 mb-3" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: '600' }}>
+                                Share Your Vision, We'll Make It Happen
                             </h2>
-                            <p className="mb-0" style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1rem, 1.5vw, 1.1rem)' }}>
-                                Fill out the form below and our team will contact you within 24 hours with personalized solutions.
+                            <p className="mb-2" style={{ color: '#666', maxWidth: '700px', margin: '0 auto', fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', lineHeight: '1.7' }}>
+                                Every great project starts with a conversation. Tell us about your industrial real estate needs, and our expert team will craft a tailored solution that exceeds your expectations.
+                            </p>
+                            <p className="mb-0" style={{ color: '#999', maxWidth: '600px', margin: '0 auto', fontSize: 'clamp(0.9rem, 1.3vw, 1rem)' }}>
+                                <i className="fas fa-check-circle me-2" style={{ color: palette.accent }}></i>
+                                Response within 24 hours • Free consultation • No obligation
                             </p>
                         </div>
 
@@ -427,13 +442,16 @@ const ContactUs = () => {
                             fontSize: '1rem',
                             letterSpacing: '3px',
                             textTransform: 'uppercase',
-                            fontWeight: '500'
+                            fontWeight: '600'
                         }}>
-                            OUR PRESENCE
+                            WHERE TO FIND US
                         </span>
-                        <h2 className="mt-3 mb-4" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
-                            Connect With Us
+                        <h2 className="mt-3 mb-3" style={{ color: palette.surface, fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: '600' }}>
+                            Visit Us or Reach Out Anytime
                         </h2>
+                        <p className="mb-0" style={{ color: '#666', maxWidth: '600px', margin: '0 auto', fontSize: 'clamp(1rem, 1.5vw, 1.1rem)' }}>
+                            We're here to help you every step of the way. Drop by our office, give us a call, or connect with us online.
+                        </p>
                     </div>
 
                     <div className="row g-4">
@@ -453,22 +471,26 @@ const ContactUs = () => {
                                         />
                                     </div>
                                     <div className="card-body p-4">
-                                        <h5 className="fw-bold mb-3" style={{ color: palette.surface }}>
+                                        <h5 className="fw-bold mb-3" style={{ color: palette.surface, fontSize: '1.3rem' }}>
                                             <i className="fas fa-building me-2" style={{ color: palette.accent }}></i>
-                                            Our Headquarters
+                                            Visit Our Office
                                         </h5>
-                                        <p style={{ color: '#666', lineHeight: '1.7' }}>
-                                            11 Raja Ram Apts., 103, South Main Road, Koregaon Park, Pune-411001
+                                        <p style={{ color: '#666', lineHeight: '1.7', marginBottom: '1rem' }}>
+                                            Stop by our headquarters to discuss your project in person. We're located in the heart of Pune's business district.
+                                        </p>
+                                        <p className="mb-3 fw-semibold" style={{ color: '#333', fontSize: '0.95rem' }}>
+                                            11 Raja Ram Apts., 103, South Main Road,<br />
+                                            Koregaon Park, Pune-411001
                                         </p>
                                         <div className="mt-4">
                                             <a
                                                 href="https://maps.google.com"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="btn btn-outline-danger px-4"
+                                                className="btn btn-outline-danger px-4 fw-semibold"
                                             >
                                                 <i className="fas fa-map-marked-alt me-2"></i>
-                                                View on Map
+                                                Get Directions
                                             </a>
                                         </div>
                                     </div>
@@ -491,30 +513,36 @@ const ContactUs = () => {
                                                 className="img-fluid mb-4"
                                                 style={{ maxHeight: '60px' }}
                                             />
-                                            <h5 className="fw-bold mb-4" style={{ color: palette.surface }}>
+                                            <h5 className="fw-bold mb-4" style={{ color: palette.surface, fontSize: '1.3rem' }}>
                                                 <i className="fas fa-address-card me-2" style={{ color: palette.accent }}></i>
-                                                Contact Information
+                                                Get In Touch
                                             </h5>
                                         </div>
 
                                         <div className="mb-4">
                                             <p className="mb-3">
-                                                <i className="fas fa-phone-alt me-3" style={{ color: palette.accent }}></i>
-                                                <span style={{ color: '#333' }}>+91 9225520888</span>
+                                                <i className="fas fa-phone-alt me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                                <a href="tel:+919225520888" className="text-decoration-none fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>
+                                                    +91 9225520888
+                                                </a>
                                                 <br />
-                                                <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Mobile</span>
+                                                <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>Available 24/7 for urgent inquiries</span>
                                             </p>
                                             <p className="mb-3">
-                                                <i className="fas fa-phone me-3" style={{ color: palette.accent }}></i>
-                                                <span style={{ color: '#333' }}>020-61095378</span>
+                                                <i className="fas fa-phone me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                                <a href="tel:02061095378" className="text-decoration-none fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>
+                                                    020-61095378
+                                                </a>
                                                 <br />
-                                                <span className="ms-4" style={{ color: '#666', fontSize: '0.9rem' }}>Office</span>
+                                                <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>Office line during business hours</span>
                                             </p>
                                             <p className="mb-3">
-                                                <i className="fas fa-envelope me-3" style={{ color: palette.accent }}></i>
-                                                <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none" style={{ color: '#333' }}>
+                                                <i className="fas fa-envelope me-3" style={{ color: palette.accent, fontSize: '1.1rem' }}></i>
+                                                <a href="mailto:zhangproperties@gmail.com" className="text-decoration-none fw-semibold" style={{ color: '#333', fontSize: '1.05rem' }}>
                                                     zhangproperties@gmail.com
                                                 </a>
+                                                <br />
+                                                <span className="ms-4" style={{ color: '#999', fontSize: '0.85rem' }}>We'll respond within 24 hours</span>
                                             </p>
                                         </div>
 
@@ -544,41 +572,59 @@ const ContactUs = () => {
                             >
                                 <div className="card h-100 border-0 shadow-sm rounded-4">
                                     <div className="card-body p-4">
-                                        <h5 className="fw-bold mb-4" style={{ color: palette.surface }}>
+                                        <h5 className="fw-bold mb-4" style={{ color: palette.surface, fontSize: '1.3rem' }}>
                                             <i className="fas fa-clock me-2" style={{ color: palette.accent }}></i>
-                                            Business Hours
+                                            When We're Available
                                         </h5>
 
                                         <div className="mb-4">
-                                            <div className="d-flex justify-content-between py-3 border-bottom">
-                                                <span style={{ color: '#333' }}>Monday - Friday</span>
-                                                <span style={{ color: palette.accent, fontWeight: '500' }}>9:00 AM - 6:00 PM</span>
+                                            <div className="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                                <div>
+                                                    <span className="fw-semibold" style={{ color: '#333', fontSize: '1rem' }}>Monday - Friday</span>
+                                                    <br />
+                                                    <span style={{ color: '#999', fontSize: '0.85rem' }}>Full service available</span>
+                                                </div>
+                                                <span className="fw-bold" style={{ color: palette.accent, fontSize: '1rem' }}>9:00 AM - 6:00 PM</span>
                                             </div>
-                                            <div className="d-flex justify-content-between py-3 border-bottom">
-                                                <span style={{ color: '#333' }}>Saturday</span>
-                                                <span style={{ color: palette.accent, fontWeight: '500' }}>10:00 AM - 2:00 PM</span>
+                                            <div className="d-flex justify-content-between align-items-center py-3 border-bottom">
+                                                <div>
+                                                    <span className="fw-semibold" style={{ color: '#333', fontSize: '1rem' }}>Saturday</span>
+                                                    <br />
+                                                    <span style={{ color: '#999', fontSize: '0.85rem' }}>Limited hours</span>
+                                                </div>
+                                                <span className="fw-bold" style={{ color: palette.accent, fontSize: '1rem' }}>10:00 AM - 2:00 PM</span>
                                             </div>
-                                            <div className="d-flex justify-content-between py-3">
-                                                <span style={{ color: '#333' }}>Sunday</span>
-                                                <span style={{ color: '#666' }}>Closed</span>
+                                            <div className="d-flex justify-content-between align-items-center py-3">
+                                                <div>
+                                                    <span className="fw-semibold" style={{ color: '#333', fontSize: '1rem' }}>Sunday</span>
+                                                    <br />
+                                                    <span style={{ color: '#999', fontSize: '0.85rem' }}>Emergency support only</span>
+                                                </div>
+                                                <span style={{ color: '#999', fontSize: '0.9rem' }}>Closed</span>
                                             </div>
                                         </div>
 
                                         <div className="mt-4">
-                                            <h6 className="fw-bold mb-3" style={{ color: palette.surface }}>
+                                            <h6 className="fw-bold mb-3" style={{ color: palette.surface, fontSize: '1.1rem' }}>
                                                 <i className="fas fa-calendar-check me-2" style={{ color: palette.accent }}></i>
-                                                Appointments
+                                                Schedule a Meeting
                                             </h6>
-                                            <p style={{ color: '#666', fontSize: '0.9rem' }}>
-                                                Schedule appointments Monday through Friday, between 10:00 AM and 4:00 PM.
+                                            <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                                                Prefer a face-to-face discussion? Book a consultation at your convenience. We're flexible and can accommodate your schedule.
                                             </p>
                                             <button
                                                 className="btn w-100 py-3 fw-bold mt-3"
-                                                style={{ backgroundColor: palette.accent, borderColor: palette.accent, color: palette.text }}
+                                                style={{ 
+                                                    backgroundColor: palette.accent, 
+                                                    borderColor: palette.accent, 
+                                                    color: palette.text,
+                                                    fontSize: '1rem',
+                                                    letterSpacing: '0.5px'
+                                                }}
                                                 onClick={scrollToForm}
                                             >
                                                 <i className="fas fa-calendar-alt me-2"></i>
-                                                Book Appointment
+                                                Request Consultation
                                             </button>
                                         </div>
                                     </div>
@@ -593,11 +639,15 @@ const ContactUs = () => {
                 <div className="container py-4">
                     <div className="row align-items-center">
                         <div className="col-lg-8">
-                            <h3 className="mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)' }}>
-                                Ready to Transform Your Vision into Reality?
+                            <h3 className="mb-3" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: '600', lineHeight: '1.3' }}>
+                                Ready to Build Your Next Success Story?
                             </h3>
-                            <p className="mb-0" style={{ color: '#ffffffb3', fontSize: '1.1rem' }}>
-                                Contact us today for a free consultation and discover how we can help you achieve your goals.
+                            <p className="mb-2" style={{ color: '#ffffffb3', fontSize: '1.15rem', lineHeight: '1.7' }}>
+                                Join hundreds of satisfied clients who've transformed their industrial real estate vision into thriving operations. Your journey starts with a single conversation.
+                            </p>
+                            <p className="mb-0" style={{ color: '#ffffff99', fontSize: '1rem' }}>
+                                <i className="fas fa-check-circle me-2" style={{ color: palette.accent }}></i>
+                                Free consultation • Expert guidance • Proven track record
                             </p>
                         </div>
                         <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">
@@ -607,7 +657,8 @@ const ContactUs = () => {
                                     backgroundColor: palette.accent,
                                     borderColor: palette.accent,
                                     color: palette.text,
-                                    fontSize: '1.1rem'
+                                    fontSize: '1.1rem',
+                                    letterSpacing: '0.5px'
                                 }}
                                 whileHover={{
                                     scale: 1.05,
@@ -616,7 +667,7 @@ const ContactUs = () => {
                                 whileTap={{ scale: 0.96 }}
                                 onClick={scrollToForm}
                             >
-                                Get Started Now
+                                Start Your Project
                                 <i className="fas fa-arrow-right ms-2"></i>
                             </motion.button>
                         </div>

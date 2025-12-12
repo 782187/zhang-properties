@@ -30,6 +30,8 @@ import tataGotion2 from './images/tata_gotion2.png';
 import tataGotion3 from './images/tata_gotion3.jpg';
 import teamHeroBg from './images/team-hero-bg.jpg';
 import zhangLogo from './images/Zhang_Logo.png';
+import tataFicosa from './images/tata_ficosa.png';
+import tataFicosa1 from './images/tata_ficosa1.png';
 
 import galleryBoardMeeting from './images/gallery/board-meeting.jpg';
 import galleryCelebration from './images/gallery/celebration.jpg';
@@ -83,6 +85,8 @@ export const images = {
   tataGotion3,
   teamHeroBg,
   zhangLogo,
+  tataFicosa,
+  tataFicosa1,
 };
 
 export const gallery = {
