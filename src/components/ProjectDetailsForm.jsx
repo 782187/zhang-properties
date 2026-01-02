@@ -83,15 +83,15 @@ function ProjectDetailsForm() {
 
   const uploadToCloudinary = async (file) => {
     try {
-      const uploadData = new FormData();
-      uploadData.append("file", file);
-      uploadData.append("upload_preset", "client_uploads");
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "client_requirements"); 
       
       const response = await fetch(
-        "https://api.cloudinary.com/v1_1/dfslaqlsf/image/upload",
+        "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload", 
         {
           method: "POST",
-          body: uploadData,
+          body: formData,
         }
       );
       
@@ -102,6 +102,7 @@ function ProjectDetailsForm() {
       const data = await response.json();
       return {
         url: data.secure_url,
+        public_id: data.public_id,
         format: data.format
       };
     } catch (error) {
@@ -114,66 +115,37 @@ function ProjectDetailsForm() {
     e.preventDefault();
     setLoading(true);
 
-    try {
-      let mpcbUrl = "";
-      let mpcbFormat = "";
-      let processUrl = "";
-      let processFormat = "";
+    let uploadResults = {
+      mpcb_certificate: null,
+      process_flow_file: null
+    };
 
+    try {
       if (files.mpcb_certificate) {
         const result = await uploadToCloudinary(files.mpcb_certificate);
-        if (result) {
-          mpcbUrl = result.url;
-          mpcbFormat = result.format;
-        }
+        uploadResults.mpcb_certificate = result;
       }
 
       if (files.process_flow_file) {
         const result = await uploadToCloudinary(files.process_flow_file);
-        if (result) {
-          processUrl = result.url;
-          processFormat = result.format;
-        }
+        uploadResults.process_flow_file = result;
       }
 
-      const templateParams = {
-        client_name: formData.client_name || "",
-        client_email: formData.client_email || "",
-        client_contact: formData.client_contact || "",
-        area_required_sft: formData.area_required_sft || "",
-        project_timeline: formData.project_timeline || "",
-        term_lockin: formData.term_lockin || "",
-        activity_type: formData.activity_type || "",
-        mpcb_category: formData.mpcb_category || "",
-        power_kva: formData.power_kva || "",
-        lighting_lux: formData.lighting_lux || "",
-        floor_load: formData.floor_load || "",
-        no_of_docks: formData.no_of_docks || "",
-        process_water: formData.process_water || "",
-        utilities_area: formData.utilities_area || "",
-        crane_type: formData.crane_type || "",
-        no_of_cranes: formData.no_of_cranes || "",
-        crane_transverse: formData.crane_transverse || "",
-        crane_span: formData.crane_span || "",
-        underhook_height: formData.underhook_height || "",
-        crane_capacity: formData.crane_capacity || "",
-        sprinkler_type: formData.sprinkler_type || "",
-        manpower_details: formData.manpower_details || "",
-        etp_details: formData.etp_details || "",
-        effluent_characteristics: formData.effluent_characteristics || "",
-        raw_material: formData.raw_material || "",
-        hazardous_material: formData.hazardous_material || "",
-        msds_details: formData.msds_details || "",
-        company_brief: formData.company_brief || "",
-        mpcb_certificate_url: mpcbUrl || "Not provided",
-        mpcb_certificate_format: mpcbFormat || "",
-        process_flow_url: processUrl || "Not provided",
-        process_flow_format: processFormat || "",
+      const emailData = {
+        ...formData,
+        mpcb_certificate_url: uploadResults.mpcb_certificate?.url || "Not provided",
+        mpcb_certificate_format: uploadResults.mpcb_certificate?.format || "",
+        process_flow_url: uploadResults.process_flow_file?.url || "Not provided",
+        process_flow_format: uploadResults.process_flow_file?.format || "",
         submission_date: new Date().toLocaleDateString(),
-        submission_time: new Date().toLocaleTimeString()
+        submission_time: new Date().toLocaleTimeString(),
+        timestamp: new Date().toISOString()
       };
 
-      console.log("Sending email with params:", templateParams);
+      const templateParams = {};
+      Object.keys(emailData).forEach(key => {
+        templateParams[key] = String(emailData[key] || "");
+      });
 
       await emailjs.send(
         "service_23vxzhp",
@@ -222,7 +194,7 @@ function ProjectDetailsForm() {
 
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Submission failed: " + error.message);
+      alert("Submission failed. Please try again or contact us directly.");
     } finally {
       setLoading(false);
     }
@@ -241,7 +213,7 @@ function ProjectDetailsForm() {
         style={{ backgroundColor: '#ffffff' }}
       >
         <h3 className="text-center mb-4 fw-bold" style={{ color: '#1a1a1a' }}>
-          CLIENT REQUIREMENT SHEET – STANDARD BUILDING
+          CLIENT REQUIREMENT SHEET - STANDARD BUILDING
         </h3>
 
         <div className="mb-5">

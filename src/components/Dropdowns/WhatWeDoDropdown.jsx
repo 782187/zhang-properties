@@ -6,7 +6,7 @@ import { images } from '@assets/media';
 
 const solutions = [
   {
-    title: 'BUILD TO SUIT',
+    title: 'BUILT TO SUIT',
     image: images.tataGotion,
     link: '/dropdown/webuild',
   },
@@ -16,7 +16,7 @@ const solutions = [
     link: '/dropdown/welease',
   },
   {
-    title: 'BUILD OPERATE & TRANSFORM',
+    title: 'BUILT OPERATE TRANSFER',
     image: images.sanyChakan2,
     link: '/dropdown/wemaintain',
   },

@@ -9,28 +9,43 @@ const OrganisationInfoSection = () => {
       <div className="first-row">
         <div className="small-video">
           <video autoPlay muted loop playsInline>
-            <source src="https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb/67434bc3f8cab15f2f07ebba_Company-transcode.mp4" type="video/mp4" />
+            <source
+              src="https://cdn.prod.website-files.com/67434bc3f8cab15f2f07e6cb/67434bc3f8cab15f2f07ebba_Company-transcode.mp4"
+              type="video/mp4"
+            />
           </video>
         </div>
 
         <div className="row-content">
           <div className="info-box">
             <div className="info-header">
-              <h3>Founded in 2017</h3>
+              <h3>Pan‑India Industrial Parks</h3>
             </div>
-            <p>Ahmedabad headquartered industrial real estate firm dedicated towards developing modern industrial parks.</p>
+            <p>
+              Developer and owner of industrial parks, sheds and warehousing space across major
+              manufacturing corridors in India.
+            </p>
             <div className="extra-content">
-              <p>We create sustainable industrial ecosystems with an emphasis on productivity and employee wellbeing.</p>
+              <p>
+                Parks are designed for plug‑and‑play operations with clear titles, utilities and
+                compliant infrastructure so companies can scale quickly.
+              </p>
             </div>
           </div>
 
           <div className="info-box">
             <div className="info-header">
-              <h3>25 Leading Occupiers</h3>
+              <h3>Built‑to‑Suit Expertise</h3>
             </div>
-            <p>Asset management across diverse sectors including manufacturing, logistics, engineering and technology.</p>
+            <p>
+              Customised facilities delivered for manufacturers, logistics players and other
+              occupiers with specific process and layout needs.
+            </p>
             <div className="extra-content">
-              <p>Fortune 500 companies and fast-growing brands form part of our core occupier portfolio.</p>
+              <p>
+                Projects range from ready industrial sheds to large land parcels tailored for
+                future expansion and specialised requirements.
+              </p>
             </div>
           </div>
         </div>
@@ -40,23 +55,29 @@ const OrganisationInfoSection = () => {
         <div className="second-content">
           <div className="info-box">
             <div className="info-header">
-              <h3>Strategic Locations</h3>
+              <h3>End‑to‑End Support</h3>
             </div>
-            <p>Industrial parks located near transportation hubs to ensure seamless connectivity and reduce operational costs.</p>
+            <p>
+              Assistance with government interfaces, approvals and project coordination so clients
+              can focus on core operations.
+            </p>
           </div>
 
           <div className="info-box">
             <div className="info-header">
-              <h3>Sustainable Practices</h3>
+              <h3>Strategic Presence</h3>
             </div>
-            <p>Energy-efficient systems and green construction standards integrated across all developments.</p>
+            <p>
+              Locations chosen along key industrial belts and near major cities to optimise access
+              to supply chains and talent.
+            </p>
           </div>
         </div>
 
         <div className="large-image">
-          <img 
-            src={images.orgInfo} 
-            alt="Industrial park with modern architecture" 
+          <img
+            src={images.orgInfo}
+            alt="Industrial park with modern architecture"
             loading="lazy"
           />
         </div>
@@ -66,5 +87,4 @@ const OrganisationInfoSection = () => {
 };
 
 export default OrganisationInfoSection;
-
 export { AboutUsSection };

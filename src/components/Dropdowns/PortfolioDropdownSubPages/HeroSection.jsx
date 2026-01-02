@@ -74,7 +74,7 @@ const HeroSection = ({
                 Project
               </span>
               <span className="fw-semibold" style={{ fontSize: '0.75rem', letterSpacing: '0.3em' }}>
-                BY Zang Properties
+                BY Zhang Properties
               </span>
             </div>
             <div

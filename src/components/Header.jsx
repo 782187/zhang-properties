@@ -25,19 +25,17 @@ const Header = () => {
     setActiveDropdown(null);
   };
 
-  // Function to close the mobile navbar
   const closeMobileNavbar = () => {
     if (navbarRef.current && window.innerWidth < 992) {
       const navbarToggler = navbarRef.current.querySelector('.navbar-toggler');
       if (navbarToggler && getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click(); // This will collapse the navbar
+        navbarToggler.click();
       }
     }
   };
 
   return (
     <div className="header-wrapper" onMouseLeave={handleMouseLeave}>
-      {/* Desktop Header */}
       <div className="desktop-header d-none d-lg-block">
         <div className="header-container">
           <Link to="/" className="header-logo">
@@ -82,7 +80,6 @@ const Header = () => {
         )}
       </div>
 
-      {/* Mobile Header */}
       <Navbar 
         expand="lg" 
         className="mobile-header d-lg-none"
@@ -115,19 +112,39 @@ const Header = () => {
               </Nav.Link>
 
               <NavDropdown
-                title="Portfolio"
+                title={
+                  <div className="mobile-dropdown-title">
+                    Portfolio <span className="mobile-dropdown-arrow">▼</span>
+                  </div>
+                }
                 id="portfolio-dropdown"
-                className="mobile-dropdown"
+                className="mobile-nav-dropdown"
               >
-                <PortfolioDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
+                <div className="mobile-dropdown-content">
+                  <PortfolioDropdown 
+                    mobile={true} 
+                    closeDropdown={handleDropdownClose} 
+                    closeMobileNavbar={closeMobileNavbar} 
+                  />
+                </div>
               </NavDropdown>
 
               <NavDropdown
-                title="What We Do"
+                title={
+                  <div className="mobile-dropdown-title">
+                    What We Do <span className="mobile-dropdown-arrow">▼</span>
+                  </div>
+                }
                 id="what-we-do-dropdown"
-                className="mobile-dropdown"
+                className="mobile-nav-dropdown"
               >
-                <WhatWeDoDropdown mobile={true} closeDropdown={handleDropdownClose} closeMobileNavbar={closeMobileNavbar} />
+                <div className="mobile-dropdown-content">
+                  <WhatWeDoDropdown 
+                    mobile={true} 
+                    closeDropdown={handleDropdownClose} 
+                    closeMobileNavbar={closeMobileNavbar} 
+                  />
+                </div>
               </NavDropdown>
 
               <Nav.Link 
