@@ -4,7 +4,7 @@ import Contact from "../../Contact";
 import { motion, AnimatePresence } from "framer-motion";
 import { videos } from "@assets/media";
 import areaMapPdf from "/25091_INDURI_ GOOGLE MAP.pdf";
-import mapPreview from "/welease.png"; 
+import mapPreview from "/welease.png";
 import { FaMapMarkerAlt, FaIndustry, FaWarehouse, FaRoad, FaTruck, FaBuilding, FaFilePdf, FaExpand, FaCheckCircle, FaDownload } from "react-icons/fa";
 
 const PRIMARY_RED = '#d61f26';
@@ -21,10 +21,10 @@ function WeLease() {
 
   useEffect(() => {
     const observers = [];
-    
+
     sectionRefs.current.forEach((section, index) => {
       if (!section) return;
-      
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -38,11 +38,11 @@ function WeLease() {
           rootMargin: '0px 0px -100px 0px'
         }
       );
-      
+
       observer.observe(section);
       observers.push(observer);
     });
-    
+
     return () => observers.forEach(observer => observer.disconnect());
   }, []);
 
@@ -108,17 +108,18 @@ function WeLease() {
     const baseStyles = {
       position: "relative",
       overflow: "hidden",
-      border: "none",
       fontWeight: "600",
       letterSpacing: "0.5px",
       transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
       boxShadow: "0 4px 20px rgba(214, 31, 38, 0.25)",
-      background: variant === "primary"
-        ? `linear-gradient(135deg, ${PRIMARY_RED} 0%, #e53935 100%)`
-        : "transparent",
+      background:
+        variant === "primary"
+          ? `linear-gradient(135deg, ${PRIMARY_RED} 0%, #e53935 100%)`
+          : "transparent",
       color: variant === "primary" ? WHITE_TEXT : PRIMARY_RED,
       border: variant === "outline" ? `2px solid ${PRIMARY_RED}` : "none",
     };
+
 
     const textureStyle = {
       position: "absolute",
@@ -343,7 +344,7 @@ function WeLease() {
         </div>
       </section>
 
-      <section 
+      <section
         className="py-5 bg-light position-relative"
         ref={el => sectionRefs.current[2] = el}
       >
@@ -384,7 +385,7 @@ function WeLease() {
                       transition: "transform 0.5s ease",
                     }}
                   />
-                  <div 
+                  <div
                     className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
                     style={{
                       background: "rgba(0, 0, 0, 0.3)",
@@ -427,7 +428,7 @@ function WeLease() {
         </div>
       </section>
 
-      <section 
+      <section
         className="py-5 bg-white position-relative"
         ref={el => sectionRefs.current[3] = el}
       >
